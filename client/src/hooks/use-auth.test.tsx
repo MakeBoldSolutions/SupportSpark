@@ -1,18 +1,20 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { renderHook, waitFor } from "@testing-library/react";
+import { renderHook, waitFor, act } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useAuth } from "./use-auth";
-import type { User } from "@shared/schema";
+import { storage } from "@/lib/local-storage-adapter";
 import React from "react";
-
-// Mock fetch globally
-global.fetch = vi.fn();
 
 // Mock toast
 vi.mock("@/hooks/use-toast", () => ({
   useToast: () => ({
     toast: vi.fn(),
   }),
+}));
+
+// Mock seed-data dynamic import to avoid side effects
+vi.mock("@/lib/seed-data", () => ({
+  injectSeedData: vi.fn(),
 }));
 
 function createWrapper() {
@@ -31,78 +33,48 @@ function createWrapper() {
 
 describe("useAuth", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    storage.resetAllData();
   });
 
   describe("user query", () => {
-    it("should return null when not authenticated (401)", async () => {
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 401,
-      });
-
+    it("should return null when not authenticated", async () => {
       const { result } = renderHook(() => useAuth(), { wrapper: createWrapper() });
 
       await waitFor(() => {
-        expect(result.current.user).toBeNull();
         expect(result.current.isLoading).toBe(false);
       });
+      expect(result.current.user).toBeNull();
     });
 
     it("should return user data when authenticated", async () => {
-      const mockUser: User = {
-        id: "user-123",
+      // Pre-register a user to set session
+      storage.register({
         email: "test@example.com",
-        password: "hashed",
+        password: "password123",
         firstName: "Test",
         lastName: "User",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 200,
-        ok: true,
-        json: async () => mockUser,
       });
 
       const { result } = renderHook(() => useAuth(), { wrapper: createWrapper() });
 
       await waitFor(() => {
-        expect(result.current.user).toEqual(mockUser);
         expect(result.current.isLoading).toBe(false);
       });
-    });
-
-    it("should handle fetch errors", async () => {
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 500,
-        ok: false,
-      });
-
-      const { result } = renderHook(() => useAuth(), { wrapper: createWrapper() });
-
-      await waitFor(() => {
-        expect(result.current.error).toBeTruthy();
-        expect(result.current.isLoading).toBe(false);
-      });
+      expect(result.current.user).toBeTruthy();
+      expect(result.current.user?.email).toBe("test@example.com");
+      expect(result.current.user?.firstName).toBe("Test");
     });
   });
 
   describe("loginMutation", () => {
     it("should login successfully", async () => {
-      const mockUser: User = {
-        id: "user-123",
+      // Register a user first
+      storage.register({
         email: "test@example.com",
-        password: "hashed",
+        password: "password123",
         firstName: "Test",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-
-      // Initial auth check
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 401,
       });
+      storage.logout();
 
       const { result } = renderHook(() => useAuth(), { wrapper: createWrapper() });
 
@@ -110,16 +82,11 @@ describe("useAuth", () => {
         expect(result.current.isLoading).toBe(false);
       });
 
-      // Mock login response
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 200,
-        ok: true,
-        json: async () => mockUser,
-      });
-
-      result.current.loginMutation.mutate({
-        email: "test@example.com",
-        password: "password123",
+      await act(async () => {
+        result.current.loginMutation.mutate({
+          email: "test@example.com",
+          password: "password123",
+        });
       });
 
       await waitFor(() => {
@@ -127,11 +94,13 @@ describe("useAuth", () => {
       });
     });
 
-    it("should handle login errors", async () => {
-      // Initial auth check
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 401,
+    it("should handle login errors for wrong credentials", async () => {
+      storage.register({
+        email: "test@example.com",
+        password: "password123",
+        firstName: "Test",
       });
+      storage.logout();
 
       const { result } = renderHook(() => useAuth(), { wrapper: createWrapper() });
 
@@ -139,16 +108,11 @@ describe("useAuth", () => {
         expect(result.current.isLoading).toBe(false);
       });
 
-      // Mock login error
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 401,
-        ok: false,
-        json: async () => ({ message: "Invalid credentials" }),
-      });
-
-      result.current.loginMutation.mutate({
-        email: "test@example.com",
-        password: "wrongpassword",
+      await act(async () => {
+        result.current.loginMutation.mutate({
+          email: "test@example.com",
+          password: "wrongpassword",
+        });
       });
 
       await waitFor(() => {
@@ -159,19 +123,33 @@ describe("useAuth", () => {
 
   describe("registerMutation", () => {
     it("should register successfully", async () => {
-      const mockUser: User = {
-        id: "user-new",
-        email: "new@example.com",
-        password: "hashed",
-        firstName: "New",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
+      const { result } = renderHook(() => useAuth(), { wrapper: createWrapper() });
 
-      // Initial auth check
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 401,
+      await waitFor(() => {
+        expect(result.current.isLoading).toBe(false);
       });
+
+      await act(async () => {
+        result.current.registerMutation.mutate({
+          email: "new@example.com",
+          password: "password123",
+          firstName: "New",
+        });
+      });
+
+      await waitFor(() => {
+        expect(result.current.registerMutation.isSuccess).toBe(true);
+      });
+      expect(result.current.user?.email).toBe("new@example.com");
+    });
+
+    it("should fail for duplicate email", async () => {
+      storage.register({
+        email: "dupe@example.com",
+        password: "password123",
+        firstName: "First",
+      });
+      storage.logout();
 
       const { result } = renderHook(() => useAuth(), { wrapper: createWrapper() });
 
@@ -179,60 +157,42 @@ describe("useAuth", () => {
         expect(result.current.isLoading).toBe(false);
       });
 
-      // Mock register response
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 201,
-        ok: true,
-        json: async () => mockUser,
-      });
-
-      result.current.registerMutation.mutate({
-        email: "new@example.com",
-        password: "password123",
-        firstName: "New",
+      await act(async () => {
+        result.current.registerMutation.mutate({
+          email: "dupe@example.com",
+          password: "password456",
+          firstName: "Second",
+        });
       });
 
       await waitFor(() => {
-        expect(result.current.registerMutation.isSuccess).toBe(true);
+        expect(result.current.registerMutation.isError).toBe(true);
       });
     });
   });
 
   describe("logoutMutation", () => {
     it("should logout successfully", async () => {
-      // Initial auth check - logged in
-      const mockUser: User = {
-        id: "user-123",
+      storage.register({
         email: "test@example.com",
-        password: "hashed",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 200,
-        ok: true,
-        json: async () => mockUser,
+        password: "password123",
+        firstName: "Test",
       });
 
       const { result } = renderHook(() => useAuth(), { wrapper: createWrapper() });
 
       await waitFor(() => {
-        expect(result.current.user).toEqual(mockUser);
+        expect(result.current.user).toBeTruthy();
       });
 
-      // Mock logout response
-      (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        status: 200,
-        ok: true,
-        json: async () => ({ message: "Logged out" }),
+      await act(async () => {
+        result.current.logoutMutation.mutate();
       });
-
-      result.current.logoutMutation.mutate();
 
       await waitFor(() => {
         expect(result.current.logoutMutation.isSuccess).toBe(true);
       });
+      expect(storage.getCurrentUser()).toBeNull();
     });
   });
 });

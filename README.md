@@ -103,6 +103,28 @@ The application will be available at `http://localhost:5000`
 
 ---
 
+## Preview Alpha (GitHub Pages)
+
+A fully client-side preview is available at **[https://markhazleton.github.io/SupportSpark/](https://markhazleton.github.io/SupportSpark/)**.
+
+This preview runs entirely in your browser with no backend server — all data is stored in localStorage.
+
+- **Register** with any email/password to explore
+- **Pre-seeded demo data** appears automatically on first registration
+- **Reset Demo Data** in the banner to start fresh
+
+### Static Build
+
+```bash
+# Build for GitHub Pages
+npm run build:static
+
+# Preview locally
+npx vite preview --config vite.config.static.ts
+```
+
+---
+
 ## Deployment
 
 ### Windows 11 + IIS (Production)

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { renderHook, waitFor } from "@testing-library/react";
+import { renderHook, waitFor, act } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import {
@@ -8,10 +8,12 @@ import {
   useCreateConversation,
   useAddMessage,
 } from "./use-conversations";
-import type { Conversation } from "@shared/schema";
+import { storage } from "@/lib/local-storage-adapter";
 
-// Mock fetch globally
-global.fetch = vi.fn();
+// Mock seed-data dynamic import to avoid side effects
+vi.mock("@/lib/seed-data", () => ({
+  injectSeedData: vi.fn(),
+}));
 
 function createWrapper() {
   const queryClient = new QueryClient({
@@ -27,152 +29,107 @@ function createWrapper() {
   return Wrapper;
 }
 
+function registerTestUser() {
+  return storage.register({
+    email: "test@example.com",
+    password: "password123",
+    firstName: "Test",
+    lastName: "User",
+  });
+}
+
 describe("useConversations", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    storage.resetAllData();
   });
 
-  it("should fetch all conversations", async () => {
-    const mockConversations: Conversation[] = [
-      {
-        id: 1,
-        memberId: "user-123",
-        title: "Test Conversation",
-        data: { messages: [] },
-        createdAt: new Date().toISOString(),
-      },
-    ];
-
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockConversations,
-    });
+  it("should fetch all conversations for authenticated user", async () => {
+    registerTestUser();
+    storage.createConversation({ title: "Update 1", initialMessage: "Hello" });
 
     const { result } = renderHook(() => useConversations(), { wrapper: createWrapper() });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data).toEqual(mockConversations);
     });
+    expect(result.current.data).toHaveLength(1);
+    expect(result.current.data![0].title).toBe("Update 1");
   });
 
-  it("should handle fetch errors", async () => {
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: false,
-    });
+  it("should return empty array when no conversations exist", async () => {
+    registerTestUser();
 
     const { result } = renderHook(() => useConversations(), { wrapper: createWrapper() });
 
     await waitFor(() => {
-      expect(result.current.isError).toBe(true);
+      expect(result.current.isSuccess).toBe(true);
     });
+    expect(result.current.data).toHaveLength(0);
   });
 });
 
 describe("useConversation", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    storage.resetAllData();
   });
 
   it("should fetch single conversation by ID", async () => {
-    const mockConversation: Conversation = {
-      id: 1,
-      memberId: "user-123",
-      title: "Test Conversation",
-      data: {
-        messages: [
-          {
-            id: "msg-1",
-            authorId: "user-123",
-            authorName: "Test User",
-            content: "Hello",
-            timestamp: new Date().toISOString(),
-          },
-        ],
-      },
-      createdAt: new Date().toISOString(),
-    };
+    registerTestUser();
+    const conv = storage.createConversation({ title: "My Update", initialMessage: "Content" });
 
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockConversation,
-    });
-
-    const { result } = renderHook(() => useConversation(1), { wrapper: createWrapper() });
+    const { result } = renderHook(() => useConversation(conv.id), { wrapper: createWrapper() });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data).toEqual(mockConversation);
     });
+    expect(result.current.data?.title).toBe("My Update");
+    expect(result.current.data?.data.messages).toHaveLength(1);
   });
 
-  it("should return null for 404", async () => {
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      status: 404,
-      ok: false,
-    });
+  it("should return null for non-existent conversation", async () => {
+    registerTestUser();
 
     const { result } = renderHook(() => useConversation(999), { wrapper: createWrapper() });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data).toBeNull();
     });
+    expect(result.current.data).toBeNull();
   });
 });
 
 describe("useCreateConversation", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    storage.resetAllData();
   });
 
   it("should create a new conversation", async () => {
-    const mockConversation: Conversation = {
-      id: 1,
-      memberId: "user-123",
-      title: "New Update",
-      data: {
-        messages: [
-          {
-            id: "msg-1",
-            authorId: "user-123",
-            authorName: "Test User",
-            content: "Initial message",
-            timestamp: new Date().toISOString(),
-          },
-        ],
-      },
-      createdAt: new Date().toISOString(),
-    };
-
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockConversation,
-    });
+    registerTestUser();
 
     const { result } = renderHook(() => useCreateConversation(), { wrapper: createWrapper() });
 
-    result.current.mutate({
-      title: "New Update",
-      initialMessage: "Initial message",
+    await act(async () => {
+      result.current.mutate({
+        title: "New Update",
+        initialMessage: "Initial message",
+      });
     });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data).toEqual(mockConversation);
     });
+    expect(result.current.data?.title).toBe("New Update");
+    expect(result.current.data?.data.messages[0].content).toBe("Initial message");
   });
 
-  it("should handle creation errors", async () => {
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: false,
-    });
-
+  it("should fail when not authenticated", async () => {
     const { result } = renderHook(() => useCreateConversation(), { wrapper: createWrapper() });
 
-    result.current.mutate({
-      title: "New Update",
-      initialMessage: "Initial message",
+    await act(async () => {
+      result.current.mutate({
+        title: "New Update",
+        initialMessage: "Initial message",
+      });
     });
 
     await waitFor(() => {
@@ -183,95 +140,40 @@ describe("useCreateConversation", () => {
 
 describe("useAddMessage", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    storage.resetAllData();
   });
 
   it("should add a message to conversation", async () => {
-    const mockConversation: Conversation = {
-      id: 1,
-      memberId: "user-123",
-      title: "Test Conversation",
-      data: {
-        messages: [
-          {
-            id: "msg-1",
-            authorId: "user-123",
-            authorName: "Test User",
-            content: "Original message",
-            timestamp: new Date().toISOString(),
-          },
-          {
-            id: "msg-2",
-            authorId: "user-123",
-            authorName: "Test User",
-            content: "New message",
-            timestamp: new Date().toISOString(),
-          },
-        ],
-      },
-      createdAt: new Date().toISOString(),
-    };
+    registerTestUser();
+    const conv = storage.createConversation({ title: "Test", initialMessage: "First" });
 
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockConversation,
-    });
+    const { result } = renderHook(() => useAddMessage(conv.id), { wrapper: createWrapper() });
 
-    const { result } = renderHook(() => useAddMessage(1), { wrapper: createWrapper() });
-
-    result.current.mutate({
-      content: "New message",
+    await act(async () => {
+      result.current.mutate({ content: "Second message" });
     });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data?.data.messages).toHaveLength(2);
     });
+    expect(result.current.data?.data.messages).toHaveLength(2);
+    expect(result.current.data?.data.messages[1].content).toBe("Second message");
   });
 
-  it("should add a reply to a message", async () => {
-    const mockConversation: Conversation = {
-      id: 1,
-      memberId: "user-123",
-      title: "Test Conversation",
-      data: {
-        messages: [
-          {
-            id: "msg-1",
-            authorId: "user-123",
-            authorName: "Test User",
-            content: "Original message",
-            timestamp: new Date().toISOString(),
-            replies: [
-              {
-                id: "msg-1-reply-1",
-                authorId: "user-456",
-                authorName: "Supporter",
-                content: "Reply to message",
-                timestamp: new Date().toISOString(),
-              },
-            ],
-          },
-        ],
-      },
-      createdAt: new Date().toISOString(),
-    };
+  it("should include author info in added message", async () => {
+    const user = registerTestUser();
+    const conv = storage.createConversation({ title: "Test", initialMessage: "First" });
 
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockConversation,
-    });
+    const { result } = renderHook(() => useAddMessage(conv.id), { wrapper: createWrapper() });
 
-    const { result } = renderHook(() => useAddMessage(1), { wrapper: createWrapper() });
-
-    result.current.mutate({
-      content: "Reply to message",
-      parentMessageId: "msg-1",
+    await act(async () => {
+      result.current.mutate({ content: "New message" });
     });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data?.data.messages[0].replies).toHaveLength(1);
     });
+    expect(result.current.data?.data.messages[1].authorId).toBe(user.id);
+    expect(result.current.data?.data.messages[1].authorName).toBe("Test");
   });
 });

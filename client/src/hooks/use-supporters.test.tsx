@@ -1,12 +1,14 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { renderHook, waitFor } from "@testing-library/react";
+import { renderHook, waitFor, act } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import { useSupporters, useInviteSupporter, useUpdateSupporterStatus } from "./use-supporters";
-import type { Supporter } from "@shared/schema";
+import { storage } from "@/lib/local-storage-adapter";
 
-// Mock fetch globally
-global.fetch = vi.fn();
+// Mock seed-data dynamic import to avoid side effects
+vi.mock("@/lib/seed-data", () => ({
+  injectSeedData: vi.fn(),
+}));
 
 function createWrapper() {
   const queryClient = new QueryClient({
@@ -22,112 +24,90 @@ function createWrapper() {
   return Wrapper;
 }
 
+function registerTestUser() {
+  return storage.register({
+    email: "test@example.com",
+    password: "password123",
+    firstName: "Test",
+    lastName: "User",
+  });
+}
+
 describe("useSupporters", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    storage.resetAllData();
   });
 
-  it("should fetch supporters list", async () => {
-    const mockResponse = {
-      mySupporters: [
-        {
-          id: 1,
-          memberId: "user-123",
-          supporterId: "user-456",
-          status: "accepted" as const,
-          createdAt: new Date().toISOString(),
-          supporterName: "John Doe",
-          supporterEmail: "john@example.com",
-        },
-      ],
-      supporting: [],
-    };
-
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockResponse,
-    });
+  it("should return empty supporters when none exist", async () => {
+    registerTestUser();
 
     const { result } = renderHook(() => useSupporters(), { wrapper: createWrapper() });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data).toEqual(mockResponse);
     });
+    expect(result.current.data?.mySupporters).toHaveLength(0);
+    expect(result.current.data?.supporting).toHaveLength(0);
   });
 
-  it("should handle fetch errors", async () => {
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: false,
-    });
+  it("should return supporters after invite", async () => {
+    registerTestUser();
+    storage.inviteSupporter({ email: "friend@example.com" });
 
     const { result } = renderHook(() => useSupporters(), { wrapper: createWrapper() });
 
     await waitFor(() => {
-      expect(result.current.isError).toBe(true);
+      expect(result.current.isSuccess).toBe(true);
     });
+    // Bidirectional: mySupporters has the invited user, supporting has the reverse
+    expect(result.current.data?.mySupporters).toHaveLength(1);
+    expect(result.current.data?.supporting).toHaveLength(1);
   });
 });
 
 describe("useInviteSupporter", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    storage.resetAllData();
   });
 
   it("should invite a supporter by email", async () => {
-    const mockSupporter: Supporter = {
-      id: 1,
-      memberId: "user-123",
-      supporterId: "user-456",
-      status: "pending",
-      createdAt: new Date().toISOString(),
-    };
-
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockSupporter,
-    });
+    registerTestUser();
 
     const { result } = renderHook(() => useInviteSupporter(), { wrapper: createWrapper() });
 
-    result.current.mutate({
-      email: "supporter@example.com",
+    await act(async () => {
+      result.current.mutate({ email: "supporter@example.com" });
     });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data).toEqual(mockSupporter);
     });
+    expect(result.current.data?.status).toBe("accepted");
   });
 
-  it("should handle 404 when user not found", async () => {
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      status: 404,
-      ok: false,
-    });
+  it("should auto-create mock user for unknown email", async () => {
+    registerTestUser();
 
     const { result } = renderHook(() => useInviteSupporter(), { wrapper: createWrapper() });
 
-    result.current.mutate({
-      email: "nonexistent@example.com",
+    await act(async () => {
+      result.current.mutate({ email: "newperson@example.com" });
     });
 
     await waitFor(() => {
-      expect(result.current.isError).toBe(true);
-      expect(result.current.error?.message).toContain("not found");
+      expect(result.current.isSuccess).toBe(true);
     });
+    // The mock user should now be loginable
+    storage.logout();
+    const mockUser = storage.login({ email: "newperson@example.com", password: "preview123" });
+    expect(mockUser.firstName).toBe("Newperson");
   });
 
-  it("should handle other invite errors", async () => {
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      status: 400,
-      ok: false,
-    });
-
+  it("should fail when not authenticated", async () => {
     const { result } = renderHook(() => useInviteSupporter(), { wrapper: createWrapper() });
 
-    result.current.mutate({
-      email: "supporter@example.com",
+    await act(async () => {
+      result.current.mutate({ email: "supporter@example.com" });
     });
 
     await waitFor(() => {
@@ -138,73 +118,54 @@ describe("useInviteSupporter", () => {
 
 describe("useUpdateSupporterStatus", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    storage.resetAllData();
   });
 
   it("should accept a supporter invitation", async () => {
-    const mockSupporter: Supporter = {
-      id: 1,
-      memberId: "user-123",
-      supporterId: "user-456",
-      status: "accepted",
-      createdAt: new Date().toISOString(),
-    };
+    registerTestUser();
+    const supporter = storage.inviteSupporter({ email: "friend@example.com" });
 
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockSupporter,
+    const { result } = renderHook(() => useUpdateSupporterStatus(), {
+      wrapper: createWrapper(),
     });
 
-    const { result } = renderHook(() => useUpdateSupporterStatus(), { wrapper: createWrapper() });
-
-    result.current.mutate({
-      id: 1,
-      status: "accepted",
+    await act(async () => {
+      result.current.mutate({ id: supporter.id, status: "accepted" });
     });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data?.status).toBe("accepted");
     });
+    expect(result.current.data?.status).toBe("accepted");
   });
 
   it("should reject a supporter invitation", async () => {
-    const mockSupporter: Supporter = {
-      id: 1,
-      memberId: "user-123",
-      supporterId: "user-456",
-      status: "rejected",
-      createdAt: new Date().toISOString(),
-    };
+    registerTestUser();
+    const supporter = storage.inviteSupporter({ email: "friend@example.com" });
 
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockSupporter,
+    const { result } = renderHook(() => useUpdateSupporterStatus(), {
+      wrapper: createWrapper(),
     });
 
-    const { result } = renderHook(() => useUpdateSupporterStatus(), { wrapper: createWrapper() });
-
-    result.current.mutate({
-      id: 1,
-      status: "rejected",
+    await act(async () => {
+      result.current.mutate({ id: supporter.id, status: "rejected" });
     });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
-      expect(result.current.data?.status).toBe("rejected");
     });
+    expect(result.current.data?.status).toBe("rejected");
   });
 
-  it("should handle update errors", async () => {
-    (fetch as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-      ok: false,
+  it("should fail for non-existent supporter", async () => {
+    registerTestUser();
+
+    const { result } = renderHook(() => useUpdateSupporterStatus(), {
+      wrapper: createWrapper(),
     });
 
-    const { result } = renderHook(() => useUpdateSupporterStatus(), { wrapper: createWrapper() });
-
-    result.current.mutate({
-      id: 999,
-      status: "accepted",
+    await act(async () => {
+      result.current.mutate({ id: 999, status: "accepted" });
     });
 
     await waitFor(() => {

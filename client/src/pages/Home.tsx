@@ -5,8 +5,8 @@ import { useAuth } from "@/hooks/use-auth";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Shield, Users, ArrowRight } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
+import quotesJson from "@assets/quotes_1766784685256.json";
 
 interface Quote {
   quote: string;
@@ -19,11 +19,7 @@ export default function Home() {
   const isAuthenticated = !!user;
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
 
-  const { data: quotesData } = useQuery<{ quotes: Quote[] }>({
-    queryKey: ["/api/quotes"],
-  });
-
-  const quotes = quotesData?.quotes || [];
+  const quotes: Quote[] = quotesJson.quotes || [];
 
   // Rotate quote every minute
   useEffect(() => {
@@ -74,13 +70,14 @@ export default function Home() {
                 </Link>
               ) : (
                 <>
-                  <Button
-                    size="lg"
-                    className="h-14 px-8 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1"
-                    onClick={() => (window.location.href = "/auth")}
-                  >
-                    Start Your Journey
-                  </Button>
+                  <Link href="/auth">
+                    <Button
+                      size="lg"
+                      className="h-14 px-8 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1"
+                    >
+                      Start Your Journey
+                    </Button>
+                  </Link>
                   <Link href="/demo">
                     <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full">
                       Try the Demo

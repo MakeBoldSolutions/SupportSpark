@@ -54,9 +54,9 @@ export function Navbar() {
               </Button>
             </div>
           ) : (
-            <Button size="sm" onClick={() => (window.location.href = "/auth")}>
-              Sign In / Join
-            </Button>
+            <Link href="/auth">
+              <Button size="sm">Sign In / Join</Button>
+            </Link>
           )}
         </div>
 
@@ -98,9 +98,9 @@ export function Navbar() {
                     Sign Out
                   </Button>
                 ) : (
-                  <Button className="w-full" onClick={() => (window.location.href = "/auth")}>
-                    Sign In
-                  </Button>
+                  <Link href="/auth" onClick={() => setIsOpen(false)}>
+                    <Button className="w-full">Sign In</Button>
+                  </Link>
                 )}
               </div>
             </div>
