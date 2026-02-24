@@ -16,6 +16,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,json,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,json,md}\"",
     "type-check": "tsc --noEmit",
+    "dev:static": "vite --config vite.config.static.ts",
+    "build:static": "vite build --config vite.config.static.ts",
     "validate": "npm run type-check && npm run lint && npm run format:check && npm test"
   },
   "dependencies": {

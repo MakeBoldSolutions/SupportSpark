@@ -1,0 +1,17 @@
+{
+  "id": 65,
+  "memberId": "a49f5435-2f5e-46de-986d-77680920a134",
+  "title": "Conv 1",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "a49f5435-2f5e-46de-986d-77680920a134",
+        "authorName": "User",
+        "content": "First",
+        "timestamp": "2026-02-24T18:53:53.315Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T18:53:53.315Z"
+}

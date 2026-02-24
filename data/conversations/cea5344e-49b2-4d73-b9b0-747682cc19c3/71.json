@@ -1,0 +1,17 @@
+{
+  "id": 71,
+  "memberId": "cea5344e-49b2-4d73-b9b0-747682cc19c3",
+  "title": "Conversation 2",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-2",
+        "authorId": "cea5344e-49b2-4d73-b9b0-747682cc19c3",
+        "authorName": "Test User",
+        "content": "Message 2",
+        "timestamp": "2026-02-24T18:56:12.602Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T18:56:12.605Z"
+}

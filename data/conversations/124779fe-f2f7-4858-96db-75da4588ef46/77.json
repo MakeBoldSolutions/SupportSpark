@@ -1,0 +1,17 @@
+{
+  "id": 77,
+  "memberId": "124779fe-f2f7-4858-96db-75da4588ef46",
+  "title": "Conversation 1",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "124779fe-f2f7-4858-96db-75da4588ef46",
+        "authorName": "Test User",
+        "content": "Message 1",
+        "timestamp": "2026-02-24T18:57:09.932Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T18:57:09.932Z"
+}

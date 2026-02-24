@@ -1,0 +1,17 @@
+{
+  "id": 87,
+  "memberId": "8aea80c8-db45-43b0-bc82-8985015f5ed2",
+  "title": "Conv 2",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-2",
+        "authorId": "8aea80c8-db45-43b0-bc82-8985015f5ed2",
+        "authorName": "User",
+        "content": "Second",
+        "timestamp": "2026-02-24T18:57:59.824Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T18:57:59.824Z"
+}

@@ -1,0 +1,17 @@
+{
+  "id": 83,
+  "memberId": "97cd22a8-34e9-42b0-89e3-7a96352383bd",
+  "title": "Updated Title",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "97cd22a8-34e9-42b0-89e3-7a96352383bd",
+        "authorName": "Test User",
+        "content": "Original",
+        "timestamp": "2026-02-24T18:57:59.724Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T18:57:59.724Z"
+}

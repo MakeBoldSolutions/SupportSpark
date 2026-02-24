@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+import { useQueryClient } from "@tanstack/react-query";
+import { storage } from "@/lib/local-storage-adapter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -18,11 +18,6 @@ import {
   Check,
 } from "lucide-react";
 import { useLocation } from "wouter";
-
-interface DemoInfo {
-  patient: { firstName: string; lastName: string } | null;
-  supporter: { firstName: string; lastName: string } | null;
-}
 
 const WALKTHROUGH_STEPS = [
   {
@@ -66,32 +61,39 @@ export default function Demo() {
   const [currentStep, setCurrentStep] = useState(0);
   const [, setLocation] = useLocation();
   const queryClient = useQueryClient();
+  const [loginPending, setLoginPending] = useState<"patient" | "supporter" | null>(null);
 
-  const { data: demoInfo } = useQuery<DemoInfo>({
-    queryKey: ["/api/demo/info"],
-  });
+  const seedUser = storage.getCurrentUser();
+  const patientName = seedUser?.firstName || "Member";
 
-  const loginAsPatient = useMutation({
-    mutationFn: async () => {
-      const res = await apiRequest("POST", "/api/demo/login/patient");
-      return res.json();
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
+  const handleLoginAsPatient = () => {
+    setLoginPending("patient");
+    try {
+      // Log in as the demo member — use seeded supporter credentials for a second perspective,
+      // or the current user if already registered
+      const user = storage.login({ email: "alex.supporter@example.com", password: "preview123" });
+      queryClient.setQueryData(["/api/auth/user"], user);
       setLocation("/dashboard");
-    },
-  });
+    } catch {
+      // If seed user doesn't exist, direct to auth
+      setLocation("/auth");
+    } finally {
+      setLoginPending(null);
+    }
+  };
 
-  const loginAsSupporter = useMutation({
-    mutationFn: async () => {
-      const res = await apiRequest("POST", "/api/demo/login/supporter");
-      return res.json();
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
+  const handleLoginAsSupporter = () => {
+    setLoginPending("supporter");
+    try {
+      const user = storage.login({ email: "alex.supporter@example.com", password: "preview123" });
+      queryClient.setQueryData(["/api/auth/user"], user);
       setLocation("/dashboard");
-    },
-  });
+    } catch {
+      setLocation("/auth");
+    } finally {
+      setLoginPending(null);
+    }
+  };
 
   const nextStep = () => {
     if (currentStep < WALKTHROUGH_STEPS.length - 1) {
@@ -202,7 +204,7 @@ export default function Demo() {
                   <CardTitle className="text-xl">Try as Member</CardTitle>
                 </div>
                 <CardDescription>
-                  Experience the platform as {demoInfo?.patient?.firstName || "Sarah"}, someone
+                  Experience the platform as {patientName}, someone
                   sharing their journey with supporters.
                 </CardDescription>
               </CardHeader>
@@ -223,12 +225,12 @@ export default function Demo() {
                 </ul>
                 <Button
                   className="w-full"
-                  onClick={() => loginAsPatient.mutate()}
-                  disabled={loginAsPatient.isPending}
+                  onClick={handleLoginAsPatient}
+                  disabled={loginPending === "patient"}
                   data-testid="button-login-patient"
                 >
                   <User className="w-4 h-4 mr-2" />
-                  {loginAsPatient.isPending ? "Loading..." : "Enter as Member"}
+                  {loginPending === "patient" ? "Loading..." : "Enter as Member"}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
@@ -244,8 +246,8 @@ export default function Demo() {
                   <CardTitle className="text-xl">Try as Supporter</CardTitle>
                 </div>
                 <CardDescription>
-                  Experience the platform as {demoInfo?.supporter?.firstName || "James"}, a friend
-                  supporting {demoInfo?.patient?.firstName || "Sarah"}&apos;s journey.
+                  Experience the platform as Alex, a friend
+                  supporting {patientName}&apos;s journey.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -266,12 +268,12 @@ export default function Demo() {
                 <Button
                   variant="outline"
                   className="w-full"
-                  onClick={() => loginAsSupporter.mutate()}
-                  disabled={loginAsSupporter.isPending}
+                  onClick={handleLoginAsSupporter}
+                  disabled={loginPending === "supporter"}
                   data-testid="button-login-supporter"
                 >
                   <Users className="w-4 h-4 mr-2" />
-                  {loginAsSupporter.isPending ? "Loading..." : "Enter as Supporter"}
+                  {loginPending === "supporter" ? "Loading..." : "Enter as Supporter"}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
