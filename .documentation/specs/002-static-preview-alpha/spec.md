@@ -23,7 +23,7 @@ A first-time visitor lands on the SupportSpark preview site hosted on GitHub Pag
 
 **Why this priority**: This is the core value proposition — letting stakeholders and early reviewers experience the full product flow without requiring server infrastructure. If only one story ships, this delivers the most insight.
 
-**Independent Test**: Visit the GitHub Pages URL in a fresh browser, complete registration, navigate the dashboard, open a conversation, and post a reply. Verify no network errors appear and all data persists across page refreshes within the same browser.
+**Independent Test**: Visit the GitHub Pages URL in a fresh browser, complete registration, navigate the dashboard, and open a pre-seeded conversation to verify content displays. Verify no network errors appear and all data persists across page refreshes within the same browser.
 
 **Acceptance Scenarios**:
 
@@ -126,7 +126,7 @@ The application builds as a fully static site (HTML, CSS, JS) with no server-sid
 - **FR-014**: System MUST provide login and logout functionality using local storage session management
 - **FR-015**: System MUST reuse existing React components (shadcn/ui, pages, layouts) from the current codebase with minimal modification
 - **FR-016**: System MUST validate user input (email format, password length) using the existing Zod schemas on the client side
-- **FR-017**: System MUST show the daily reflection quote on the dashboard, sourced from pre-bundled quote data
+- **FR-017**: System MUST show quotes on the Home page and dashboard. The Home page quote carousel MUST be sourced from a static import of `data/quotes.json` (replacing the existing `/api/quotes` fetch). The dashboard displays a hardcoded daily reflection quote (existing behavior). Home.tsx MUST be modified to import bundled quote data instead of calling the server API
 - **FR-018**: System MUST provide a "Reset Demo Data" action allowing users to clear all local data and return to the initial seeded state
 - **FR-019**: System MUST display a warning bar when local storage usage exceeds 80% of the browser's available quota, directing the user to the "Reset Demo Data" action to free space
 - **FR-020**: System MUST include a GitHub Actions workflow that automatically builds and deploys the static site to GitHub Pages on every push to the feature branch
@@ -157,5 +157,5 @@ The application builds as a fully static site (HTML, CSS, JS) with no server-sid
 - **SC-003**: All user-created data persists across page refreshes and browser sessions without loss
 - **SC-004**: 100% of existing UI pages (Home, Auth, Dashboard, ConversationView, Supporters, Demo) render correctly in the static preview build
 - **SC-005**: The static build produces output under 5MB total (excluding source maps), suitable for GitHub Pages hosting
-- **SC-006**: The "Preview Alpha" banner is visible on every authenticated page, ensuring no reviewer mistakes this for a production system
+- **SC-006**: The "Preview Alpha" banner is visible on every page (including Home and Auth), ensuring no reviewer mistakes this for a production system
 - **SC-007**: A user with no technical knowledge can access the GitHub Pages URL and use the full application without instructions beyond what the UI provides

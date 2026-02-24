@@ -26,7 +26,7 @@ Create a fully client-side version of SupportSpark that runs entirely from local
 | Principle | Applies? | Status | Notes |
 |-----------|----------|--------|-------|
 | I. Type Safety | YES | ✅ PASS | Shared Zod schemas reused; localStorage adapter typed to same interfaces |
-| II. Testing | YES | ✅ PASS | Tests for localStorage adapter + hook integrations required |
+| II. Testing | YES | ✅ PASS | Tests included in tasks.md: localStorage adapter unit tests + hook integration tests |
 | III. UI Components | YES | ✅ PASS | Existing shadcn/ui components reused; only new component is PreviewBanner |
 | IV. Security | PARTIAL | ✅ PASS | No backend = no bcrypt/rate-limiting needed. Plaintext passwords acceptable per spec (client-only preview, documented in banner). Constitution IV timeline: this is pre-alpha preview. |
 | V. API Contracts | N/A | ✅ PASS | No API — localStorage adapter replaces server routes. Shared schemas still used for validation. |
@@ -76,7 +76,7 @@ client/
 │   │   ├── queryClient.ts             # MODIFIED: remove server fetch, use localStorage queryFn
 │   │   └── utils.ts                   # Unchanged
 │   └── pages/
-│       ├── Home.tsx                   # Unchanged
+│       ├── Home.tsx                   # MODIFIED: replace /api/quotes fetch with static import of bundled quote data
 │       ├── Auth.tsx                   # Unchanged (form logic stays, auth hook handles storage)
 │       ├── Dashboard.tsx              # Unchanged
 │       ├── ConversationView.tsx       # Unchanged
@@ -94,7 +94,7 @@ shared/
 └── routes.ts                          # Referenced for types only, not for HTTP calls
 ```
 
-**Structure Decision**: Client-only SPA. No server/ directory changes needed. The existing `client/src/` structure is preserved. New files are added for the localStorage adapter, seed data, preview banner, static Vite config, and GitHub Actions workflow. Hooks are modified in-place to swap their data source.
+**Structure Decision**: Client-only SPA. No server/ directory changes needed. The existing `client/src/` structure is preserved. New files are added for the localStorage adapter, seed data, preview banner, static Vite config, and GitHub Actions workflow. Hooks are modified in-place to swap their data source. Home.tsx is modified to replace the `/api/quotes` fetch with a static import of bundled quote data (FR-017).
 
 ## Complexity Tracking
 
