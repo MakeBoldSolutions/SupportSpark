@@ -4,19 +4,9 @@ import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Route, Router } from "wouter";
 import React from "react";
-// Mock Dashboard page component for now
-const Dashboard = () => {
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      <button>New Update</button>
-      <div>Test Conversation 1</div>
-      <div>Test Conversation 2</div>
-    </div>
-  );
-};
+import type { Conversation } from "@shared/schema";
 
-function createWrapper() {
+// Mock hooks at top level
 vi.mock("@/hooks/use-auth", () => ({
   useAuth: () => ({
     user: {
@@ -56,6 +46,18 @@ vi.mock("@/hooks/use-conversations", () => ({
   }),
 }));
 
+// Mock Dashboard page component for now
+const Dashboard = () => {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <button>New Update</button>
+      <div>Test Conversation 1</div>
+      <div>Test Conversation 2</div>
+    </div>
+  );
+};
+
 function createWrapper() {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -64,13 +66,15 @@ function createWrapper() {
     },
   });
 
-  return ({ children }: { children: React.ReactNode }) => (
+  const Wrapper = ({ children }: { children: React.ReactNode }) => (
     <QueryClientProvider client={queryClient}>
       <Router>
         <Route path="/" component={() => <>{children}</>} />
       </Router>
     </QueryClientProvider>
   );
+  Wrapper.displayName = "Wrapper";
+  return Wrapper;
 }
 
 describe("Dashboard Page", () => {
@@ -86,8 +90,9 @@ describe("Dashboard Page", () => {
   it("should display create new conversation button", () => {
     render(<Dashboard />, { wrapper: createWrapper() });
 
-    const createButton = screen.getByRole("button", { name: /new.*update/i }) ||
-                        screen.getByRole("button", { name: /create/i });
+    const createButton =
+      screen.getByRole("button", { name: /new.*update/i }) ||
+      screen.getByRole("button", { name: /create/i });
     expect(createButton).toBeInTheDocument();
   });
 
@@ -107,8 +112,7 @@ describe("Dashboard Page", () => {
     render(<Dashboard />, { wrapper: createWrapper() });
 
     // Check for loading indicator
-    const loadingElements = screen.queryAllByText(/loading/i) ||
-                           screen.queryAllByRole("status");
+    const loadingElements = screen.queryAllByText(/loading/i) || screen.queryAllByRole("status");
     expect(loadingElements.length >= 0).toBe(true);
   });
 
@@ -128,10 +132,11 @@ describe("Dashboard Page", () => {
     render(<Dashboard />, { wrapper: createWrapper() });
 
     // Look for empty state message
-    const emptyMessage = screen.queryByText(/no.*conversation/i) ||
-                        screen.queryByText(/get started/i) ||
-                        screen.queryByText(/create.*first/i);
-    
+    const emptyMessage =
+      screen.queryByText(/no.*conversation/i) ||
+      screen.queryByText(/get started/i) ||
+      screen.queryByText(/create.*first/i);
+
     // Accept if empty message exists or if create button is prominently displayed
     if (emptyMessage) {
       expect(emptyMessage).toBeInTheDocument();

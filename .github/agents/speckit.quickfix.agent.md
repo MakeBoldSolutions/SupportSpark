@@ -33,7 +33,7 @@ This command enables rapid fixes for bug fixes, small features, and production i
 
 ## Prerequisites
 
-- Project constitution at `/.documentation.documentation/memory/constitution.md` (REQUIRED)
+- Project constitution at `/.documentation/memory/constitution.md` (REQUIRED)
 - Git repository with working branch
 
 ## Actions
@@ -104,7 +104,7 @@ If ACTION is "complete" and QUICKFIX_ID is provided:
 3. Update the record:
    - Set `Completed` timestamp
    - Get current commit SHA: `git rev-parse HEAD`
-   - Check for associated PR: `gh pr view --json number 2>/dev/null`
+   - Check for associated PR: `gh pr view --json number 2>$null`
 4. Write updated record
 5. Display completion summary
 6. Stop execution
@@ -139,7 +139,7 @@ Consider upgrading to a full specification:
 
 ### 4. Load Constitution (Targeted)
 
-Read `/.documentation.documentation/memory/constitution.md` and extract only principles relevant to the change type:
+Read `/.documentation/memory/constitution.md` and extract only principles relevant to the change type:
 
 | Classification | Relevant Principles |
 |---------------|---------------------|

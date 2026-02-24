@@ -1,0 +1,17 @@
+{
+  "id": 44,
+  "memberId": "96772c91-4265-4d5a-9779-4121ac9d9243",
+  "title": "Conv 1",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "96772c91-4265-4d5a-9779-4121ac9d9243",
+        "authorName": "User",
+        "content": "First",
+        "timestamp": "2026-02-24T13:59:20.844Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T13:59:20.844Z"
+}

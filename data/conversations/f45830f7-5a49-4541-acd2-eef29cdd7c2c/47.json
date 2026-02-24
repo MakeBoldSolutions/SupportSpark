@@ -1,0 +1,17 @@
+{
+  "id": 47,
+  "memberId": "f45830f7-5a49-4541-acd2-eef29cdd7c2c",
+  "title": "Test",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "f45830f7-5a49-4541-acd2-eef29cdd7c2c",
+        "authorName": "Test User",
+        "content": "Test message",
+        "timestamp": "2026-02-24T14:05:26.030Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T14:05:26.030Z"
+}

@@ -1,0 +1,17 @@
+{
+  "id": 40,
+  "memberId": "b991526d-7525-4abe-bbe2-98437c806739",
+  "title": "Test",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "b991526d-7525-4abe-bbe2-98437c806739",
+        "authorName": "Test User",
+        "content": "Test message",
+        "timestamp": "2026-02-24T13:59:20.744Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T13:59:20.744Z"
+}

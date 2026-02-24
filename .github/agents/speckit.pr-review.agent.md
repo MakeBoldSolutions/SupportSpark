@@ -22,7 +22,7 @@ This command reviews GitHub Pull Requests against the project constitution. It w
 
 ## Prerequisites
 
-- Project constitution at `/.documentation.documentation/memory/constitution.md` (REQUIRED)
+- Project constitution at `/.documentation/memory/constitution.md` (REQUIRED)
 - GitHub repository with PR context
 - GitHub CLI (`gh`) installed and authenticated (required)
 
@@ -56,7 +56,7 @@ For single quotes in args like "I'm reviewing", use escape syntax: e.g 'I'\''m r
 
 ### 2. Load Constitution
 
-Read and parse `/.documentation.documentation/memory/constitution.md`:
+Read and parse `/.documentation/memory/constitution.md`:
 
 - Extract all core principles with their names
 - Identify MUST requirements (non-negotiable/mandatory)

@@ -45,8 +45,8 @@ Given that feature description, do this:
       ```
 
    b. Find the highest feature number across all sources for the short-name:
-      - Remote branches: `git ls-remote --heads origin | grep -E 'refs/heads/[0-9]+-<short-name>$'`
-      - Local branches: `git branch | grep -E '^[* ]*[0-9]+-<short-name>$'`
+      - Remote branches: `git ls-remote --heads origin | Select-String -Pattern 'refs/heads/[0-9]+-<short-name>$'`
+      - Local branches: `git branch | Select-String -Pattern '^[* ]*[0-9]+-<short-name>$'`
       - Specs directories: Check for directories matching `.documentation/specs/[0-9]+-<short-name>`
 
    c. Determine the next available number:

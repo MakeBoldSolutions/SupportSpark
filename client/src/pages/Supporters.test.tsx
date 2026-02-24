@@ -4,23 +4,8 @@ import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Route, Router } from "wouter";
 import React from "react";
-// Mock Supporters page component for now
-const Supporters = () => {
-  return (
-    <div>
-      <h1>Supporters</h1>
-      <button>Invite Supporter</button>
-      <div>John Doe</div>
-      <div>john@example.com</div>
-      <div>Jane Smith</div>
-      <div>jane@example.com</div>
-      <button>Accept</button>
-      <button>Reject</button>
-    </div>
-  );
-};
 
-function createWrapper() {
+// Mock hooks at top level
 vi.mock("@/hooks/use-auth", () => ({
   useAuth: () => ({
     user: {
@@ -72,6 +57,22 @@ vi.mock("@/hooks/use-supporters", () => ({
   }),
 }));
 
+// Mock Supporters page component for now
+const Supporters = () => {
+  return (
+    <div>
+      <h1>Supporters</h1>
+      <button>Invite Supporter</button>
+      <div>John Doe</div>
+      <div>john@example.com</div>
+      <div>Jane Smith</div>
+      <div>jane@example.com</div>
+      <button>Accept</button>
+      <button>Reject</button>
+    </div>
+  );
+};
+
 function createWrapper() {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -80,13 +81,15 @@ function createWrapper() {
     },
   });
 
-  return ({ children }: { children: React.ReactNode }) => (
+  const Wrapper = ({ children }: { children: React.ReactNode }) => (
     <QueryClientProvider client={queryClient}>
       <Router>
         <Route path="/" component={() => <>{children}</>} />
       </Router>
     </QueryClientProvider>
   );
+  Wrapper.displayName = "Wrapper";
+  return Wrapper;
 }
 
 describe("Supporters Page", () => {
@@ -94,7 +97,9 @@ describe("Supporters Page", () => {
     render(<Supporters />, { wrapper: createWrapper() });
 
     await waitFor(() => {
-      expect(screen.getByText(/John Doe/i) || screen.getByText(/john@example.com/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/John Doe/i) || screen.getByText(/john@example.com/i)
+      ).toBeInTheDocument();
     });
   });
 
@@ -102,15 +107,18 @@ describe("Supporters Page", () => {
     render(<Supporters />, { wrapper: createWrapper() });
 
     await waitFor(() => {
-      expect(screen.getByText(/Jane Smith/i) || screen.getByText(/jane@example.com/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Jane Smith/i) || screen.getByText(/jane@example.com/i)
+      ).toBeInTheDocument();
     });
   });
 
   it("should show invite supporter button", () => {
     render(<Supporters />, { wrapper: createWrapper() });
 
-    const inviteButton = screen.getByRole("button", { name: /invite/i }) ||
-                        screen.getByRole("button", { name: /add.*supporter/i });
+    const inviteButton =
+      screen.getByRole("button", { name: /invite/i }) ||
+      screen.getByRole("button", { name: /add.*supporter/i });
     expect(inviteButton).toBeInTheDocument();
   });
 
@@ -118,8 +126,9 @@ describe("Supporters Page", () => {
     const user = userEvent.setup();
     render(<Supporters />, { wrapper: createWrapper() });
 
-    const inviteButton = screen.getByRole("button", { name: /invite/i }) ||
-                        screen.getByRole("button", { name: /add.*supporter/i });
+    const inviteButton =
+      screen.getByRole("button", { name: /invite/i }) ||
+      screen.getByRole("button", { name: /add.*supporter/i });
     await user.click(inviteButton);
 
     await waitFor(() => {
@@ -136,8 +145,9 @@ describe("Supporters Page", () => {
     await waitFor(() => {
       // Look for accept and reject buttons
       const acceptButton = screen.queryByRole("button", { name: /accept/i });
-      const rejectButton = screen.queryByRole("button", { name: /reject/i }) ||
-                          screen.queryByRole("button", { name: /decline/i });
+      const rejectButton =
+        screen.queryByRole("button", { name: /reject/i }) ||
+        screen.queryByRole("button", { name: /decline/i });
 
       // At least one should be present for pending requests
       expect(acceptButton || rejectButton).toBeTruthy();
@@ -167,9 +177,10 @@ describe("Supporters Page", () => {
     render(<Supporters />, { wrapper: createWrapper() });
 
     // Look for empty state message
-    const emptyMessage = screen.queryByText(/no.*supporter/i) ||
-                        screen.queryByText(/haven't added/i) ||
-                        screen.queryByText(/invite.*friend/i);
+    const emptyMessage =
+      screen.queryByText(/no.*supporter/i) ||
+      screen.queryByText(/haven't added/i) ||
+      screen.queryByText(/invite.*friend/i);
 
     if (emptyMessage) {
       expect(emptyMessage).toBeInTheDocument();
@@ -199,8 +210,7 @@ describe("Supporters Page", () => {
 
     render(<Supporters />, { wrapper: createWrapper() });
 
-    const loadingElements = screen.queryAllByText(/loading/i) ||
-                           screen.queryAllByRole("status");
+    const loadingElements = screen.queryAllByText(/loading/i) || screen.queryAllByRole("status");
     expect(loadingElements.length >= 0).toBe(true);
   });
 
@@ -209,16 +219,18 @@ describe("Supporters Page", () => {
 
     await waitFor(() => {
       // Look for section headers or separators
-      const mySupportersHeader = screen.queryByText(/my.*supporter/i) ||
-                                 screen.queryByText(/support.*me/i);
-      const supportingHeader = screen.queryByText(/supporting/i) ||
-                              screen.queryByText(/I.*support/i);
+      const mySupportersHeader =
+        screen.queryByText(/my.*supporter/i) || screen.queryByText(/support.*me/i);
+      const supportingHeader =
+        screen.queryByText(/supporting/i) || screen.queryByText(/I.*support/i);
 
       // Accept if at least content from both sections is visible
       const hasSupporter = screen.queryByText(/John Doe/i);
       const hasSupporting = screen.queryByText(/Jane Smith/i);
-      
-      expect((mySupportersHeader && supportingHeader) || (hasSupporter && hasSupporting)).toBeTruthy();
+
+      expect(
+        (mySupportersHeader && supportingHeader) || (hasSupporter && hasSupporting)
+      ).toBeTruthy();
     });
   });
 });

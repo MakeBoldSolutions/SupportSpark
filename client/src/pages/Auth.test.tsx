@@ -7,7 +7,7 @@ import React from "react";
 // Mock Auth page component for now
 const Auth = () => {
   const [isRegister, setIsRegister] = React.useState(false);
-  
+
   return (
     <div>
       <h1>{isRegister ? "Sign Up" : "Sign In"}</h1>
@@ -47,13 +47,15 @@ function createWrapper() {
     },
   });
 
-  return ({ children }: { children: React.ReactNode }) => (
+  const Wrapper = ({ children }: { children: React.ReactNode }) => (
     <QueryClientProvider client={queryClient}>
       <Router>
         <Route path="/" component={() => <>{children}</>} />
       </Router>
     </QueryClientProvider>
   );
+  Wrapper.displayName = "Wrapper";
+  return Wrapper;
 }
 
 describe("Auth Page", () => {
@@ -74,7 +76,9 @@ describe("Auth Page", () => {
     await user.click(registerLink);
 
     await waitFor(() => {
-      expect(screen.getByText(/create account/i) || screen.getByText(/sign up/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/create account/i) || screen.getByText(/sign up/i)
+      ).toBeInTheDocument();
     });
   });
 
@@ -108,7 +112,8 @@ describe("Auth Page", () => {
     await user.tab();
 
     await waitFor(() => {
-      const validationMessage = screen.queryByText(/8 characters/i) || screen.queryByText(/too short/i);
+      const validationMessage =
+        screen.queryByText(/8 characters/i) || screen.queryByText(/too short/i);
       if (validationMessage) {
         expect(validationMessage).toBeInTheDocument();
       }
@@ -134,10 +139,11 @@ describe("Auth Page", () => {
     render(<Auth />, { wrapper: createWrapper() });
 
     // Check for loading indicator
-    const loadingIndicators = screen.queryAllByText(/loading/i) || 
-                             screen.queryAllByRole("status") ||
-                             screen.queryAllByTestId("loading");
-    
+    const loadingIndicators =
+      screen.queryAllByText(/loading/i) ||
+      screen.queryAllByRole("status") ||
+      screen.queryAllByTestId("loading");
+
     // Accept if any loading indicator is found
     expect(loadingIndicators.length >= 0).toBe(true);
   });

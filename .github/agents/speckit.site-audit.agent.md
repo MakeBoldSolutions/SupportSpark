@@ -23,7 +23,7 @@ This command performs a comprehensive codebase audit against the project constit
 
 ## Prerequisites
 
-- Project constitution at `/.documentation.documentation/memory/constitution.md` (REQUIRED)
+- Project constitution at `/.documentation/memory/constitution.md` (REQUIRED)
 - PowerShell 7+ (for script execution)
 - pip-audit (optional, for Python security scanning)
 
@@ -62,7 +62,7 @@ For single quotes in args like "I'm auditing", use escape syntax: e.g 'I'\''m au
 
 ### 2. Load Constitution
 
-Read and parse `/.documentation.documentation/memory/constitution.md`:
+Read and parse `/.documentation/memory/constitution.md`:
 - Extract all core principles with their names
 - Identify MUST requirements (non-negotiable/mandatory)
 - Identify SHOULD requirements (recommended)

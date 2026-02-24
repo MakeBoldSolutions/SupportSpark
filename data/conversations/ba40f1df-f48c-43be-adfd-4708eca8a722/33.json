@@ -1,0 +1,17 @@
+{
+  "id": 33,
+  "memberId": "ba40f1df-f48c-43be-adfd-4708eca8a722",
+  "title": "Test",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "ba40f1df-f48c-43be-adfd-4708eca8a722",
+        "authorName": "Test User",
+        "content": "Test message",
+        "timestamp": "2026-02-24T13:52:43.251Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T13:52:43.251Z"
+}

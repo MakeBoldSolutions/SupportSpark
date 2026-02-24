@@ -1,0 +1,17 @@
+{
+  "id": 18,
+  "memberId": "d2bbb0b0-3a3e-4fe1-86e2-948d53f77030",
+  "title": "Test Conversation",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "d2bbb0b0-3a3e-4fe1-86e2-948d53f77030",
+        "authorName": "Test User",
+        "content": "Initial message",
+        "timestamp": "2026-02-24T13:50:30.720Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T13:50:30.721Z"
+}

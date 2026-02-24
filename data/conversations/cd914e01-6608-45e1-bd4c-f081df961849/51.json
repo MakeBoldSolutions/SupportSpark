@@ -1,0 +1,17 @@
+{
+  "id": 51,
+  "memberId": "cd914e01-6608-45e1-bd4c-f081df961849",
+  "title": "Conv 1",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "cd914e01-6608-45e1-bd4c-f081df961849",
+        "authorName": "User",
+        "content": "First",
+        "timestamp": "2026-02-24T14:05:26.127Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T14:05:26.127Z"
+}

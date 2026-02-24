@@ -266,7 +266,6 @@ dist/                      # Build output (production deployment)
 - All PRs and code reviews MUST verify compliance with these principles
 - Violations MUST be justified in PR description with business rationale
 - Constitution review SHOULD occur quarterly or when major architectural changes are planned
-- Use `replit.md` or project README for runtime development guidance
 
 ### Amendment Process
 

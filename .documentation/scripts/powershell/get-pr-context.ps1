@@ -24,7 +24,7 @@ $ErrorActionPreference = "Stop"
 #==============================================================================
 
 $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
-$repoRoot = (Resolve-Path "$scriptPath\..\..")
+$repoRoot = (Resolve-Path "$scriptPath\..\..\..")
 
 #==============================================================================
 # Utility Functions

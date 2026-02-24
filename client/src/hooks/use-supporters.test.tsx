@@ -2,11 +2,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { renderHook, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
-import {
-  useSupporters,
-  useInviteSupporter,
-  useUpdateSupporterStatus,
-} from "./use-supporters";
+import { useSupporters, useInviteSupporter, useUpdateSupporterStatus } from "./use-supporters";
 import type { Supporter } from "@shared/schema";
 
 // Mock fetch globally
@@ -19,9 +15,11 @@ function createWrapper() {
       mutations: { retry: false },
     },
   });
-  return ({ children }: { children: React.ReactNode }) => (
+  const Wrapper = ({ children }: { children: React.ReactNode }) => (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
+  Wrapper.displayName = "Wrapper";
+  return Wrapper;
 }
 
 describe("useSupporters", () => {

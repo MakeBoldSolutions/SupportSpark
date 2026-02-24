@@ -1,0 +1,17 @@
+{
+  "id": 16,
+  "memberId": "de18eb58-102f-4300-9060-66a266bd071f",
+  "title": "Conv 1",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "de18eb58-102f-4300-9060-66a266bd071f",
+        "authorName": "User",
+        "content": "First",
+        "timestamp": "2026-02-24T13:49:09.438Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T13:49:09.438Z"
+}

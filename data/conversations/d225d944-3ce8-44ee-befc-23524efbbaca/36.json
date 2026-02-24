@@ -1,0 +1,17 @@
+{
+  "id": 36,
+  "memberId": "d225d944-3ce8-44ee-befc-23524efbbaca",
+  "title": "Conversation 2",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-2",
+        "authorId": "d225d944-3ce8-44ee-befc-23524efbbaca",
+        "authorName": "Test User",
+        "content": "Message 2",
+        "timestamp": "2026-02-24T13:52:43.273Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T13:52:43.277Z"
+}

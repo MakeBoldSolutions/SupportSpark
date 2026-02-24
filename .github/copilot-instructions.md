@@ -30,6 +30,10 @@ Examples:
 .documentation/
 ├── memory/              # Long-term project memory (constitution, etc.)
 ├── domain/              # Architectural and domain documentation
+├── specs/               # Feature specifications (spec-driven development)
+├── scripts/             # PowerShell automation scripts
+│   └── powershell/      # PowerShell-specific scripts
+├── templates/           # Templates for specs, plans, tasks, etc.
 └── copilot/             # Copilot-generated session documentation
     └── session-{date}/  # Date-based session folders
 ```

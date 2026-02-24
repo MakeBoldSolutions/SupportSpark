@@ -928,5 +928,1811 @@
     "passwordVersion": "bcrypt-10",
     "createdAt": "2026-02-03T14:07:58.399Z",
     "updatedAt": "2026-02-03T14:07:58.399Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "firstName": "Test",
+    "lastName": "User",
+    "id": "dc59ee3e-e352-401a-aee3-f6f501381db2",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.337Z",
+    "updatedAt": "2026-02-24T13:49:09.337Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "3af66b91-30a7-41e8-830a-8d0568d8e25d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.341Z",
+    "updatedAt": "2026-02-24T13:49:09.341Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "d5039d73-b79e-48fd-9985-5ceeaf4f83c3",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.345Z",
+    "updatedAt": "2026-02-24T13:49:09.345Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "ef1dfb0c-9ba0-402b-97bc-b63dfa78e8b5",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.357Z",
+    "updatedAt": "2026-02-24T13:49:09.357Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "76dd593e-147a-47cb-ae2a-6433c4ba227b",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.364Z",
+    "updatedAt": "2026-02-24T13:49:09.364Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "a8caa8c7-a53f-45b9-918e-968ae643d8bf",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.371Z",
+    "updatedAt": "2026-02-24T13:49:09.371Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "ed8f197f-ba75-489e-9c9f-712b0f3c947f",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.379Z",
+    "updatedAt": "2026-02-24T13:49:09.379Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "18fd2c35-d1ed-490a-af05-fc429facb3ae",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.391Z",
+    "updatedAt": "2026-02-24T13:49:09.391Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "06bd3dba-0e3a-4c83-b458-2f10cbe8a215",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.392Z",
+    "updatedAt": "2026-02-24T13:49:09.392Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "1317ccdd-bb5f-44b3-b036-edbc956e164c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.396Z",
+    "updatedAt": "2026-02-24T13:49:09.396Z"
+  },
+  {
+    "email": "supporter1@example.com",
+    "password": "hashed",
+    "id": "09ec6513-5270-43a6-bc6f-4f8f64937b13",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.397Z",
+    "updatedAt": "2026-02-24T13:49:09.397Z"
+  },
+  {
+    "email": "supporter2@example.com",
+    "password": "hashed",
+    "id": "16a5b915-0300-4b73-8acb-77e5ef706fb7",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.398Z",
+    "updatedAt": "2026-02-24T13:49:09.398Z"
+  },
+  {
+    "email": "member1@example.com",
+    "password": "hashed",
+    "id": "9058c414-8ce6-49ef-adce-784e2d83aea8",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.405Z",
+    "updatedAt": "2026-02-24T13:49:09.405Z"
+  },
+  {
+    "email": "member2@example.com",
+    "password": "hashed",
+    "id": "2b4d300a-2a66-467e-a65d-20faccdd9665",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.405Z",
+    "updatedAt": "2026-02-24T13:49:09.405Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "3be17b76-9781-4b1f-b92c-0cfd61a23382",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.406Z",
+    "updatedAt": "2026-02-24T13:49:09.406Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "5a1338df-77f1-4169-8485-5d1cae5b9a7d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.412Z",
+    "updatedAt": "2026-02-24T13:49:09.412Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "efb6eb8f-1235-4912-8d61-7c90d48f2b4e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.413Z",
+    "updatedAt": "2026-02-24T13:49:09.413Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "72732b3f-f43c-4cf1-9e07-724249cd862b",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.418Z",
+    "updatedAt": "2026-02-24T13:49:09.418Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "fe7d4d4d-6e63-436b-b7a5-3c4db3e3992f",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.419Z",
+    "updatedAt": "2026-02-24T13:49:09.419Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "0705e66b-9653-4094-b2b6-19d5c55a6e9f",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.424Z",
+    "updatedAt": "2026-02-24T13:49:09.424Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "98171229-3d0a-4d84-bf85-fb6a0f7d043a",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.425Z",
+    "updatedAt": "2026-02-24T13:49:09.425Z"
+  },
+  {
+    "email": "user1@example.com",
+    "password": "hashed",
+    "id": "3afaf9d9-a692-4153-a1bc-1ae454ae3420",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.432Z",
+    "updatedAt": "2026-02-24T13:49:09.432Z"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "hashed",
+    "id": "3f09fe51-ed2d-48b8-80e7-b69858fc427d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.433Z",
+    "updatedAt": "2026-02-24T13:49:09.433Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "de18eb58-102f-4300-9060-66a266bd071f",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.437Z",
+    "updatedAt": "2026-02-24T13:49:09.437Z"
+  },
+  {
+    "email": "test-wrong-pass-1771940949783@example.com",
+    "password": "$2b$10$bg0I2OFGZxcQHkY6assFueU6NIxl8F3/wik59R92/QueL.XrR5ZPS",
+    "id": "9bb364b0-17bc-4ca4-9fbe-dd15fb3d85fd",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.848Z",
+    "updatedAt": "2026-02-24T13:49:09.848Z"
+  },
+  {
+    "email": "test-correct-pass-1771940949903@example.com",
+    "password": "$2b$10$H75PyQjgHmWISNI86UqaMOvMsu.zVIeHzXhcoj404nEJn2B95iG7a",
+    "id": "d0094ed2-8a23-4557-94c5-65bb0b809022",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:09.947Z",
+    "updatedAt": "2026-02-24T13:49:09.947Z"
+  },
+  {
+    "email": "test-hash-1771940949997@example.com",
+    "password": "$2b$10$7HV52twgHL40cAvt2yCVHuY/9WADS5d45tnhI8MBabZKYe/rWNVGy",
+    "id": "9ddb95cc-13ce-43a4-97ef-985b49e28b34",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:10.041Z",
+    "updatedAt": "2026-02-24T13:49:10.041Z"
+  },
+  {
+    "email": "test-rate-reg-1771940950099-0@example.com",
+    "password": "$2b$10$IKtIaOiE1TOJYsGPGC9FW.C67cGuprgwNrm8zwkrTo3mJQvfzpQH6",
+    "id": "af84cd51-05c3-4d31-be65-b447dee3c3f6",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:10.143Z",
+    "updatedAt": "2026-02-24T13:49:10.143Z"
+  },
+  {
+    "email": "test-rate-reg-1771940950099-1@example.com",
+    "password": "$2b$10$ABeVZZiZHqfy5Ockf1LGQ.5B4HIiMuai0SgtCoWlEMvg1BbCJYQM2",
+    "id": "d5c48669-47fa-4257-83fe-dc67a092d3b3",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:10.190Z",
+    "updatedAt": "2026-02-24T13:49:10.190Z"
+  },
+  {
+    "email": "test-rate-reg-1771940950099-2@example.com",
+    "password": "$2b$10$YQMhLl/o0UxpkyLNUtBLq.CWzF6xzrSXLrihcfkuTcY/fkRBDbrwm",
+    "id": "3348c60b-8cfa-4bc4-acc2-f407a4a2525c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:10.236Z",
+    "updatedAt": "2026-02-24T13:49:10.236Z"
+  },
+  {
+    "email": "test-rate-reg-1771940950099-3@example.com",
+    "password": "$2b$10$ieP1cSuIF0y/GO5iegKG6./oB3RhF4.GL6RlPnjthEz7Z7qdsmb4.",
+    "id": "ab10968e-a348-480e-9b4b-3b698d567b93",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:10.282Z",
+    "updatedAt": "2026-02-24T13:49:10.282Z"
+  },
+  {
+    "email": "test-rate-reg-1771940950099-4@example.com",
+    "password": "$2b$10$4opmi0GR1z.Lq3xcbRWQi.fn6FobUVVxIqg.jlQeq90JYqVlejv6u",
+    "id": "3b907e83-0f1c-410f-8833-9100178127dd",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:49:10.329Z",
+    "updatedAt": "2026-02-24T13:49:10.329Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "firstName": "Test",
+    "lastName": "User",
+    "id": "ef6523c4-88a2-45ac-9d6c-086ce3e585bb",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.690Z",
+    "updatedAt": "2026-02-24T13:50:30.690Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "17d62d2f-670b-4e7b-a9a9-63dac6f7536b",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.696Z",
+    "updatedAt": "2026-02-24T13:50:30.696Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "ca19ae0e-55c6-4b48-9dde-df97997facea",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.702Z",
+    "updatedAt": "2026-02-24T13:50:30.702Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "d2bbb0b0-3a3e-4fe1-86e2-948d53f77030",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.719Z",
+    "updatedAt": "2026-02-24T13:50:30.719Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "849a18f2-b226-42c8-804a-fde585891e49",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.729Z",
+    "updatedAt": "2026-02-24T13:50:30.729Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "2cae5783-af8b-42e7-b331-ceadd3267abc",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.739Z",
+    "updatedAt": "2026-02-24T13:50:30.739Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "a2b36f6b-74d4-4df7-b8af-99a6e4002cf4",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.751Z",
+    "updatedAt": "2026-02-24T13:50:30.751Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "1a3c8cc1-06fe-411c-8021-57a77a86b82d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.767Z",
+    "updatedAt": "2026-02-24T13:50:30.767Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "45dd446d-e640-49c6-837a-2b1425cba274",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.769Z",
+    "updatedAt": "2026-02-24T13:50:30.769Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "ab470557-11fd-47cc-b47d-4e77dd7bdd44",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.774Z",
+    "updatedAt": "2026-02-24T13:50:30.774Z"
+  },
+  {
+    "email": "supporter1@example.com",
+    "password": "hashed",
+    "id": "4eb28846-c46e-4f5a-ad9a-3fa2a5f22dd7",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.776Z",
+    "updatedAt": "2026-02-24T13:50:30.776Z"
+  },
+  {
+    "email": "supporter2@example.com",
+    "password": "hashed",
+    "id": "1e4baa50-2d3f-4ce9-b7cb-c0337c0fac85",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.777Z",
+    "updatedAt": "2026-02-24T13:50:30.777Z"
+  },
+  {
+    "email": "member1@example.com",
+    "password": "hashed",
+    "id": "62e75ac0-b7a5-44da-9816-cc47c189d61e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.784Z",
+    "updatedAt": "2026-02-24T13:50:30.784Z"
+  },
+  {
+    "email": "member2@example.com",
+    "password": "hashed",
+    "id": "434b3638-d6af-4a9e-bef7-c8809cc7ba9c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.786Z",
+    "updatedAt": "2026-02-24T13:50:30.786Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "d07ca6fa-cc1f-4dde-aa6c-e3ce0cb33702",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.787Z",
+    "updatedAt": "2026-02-24T13:50:30.787Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "5b8b8e5d-9f82-4e8d-b8c7-3e77c6bf1ce1",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.796Z",
+    "updatedAt": "2026-02-24T13:50:30.796Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "bbed4605-ca6a-4d0e-bc67-989243e46b3e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.797Z",
+    "updatedAt": "2026-02-24T13:50:30.797Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "db71dc84-15e2-4d34-a8c2-773fe0f4a840",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.804Z",
+    "updatedAt": "2026-02-24T13:50:30.804Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "daf6d633-881d-44fc-b7a2-a42e6cd13034",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.805Z",
+    "updatedAt": "2026-02-24T13:50:30.805Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "70e3d118-5360-4b72-828d-118f8d2eb6e9",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.814Z",
+    "updatedAt": "2026-02-24T13:50:30.814Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "96c5966e-66b3-4f33-9e5a-ff146959f842",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.815Z",
+    "updatedAt": "2026-02-24T13:50:30.815Z"
+  },
+  {
+    "email": "user1@example.com",
+    "password": "hashed",
+    "id": "7417277a-be56-4eba-aaeb-cc9502d654f9",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.823Z",
+    "updatedAt": "2026-02-24T13:50:30.823Z"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "hashed",
+    "id": "affafa22-87e8-4a95-9c5a-ed158fafc0bd",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.824Z",
+    "updatedAt": "2026-02-24T13:50:30.824Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "9f1a4671-af2a-494c-95b9-8d16e2f71d51",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:30.828Z",
+    "updatedAt": "2026-02-24T13:50:30.828Z"
+  },
+  {
+    "email": "test-wrong-pass-1771941031071@example.com",
+    "password": "$2b$10$hSlTzxtw4eRr5NGs3U/yHONSw6q89bvSiSBH5oKNkU7sWZlhfpAWO",
+    "id": "8f684748-df21-4590-9724-2697416b839a",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:31.132Z",
+    "updatedAt": "2026-02-24T13:50:31.132Z"
+  },
+  {
+    "email": "test-correct-pass-1771941031188@example.com",
+    "password": "$2b$10$gUgLUfW4O.ElALXHZ0MujOBzSWI.gpsEELoXiAemn0Aoa1i6N7Ff2",
+    "id": "8be83026-dda4-4361-974c-bf9635814741",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:31.232Z",
+    "updatedAt": "2026-02-24T13:50:31.232Z"
+  },
+  {
+    "email": "test-hash-1771941031284@example.com",
+    "password": "$2b$10$Vp1MH98MuAdQfORLvZpomu4Bov/vONHFJzsJMgOL7A2zYTnc7HjKa",
+    "id": "71dea436-09e4-43b2-a379-7eabe20a1abd",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:31.328Z",
+    "updatedAt": "2026-02-24T13:50:31.328Z"
+  },
+  {
+    "email": "test-rate-reg-1771941031384-0@example.com",
+    "password": "$2b$10$AYHH5mKZbFCtGO/uDzVgm.nEfAhELMj5/lFuMSfFz78pBVrxiJqWW",
+    "id": "aa8708ac-55eb-479b-953f-2687afba89e5",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:31.428Z",
+    "updatedAt": "2026-02-24T13:50:31.428Z"
+  },
+  {
+    "email": "test-rate-reg-1771941031384-1@example.com",
+    "password": "$2b$10$EAv9L8Uu/lExDNmvhpqaWua7XneyC6KAtRkeKIA38dgJdolCotOVS",
+    "id": "5c571a7d-b4e2-44b8-a88c-7b2dc489287e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:31.475Z",
+    "updatedAt": "2026-02-24T13:50:31.475Z"
+  },
+  {
+    "email": "test-rate-reg-1771941031384-2@example.com",
+    "password": "$2b$10$yDNs0v6ZeshD6av9MIP6xO/3e/pscb0U2s3C2r7vvx3pdS/3T/XOq",
+    "id": "973dc887-e4ac-4c62-9d9f-a7937d7d5495",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:31.521Z",
+    "updatedAt": "2026-02-24T13:50:31.521Z"
+  },
+  {
+    "email": "test-rate-reg-1771941031384-3@example.com",
+    "password": "$2b$10$NV0XZvA0icXcxKApmoWAgu4Y6T4voFshqfRFPz510LhE5U2q2AB3O",
+    "id": "0e41282f-ae16-4168-aa68-2ee4f31457ce",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:31.566Z",
+    "updatedAt": "2026-02-24T13:50:31.566Z"
+  },
+  {
+    "email": "test-rate-reg-1771941031384-4@example.com",
+    "password": "$2b$10$RjxEyolDv9Qu1GxZmMXP/OklcK5.e4gCZbqBZ57NoZjvibOUoU/xS",
+    "id": "52152376-fe82-447e-ab3a-908c8df14dc7",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:50:31.612Z",
+    "updatedAt": "2026-02-24T13:50:31.612Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "firstName": "Test",
+    "lastName": "User",
+    "id": "ed71757c-ee6b-4f98-88b9-cad1e59a9caf",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.741Z",
+    "updatedAt": "2026-02-24T13:51:42.741Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "046bad41-a27f-4682-9a1b-8c0dd79a9554",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.748Z",
+    "updatedAt": "2026-02-24T13:51:42.748Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "f8706347-4256-40e4-ac88-fdf1b9b66f53",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.754Z",
+    "updatedAt": "2026-02-24T13:51:42.754Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "72619869-93cb-4f3b-af44-6a66ef251157",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.771Z",
+    "updatedAt": "2026-02-24T13:51:42.771Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "e5903415-2009-44d9-ac76-486c9a7da6f5",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.781Z",
+    "updatedAt": "2026-02-24T13:51:42.781Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "2ecdcb76-1737-4483-9055-204e1686f141",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.790Z",
+    "updatedAt": "2026-02-24T13:51:42.790Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "d4c3bd79-a9b2-4711-b237-0ad9cc7bc033",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.802Z",
+    "updatedAt": "2026-02-24T13:51:42.802Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "fabd642d-eb02-4864-b797-3be443643174",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.818Z",
+    "updatedAt": "2026-02-24T13:51:42.818Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "3b2b47bc-4021-44b1-beff-a8e658d77f22",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.820Z",
+    "updatedAt": "2026-02-24T13:51:42.820Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "52943a03-14af-439a-918e-0815d174163d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.826Z",
+    "updatedAt": "2026-02-24T13:51:42.826Z"
+  },
+  {
+    "email": "supporter1@example.com",
+    "password": "hashed",
+    "id": "2f8a4dfe-cb2f-4d01-be1c-b77275046b28",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.828Z",
+    "updatedAt": "2026-02-24T13:51:42.828Z"
+  },
+  {
+    "email": "supporter2@example.com",
+    "password": "hashed",
+    "id": "e6608c43-e28e-4a39-ac4d-bcd18375bfd6",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.830Z",
+    "updatedAt": "2026-02-24T13:51:42.830Z"
+  },
+  {
+    "email": "member1@example.com",
+    "password": "hashed",
+    "id": "0356a6b2-96d5-4c97-9ebc-28225fd0eb55",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.838Z",
+    "updatedAt": "2026-02-24T13:51:42.838Z"
+  },
+  {
+    "email": "member2@example.com",
+    "password": "hashed",
+    "id": "b856deea-0d1e-4286-9a23-7692273b0395",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.839Z",
+    "updatedAt": "2026-02-24T13:51:42.839Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "c61c6dad-483b-4f16-bc74-f2ccb6576390",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.841Z",
+    "updatedAt": "2026-02-24T13:51:42.841Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "4b9be286-2899-4088-97e0-996a1029bbb6",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.849Z",
+    "updatedAt": "2026-02-24T13:51:42.849Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "de9a91a0-252e-4c91-ba18-27ffa41251bb",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.851Z",
+    "updatedAt": "2026-02-24T13:51:42.851Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "174d2941-5de7-4011-a62f-93ca47d5615b",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.858Z",
+    "updatedAt": "2026-02-24T13:51:42.858Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "8311e506-5ccb-432e-9f2b-29339a91ca2d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.859Z",
+    "updatedAt": "2026-02-24T13:51:42.859Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "df264b5c-d858-44a0-89c2-56e3536a6c45",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.865Z",
+    "updatedAt": "2026-02-24T13:51:42.865Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "1405c6cf-ab98-4632-b210-0e90537ae011",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.866Z",
+    "updatedAt": "2026-02-24T13:51:42.866Z"
+  },
+  {
+    "email": "user1@example.com",
+    "password": "hashed",
+    "id": "819bac8b-3e7a-46ff-b2d6-706d03ff540a",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.874Z",
+    "updatedAt": "2026-02-24T13:51:42.874Z"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "hashed",
+    "id": "429c7ab1-96a7-46e8-ba66-01bc2e98705e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.875Z",
+    "updatedAt": "2026-02-24T13:51:42.875Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "7ac9c4e6-5f08-4b41-b488-c4d3e3a82107",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:42.879Z",
+    "updatedAt": "2026-02-24T13:51:42.879Z"
+  },
+  {
+    "email": "test-wrong-pass-1771941103128@example.com",
+    "password": "$2b$10$b.HXgkthSej.IOjEW4a4Qe8cHNSxnEB/AiRR7GswPGWUd25c/.fHK",
+    "id": "2de37974-c5d5-4232-b5b3-cd2579b2cb73",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:43.190Z",
+    "updatedAt": "2026-02-24T13:51:43.190Z"
+  },
+  {
+    "email": "test-correct-pass-1771941103246@example.com",
+    "password": "$2b$10$QsiNXtfL9W2IS8kcDnE4RO9d0jTfDVbI0bCrQGfkNe3SOg0TJyIZW",
+    "id": "7a6dbc7c-fc97-4f1f-8344-e2f7db374f7c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:43.290Z",
+    "updatedAt": "2026-02-24T13:51:43.290Z"
+  },
+  {
+    "email": "test-hash-1771941103342@example.com",
+    "password": "$2b$10$M683y4tWYf0wHVM1BaWK6uDnkLiyCFaLfDZ40b3o8feb7luIEsI7K",
+    "id": "8e3a82f7-0ac4-4091-b98d-c0dd2571f6b5",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:43.386Z",
+    "updatedAt": "2026-02-24T13:51:43.386Z"
+  },
+  {
+    "email": "test-rate-reg-1771941103445-0@example.com",
+    "password": "$2b$10$om3AnojlWoNqqeS/V.ZSue/INOUoi9TqyuPwWVcixsssFnmO.8rjO",
+    "id": "9b9ef658-a483-4d79-98c1-a64aff119d2b",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:43.488Z",
+    "updatedAt": "2026-02-24T13:51:43.488Z"
+  },
+  {
+    "email": "test-rate-reg-1771941103445-1@example.com",
+    "password": "$2b$10$rL0lk87x8liGF/2NrCF7Tuma6hkhQJ4yVcIKnythcFZlOu.rPnTPW",
+    "id": "62be7a32-bccd-4d20-a283-677cd832ed9a",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:43.535Z",
+    "updatedAt": "2026-02-24T13:51:43.535Z"
+  },
+  {
+    "email": "test-rate-reg-1771941103445-2@example.com",
+    "password": "$2b$10$3UO/wlpRpsG8cda3gwpCfer71Tginnl8V8nREiudue5gZQzwOBL/6",
+    "id": "a5cd35da-9414-4d93-a55e-10e51cd29167",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:43.580Z",
+    "updatedAt": "2026-02-24T13:51:43.580Z"
+  },
+  {
+    "email": "test-rate-reg-1771941103445-3@example.com",
+    "password": "$2b$10$xbRZzM3Aqy3/8qz65yopb.GJOqSv2aj8X0mFme4Q.LHMjnIqQ4fMa",
+    "id": "60a8005e-7486-4ed6-a174-d8c17c1fa3d5",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:43.626Z",
+    "updatedAt": "2026-02-24T13:51:43.626Z"
+  },
+  {
+    "email": "test-rate-reg-1771941103445-4@example.com",
+    "password": "$2b$10$nkfo7lxVJTStuX2/5cEkIuYAQ7DUjd/JsmZ31Erm1AEzmcLLy2GGa",
+    "id": "40130350-7f6a-4c53-919d-785fbb67f6aa",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:51:43.673Z",
+    "updatedAt": "2026-02-24T13:51:43.673Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "firstName": "Test",
+    "lastName": "User",
+    "id": "2c5f1fcd-ba0b-44af-b949-46007c7588af",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.209Z",
+    "updatedAt": "2026-02-24T13:52:43.209Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "ec4e4079-b81e-4cfc-992a-074e399baa61",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.215Z",
+    "updatedAt": "2026-02-24T13:52:43.215Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "c13cd65a-0a5e-4363-8d8d-48f6b188bd61",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.220Z",
+    "updatedAt": "2026-02-24T13:52:43.220Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "aeaea151-d855-4098-a33e-32497a76b113",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.238Z",
+    "updatedAt": "2026-02-24T13:52:43.238Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "ba40f1df-f48c-43be-adfd-4708eca8a722",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.249Z",
+    "updatedAt": "2026-02-24T13:52:43.249Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "6181c694-e6bb-4ba3-84e3-2fff9a29b834",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.259Z",
+    "updatedAt": "2026-02-24T13:52:43.259Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "d225d944-3ce8-44ee-befc-23524efbbaca",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.271Z",
+    "updatedAt": "2026-02-24T13:52:43.271Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "68c5970c-8933-43eb-a53e-a900dde15e3a",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.288Z",
+    "updatedAt": "2026-02-24T13:52:43.288Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "93e7ed9f-15dc-4015-816d-7110237a0619",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.289Z",
+    "updatedAt": "2026-02-24T13:52:43.289Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "cd8be03f-75a9-44c3-b24e-7e76c4d4b1ff",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.295Z",
+    "updatedAt": "2026-02-24T13:52:43.295Z"
+  },
+  {
+    "email": "supporter1@example.com",
+    "password": "hashed",
+    "id": "0021183b-35c2-4b30-9ac7-76c11678c2dc",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.297Z",
+    "updatedAt": "2026-02-24T13:52:43.297Z"
+  },
+  {
+    "email": "supporter2@example.com",
+    "password": "hashed",
+    "id": "f91a51dc-292c-46ed-9ec9-ada4a022e8e4",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.298Z",
+    "updatedAt": "2026-02-24T13:52:43.298Z"
+  },
+  {
+    "email": "member1@example.com",
+    "password": "hashed",
+    "id": "b2e95f6c-2db4-4ff8-bf4c-515fc950e262",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.306Z",
+    "updatedAt": "2026-02-24T13:52:43.306Z"
+  },
+  {
+    "email": "member2@example.com",
+    "password": "hashed",
+    "id": "4a5b8caa-b274-4528-b041-a25da8a0bea0",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.308Z",
+    "updatedAt": "2026-02-24T13:52:43.308Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "d8a5aac1-bac8-4e54-a20a-e210b3420764",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.310Z",
+    "updatedAt": "2026-02-24T13:52:43.310Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "68122495-81b4-4102-ad85-88271578a6b6",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.317Z",
+    "updatedAt": "2026-02-24T13:52:43.317Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "51a396df-534a-4b28-88d3-e566cf1de72a",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.319Z",
+    "updatedAt": "2026-02-24T13:52:43.319Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "d6b9bbae-f2d4-4e61-976f-c01216b1eff8",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.327Z",
+    "updatedAt": "2026-02-24T13:52:43.327Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "f22b1434-c4cf-46ed-9759-945727c6730c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.328Z",
+    "updatedAt": "2026-02-24T13:52:43.328Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "3cb4ea4f-2aa7-4d24-910f-b14028ac5a9e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.335Z",
+    "updatedAt": "2026-02-24T13:52:43.335Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "12633791-723a-4424-bf37-818d65d82338",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.336Z",
+    "updatedAt": "2026-02-24T13:52:43.336Z"
+  },
+  {
+    "email": "user1@example.com",
+    "password": "hashed",
+    "id": "30978e97-0dc5-47fd-82e1-31a8666f2521",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.345Z",
+    "updatedAt": "2026-02-24T13:52:43.345Z"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "hashed",
+    "id": "992b8c59-5bcc-4541-a20a-5ca3c22f4b25",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.346Z",
+    "updatedAt": "2026-02-24T13:52:43.346Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "39ffe3e7-3d19-41b5-903b-3a95f17c924b",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.350Z",
+    "updatedAt": "2026-02-24T13:52:43.350Z"
+  },
+  {
+    "email": "test-wrong-pass-1771941163615@example.com",
+    "password": "$2b$10$voetLZdl8583nGvz.hF30uBEX8tfAwJmZQU/WXf4ZBgg1If8gknF6",
+    "id": "05b2ebe0-ff28-4c01-a087-0c5c488449e5",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.677Z",
+    "updatedAt": "2026-02-24T13:52:43.677Z"
+  },
+  {
+    "email": "test-correct-pass-1771941163734@example.com",
+    "password": "$2b$10$Hav5e5/ZdBMmP81iA/Ih7e.JiuNbmYb1xwjIK6K4jEkWi/erh5pGi",
+    "id": "3a6547fb-5bc5-486f-b488-45c2ce9ac781",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.779Z",
+    "updatedAt": "2026-02-24T13:52:43.779Z"
+  },
+  {
+    "email": "test-hash-1771941163831@example.com",
+    "password": "$2b$10$JMFY/GLgGKqqg8TyNn06QulJHM0GgBZoEMIvuNfW.eITZrEVvGouC",
+    "id": "16c8823f-9c4a-486b-9499-b9983a6fac87",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.876Z",
+    "updatedAt": "2026-02-24T13:52:43.876Z"
+  },
+  {
+    "email": "test-rate-reg-1771941163936-0@example.com",
+    "password": "$2b$10$l86v9GAkJd6xl1sQ5rK.sezw8TZljIoFEQSAiELtkHqnadcW6Bx5i",
+    "id": "b8f2f7a0-1a15-406e-bd9b-f1dfa8e47430",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:43.981Z",
+    "updatedAt": "2026-02-24T13:52:43.981Z"
+  },
+  {
+    "email": "test-rate-reg-1771941163936-1@example.com",
+    "password": "$2b$10$lRwQAY8oMx2iejCBjATuue8dSqDbI.C/IumB.0EfwuiRZPq.Krn76",
+    "id": "8a487d2b-41f4-4d67-ac8d-14ca4a47ba72",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:44.028Z",
+    "updatedAt": "2026-02-24T13:52:44.028Z"
+  },
+  {
+    "email": "test-rate-reg-1771941163936-2@example.com",
+    "password": "$2b$10$7gFTaLZT3PqntWS6Pb1.E.sCoMgwvF6Sifq6U3Zhzrfreq8/s6.LC",
+    "id": "0eb19238-7e44-42ac-a4e1-281719dc2c03",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:44.076Z",
+    "updatedAt": "2026-02-24T13:52:44.076Z"
+  },
+  {
+    "email": "test-rate-reg-1771941163936-3@example.com",
+    "password": "$2b$10$KrxRURTl.TswGBySw6x9LOtJfNX42GKaJLLJzeXBeb5Ssai7kXG6i",
+    "id": "efd1b6cc-60ca-4af9-ac62-888035b27101",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:44.123Z",
+    "updatedAt": "2026-02-24T13:52:44.123Z"
+  },
+  {
+    "email": "test-rate-reg-1771941163936-4@example.com",
+    "password": "$2b$10$wxoft8iiomCWIIEBoGkEeuO2vAmTGwh6l/8su8NVk1F/z4WHLqX5u",
+    "id": "dc291b31-0f06-4805-9eeb-db0a0f778973",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:52:44.169Z",
+    "updatedAt": "2026-02-24T13:52:44.169Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "firstName": "Test",
+    "lastName": "User",
+    "id": "4fcba5bf-1be5-4d3d-b367-91903596e29d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.703Z",
+    "updatedAt": "2026-02-24T13:59:20.703Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "477d17c0-a804-4510-8147-0571bf653836",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.709Z",
+    "updatedAt": "2026-02-24T13:59:20.709Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "c2dcb622-0ffd-4079-9c89-5a90e4af362e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.715Z",
+    "updatedAt": "2026-02-24T13:59:20.715Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "5be04288-1dc4-45a4-b8de-993fc3920502",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.732Z",
+    "updatedAt": "2026-02-24T13:59:20.732Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "b991526d-7525-4abe-bbe2-98437c806739",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.743Z",
+    "updatedAt": "2026-02-24T13:59:20.743Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "dfc1d593-76b7-4096-bab4-c87fa9476cfd",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.752Z",
+    "updatedAt": "2026-02-24T13:59:20.752Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "b0053411-ecea-4f54-a219-3f74d4944308",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.765Z",
+    "updatedAt": "2026-02-24T13:59:20.765Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "b326dc8b-8103-40e7-88b8-7cf5dfa0b671",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.781Z",
+    "updatedAt": "2026-02-24T13:59:20.781Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "2501efd7-8dea-4316-9289-63432e9eab6c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.783Z",
+    "updatedAt": "2026-02-24T13:59:20.783Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "0878d6eb-ce69-40b7-97a9-139a83690c1e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.789Z",
+    "updatedAt": "2026-02-24T13:59:20.789Z"
+  },
+  {
+    "email": "supporter1@example.com",
+    "password": "hashed",
+    "id": "fba22ddc-f10e-4671-b94b-f0c3bf294470",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.791Z",
+    "updatedAt": "2026-02-24T13:59:20.791Z"
+  },
+  {
+    "email": "supporter2@example.com",
+    "password": "hashed",
+    "id": "68cbba62-34a9-4e3f-8fcd-b7baaa589af0",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.792Z",
+    "updatedAt": "2026-02-24T13:59:20.792Z"
+  },
+  {
+    "email": "member1@example.com",
+    "password": "hashed",
+    "id": "78b51ee6-b99a-4018-943a-559414b03703",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.799Z",
+    "updatedAt": "2026-02-24T13:59:20.799Z"
+  },
+  {
+    "email": "member2@example.com",
+    "password": "hashed",
+    "id": "9fd9057b-3a5d-46c7-ad55-d9eb4c23ddbd",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.801Z",
+    "updatedAt": "2026-02-24T13:59:20.801Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "7ca94e8d-87f3-454b-8439-b8916830761d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.803Z",
+    "updatedAt": "2026-02-24T13:59:20.803Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "7f35eb43-d7a0-4ce4-9820-b39f528b2ae5",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.810Z",
+    "updatedAt": "2026-02-24T13:59:20.810Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "473c0339-11ad-455e-8aa8-2e54f5ee1a90",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.812Z",
+    "updatedAt": "2026-02-24T13:59:20.812Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "e7bb1424-1855-45e8-b912-bef3f09d9697",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.820Z",
+    "updatedAt": "2026-02-24T13:59:20.820Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "6f452660-cabd-4f4f-ac23-84d002b9a278",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.821Z",
+    "updatedAt": "2026-02-24T13:59:20.821Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "6e91e0e0-b647-40f4-adea-c2237eec3b85",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.827Z",
+    "updatedAt": "2026-02-24T13:59:20.827Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "77e1d258-65d7-400f-8120-f9942c8c7f0a",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.829Z",
+    "updatedAt": "2026-02-24T13:59:20.829Z"
+  },
+  {
+    "email": "user1@example.com",
+    "password": "hashed",
+    "id": "911c51b1-ad5f-44eb-aa97-12f361898375",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.837Z",
+    "updatedAt": "2026-02-24T13:59:20.837Z"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "hashed",
+    "id": "9a85e0e8-5797-4721-b99e-e2b23bf4430b",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.838Z",
+    "updatedAt": "2026-02-24T13:59:20.838Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "96772c91-4265-4d5a-9779-4121ac9d9243",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:20.842Z",
+    "updatedAt": "2026-02-24T13:59:20.842Z"
+  },
+  {
+    "email": "test-wrong-pass-1771941561084@example.com",
+    "password": "$2b$10$ijj73ZiI44xHkuQnJdy09.ax21aAn.dacSN6FKAOh3SHPYT1FsyPi",
+    "id": "ad64460f-c560-46da-a26e-bc794c068904",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:21.145Z",
+    "updatedAt": "2026-02-24T13:59:21.145Z"
+  },
+  {
+    "email": "test-correct-pass-1771941561201@example.com",
+    "password": "$2b$10$ufDAs4dkkIgs.V0U4.5fxuHl9BbMnnNX6wcGghLVAbzZLyfWTUA3e",
+    "id": "0f2f8d79-e638-48fe-87ba-7a57a233fe50",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:21.245Z",
+    "updatedAt": "2026-02-24T13:59:21.245Z"
+  },
+  {
+    "email": "test-hash-1771941561297@example.com",
+    "password": "$2b$10$6XiRbQpIE11hV0bp/Y743.KHybKQsMur8tJbfDosB2taziuCgbtTe",
+    "id": "a93f105c-d94c-4780-b537-90819abcf610",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:21.341Z",
+    "updatedAt": "2026-02-24T13:59:21.341Z"
+  },
+  {
+    "email": "test-rate-reg-1771941561400-0@example.com",
+    "password": "$2b$10$LQ2zJl4z3ZE5zEMXQXbwH.WhMyyquZrIqtusXpu51kS9BKfD6wZjm",
+    "id": "fa9ca020-8dea-4cc9-b1da-29c52bdf6a85",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:21.443Z",
+    "updatedAt": "2026-02-24T13:59:21.443Z"
+  },
+  {
+    "email": "test-rate-reg-1771941561400-1@example.com",
+    "password": "$2b$10$pQQP.i0P/eYWJ1qbC2nlre6Je5ubxd73WHedJdTbJNsOCKtV8eEpq",
+    "id": "07776cbd-438f-49fb-a1b3-f0ac8f478053",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:21.490Z",
+    "updatedAt": "2026-02-24T13:59:21.490Z"
+  },
+  {
+    "email": "test-rate-reg-1771941561400-2@example.com",
+    "password": "$2b$10$KqIv9xgpT7GW6FnrDIudm.HbsfUpRP3ogUL.kIpB/NTHbBnjEGjR.",
+    "id": "47ce5e9c-bcfb-4272-8375-8d774d9bb4bc",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:21.536Z",
+    "updatedAt": "2026-02-24T13:59:21.536Z"
+  },
+  {
+    "email": "test-rate-reg-1771941561400-3@example.com",
+    "password": "$2b$10$TzfCs.V8jS0OlOfY5BxYFeYDzizSI8dpXkb3lhbm/MfB08AtRdbIq",
+    "id": "7821f29d-6af9-47bf-9141-8010b280605f",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:21.582Z",
+    "updatedAt": "2026-02-24T13:59:21.582Z"
+  },
+  {
+    "email": "test-rate-reg-1771941561400-4@example.com",
+    "password": "$2b$10$bAPZStkzg./Yr30xHLI69e0F1dA6YojZbC.Yy.kOh7eohUJyM237C",
+    "id": "9635ab52-c0e5-449c-a01e-1ea8e06c22c3",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T13:59:21.629Z",
+    "updatedAt": "2026-02-24T13:59:21.629Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "firstName": "Test",
+    "lastName": "User",
+    "id": "21cf46e0-b218-454e-85cd-ea22c8c2f4c1",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:25.985Z",
+    "updatedAt": "2026-02-24T14:05:25.985Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "2d5f2b17-2677-446b-98e3-da07a9178d81",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:25.992Z",
+    "updatedAt": "2026-02-24T14:05:25.993Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "98f551da-542e-48d6-8de3-4492be95814e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:25.999Z",
+    "updatedAt": "2026-02-24T14:05:25.999Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "904a121e-e9d1-433b-bdee-f32051eec942",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.019Z",
+    "updatedAt": "2026-02-24T14:05:26.019Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "f45830f7-5a49-4541-acd2-eef29cdd7c2c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.028Z",
+    "updatedAt": "2026-02-24T14:05:26.028Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "8f9b0844-2c20-4446-bf10-a8a6cf23e3ec",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.037Z",
+    "updatedAt": "2026-02-24T14:05:26.037Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "a3c0f936-ae7b-4421-aa80-df04f9feb35e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.049Z",
+    "updatedAt": "2026-02-24T14:05:26.049Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "e4e73821-8c50-4e3c-9b0c-3d4cf344fdeb",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.064Z",
+    "updatedAt": "2026-02-24T14:05:26.065Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "befc7146-2e0c-476c-80e4-78f5e1c5e767",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.066Z",
+    "updatedAt": "2026-02-24T14:05:26.066Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "e3dfdfee-13e0-4359-ab1c-3b4d7d17747b",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.072Z",
+    "updatedAt": "2026-02-24T14:05:26.072Z"
+  },
+  {
+    "email": "supporter1@example.com",
+    "password": "hashed",
+    "id": "8a534a12-e3cf-44de-bdd3-fac4b2aa5753",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.073Z",
+    "updatedAt": "2026-02-24T14:05:26.073Z"
+  },
+  {
+    "email": "supporter2@example.com",
+    "password": "hashed",
+    "id": "9bbf5899-740f-4fc9-bdf0-79417c7ac412",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.074Z",
+    "updatedAt": "2026-02-24T14:05:26.074Z"
+  },
+  {
+    "email": "member1@example.com",
+    "password": "hashed",
+    "id": "54dd6675-18ac-401f-8bb0-22ef75f82f51",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.082Z",
+    "updatedAt": "2026-02-24T14:05:26.082Z"
+  },
+  {
+    "email": "member2@example.com",
+    "password": "hashed",
+    "id": "f4f2e096-4946-4655-bc3e-a6a0c4547271",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.084Z",
+    "updatedAt": "2026-02-24T14:05:26.084Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "5c0d31ad-5178-420d-8fc3-d307e3083f6e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.086Z",
+    "updatedAt": "2026-02-24T14:05:26.086Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "4aff9cf0-8b79-4acd-9758-4d733beb2d0e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.094Z",
+    "updatedAt": "2026-02-24T14:05:26.094Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "1041fa86-b7be-40d1-a014-d98d203fed95",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.095Z",
+    "updatedAt": "2026-02-24T14:05:26.095Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "d843a143-b20d-4772-a883-05bcbb580bf5",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.103Z",
+    "updatedAt": "2026-02-24T14:05:26.103Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "8a992057-ec97-49dd-a8c4-b6454817b1a8",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.104Z",
+    "updatedAt": "2026-02-24T14:05:26.104Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "7e7971ce-199e-430d-9dfd-3a5754084d96",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.110Z",
+    "updatedAt": "2026-02-24T14:05:26.110Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "fbce672e-b193-4b67-804e-c51e42311029",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.111Z",
+    "updatedAt": "2026-02-24T14:05:26.111Z"
+  },
+  {
+    "email": "user1@example.com",
+    "password": "hashed",
+    "id": "12496483-6b72-4e42-8f44-8c0fe578d188",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.121Z",
+    "updatedAt": "2026-02-24T14:05:26.121Z"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "hashed",
+    "id": "6c5bd031-de0a-4e0f-b538-5448eb353f12",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.122Z",
+    "updatedAt": "2026-02-24T14:05:26.122Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "cd914e01-6608-45e1-bd4c-f081df961849",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.126Z",
+    "updatedAt": "2026-02-24T14:05:26.126Z"
+  },
+  {
+    "email": "test-wrong-pass-1771941926393@example.com",
+    "password": "$2b$10$rSir6k8s/0IrWt/1rg4fwuqAoMhlIF/etuOEQYvHcpc3I12i7oLlK",
+    "id": "5256ff7b-b0c7-41e5-937f-3a1a79c16621",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.455Z",
+    "updatedAt": "2026-02-24T14:05:26.455Z"
+  },
+  {
+    "email": "test-correct-pass-1771941926512@example.com",
+    "password": "$2b$10$bhz8MR/XkVkoercX7wV9KOwBBnOnj1t.2mkR5YQm/2ejN9NiBWajG",
+    "id": "c9bbb1e9-c494-4cdc-b801-fd51703ef8ac",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.557Z",
+    "updatedAt": "2026-02-24T14:05:26.557Z"
+  },
+  {
+    "email": "test-hash-1771941926610@example.com",
+    "password": "$2b$10$tsU3ukshKvnBFvC9qh2dYewVHNaSwN3gAI2QO9HkHHx7YVtcJ3uHq",
+    "id": "349335ff-f883-4782-b2c5-e912542d23dc",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.654Z",
+    "updatedAt": "2026-02-24T14:05:26.654Z"
+  },
+  {
+    "email": "test-rate-reg-1771941926712-0@example.com",
+    "password": "$2b$10$i8.aY5HjQvfnFIKPyqOKpus7YjD6UpaHdQ3G6bLet0F9kohQ07Rdy",
+    "id": "9c9e08d2-48a7-439d-bfac-9f8152d56b48",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.756Z",
+    "updatedAt": "2026-02-24T14:05:26.756Z"
+  },
+  {
+    "email": "test-rate-reg-1771941926712-1@example.com",
+    "password": "$2b$10$Da8AK2pR2cxRNJWfJabzJ.XFw0BqS4mC6qd07GzYjt1FBINyyzx7q",
+    "id": "c320b850-8e67-432c-8caa-3d0a5669e501",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.802Z",
+    "updatedAt": "2026-02-24T14:05:26.802Z"
+  },
+  {
+    "email": "test-rate-reg-1771941926712-2@example.com",
+    "password": "$2b$10$z76adwwEzBIJA2X.6Dwaiu5PBdJCvoz7ErjpvzhHM.qKLwgo3DzM.",
+    "id": "38ca3eaf-921a-49b2-9c1d-3a9a3647cf6d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.849Z",
+    "updatedAt": "2026-02-24T14:05:26.849Z"
+  },
+  {
+    "email": "test-rate-reg-1771941926712-3@example.com",
+    "password": "$2b$10$ioB6Pm/5F96aIWWLh3Tig.NqyJX92PYKi/erZVZlyeRoWxtTEJley",
+    "id": "92d9774d-41f2-49a6-ac0b-8920f9441350",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.897Z",
+    "updatedAt": "2026-02-24T14:05:26.897Z"
+  },
+  {
+    "email": "test-rate-reg-1771941926712-4@example.com",
+    "password": "$2b$10$kK53ZK.F2gx25Vqtddez9.UbNKRtqvIhiCxEBXEMaFS4rZOrN79Uu",
+    "id": "4f81e28e-b954-4c61-9caa-58c0e5889b8f",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:05:26.944Z",
+    "updatedAt": "2026-02-24T14:05:26.944Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "firstName": "Test",
+    "lastName": "User",
+    "id": "2bd7fe9e-f534-4218-88e9-437d6d3aafa1",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:41.987Z",
+    "updatedAt": "2026-02-24T14:06:41.987Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "073ddd40-6af2-4c31-be83-b2c6df12baa0",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:41.994Z",
+    "updatedAt": "2026-02-24T14:06:41.994Z"
+  },
+  {
+    "email": "test@example.com",
+    "password": "hashedpassword123",
+    "id": "95427584-3c77-439f-9cec-14e00d73aa7c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.000Z",
+    "updatedAt": "2026-02-24T14:06:42.000Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "9b8b92a4-3c47-49b0-a8d8-6248f5e2f49c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.018Z",
+    "updatedAt": "2026-02-24T14:06:42.018Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "17d666c5-2da8-4791-ad74-32f6df2ce568",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.028Z",
+    "updatedAt": "2026-02-24T14:06:42.028Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "6a334ea7-bf02-4a86-ae26-b024474eee26",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.038Z",
+    "updatedAt": "2026-02-24T14:06:42.038Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "3abf9d8e-3dd7-47f5-bb6c-c508285d4f58",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.051Z",
+    "updatedAt": "2026-02-24T14:06:42.051Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "9431d5d1-600f-4ac5-bb7f-98fd0dfdc3b9",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.068Z",
+    "updatedAt": "2026-02-24T14:06:42.068Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "f025ac3f-a82b-413f-b4a3-0183d5060445",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.070Z",
+    "updatedAt": "2026-02-24T14:06:42.070Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "8d18c958-ceb8-43b8-988b-0dc17b6447e2",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.077Z",
+    "updatedAt": "2026-02-24T14:06:42.077Z"
+  },
+  {
+    "email": "supporter1@example.com",
+    "password": "hashed",
+    "id": "a7daa3f1-e2ef-4b9a-bc08-8770892ae7ad",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.079Z",
+    "updatedAt": "2026-02-24T14:06:42.079Z"
+  },
+  {
+    "email": "supporter2@example.com",
+    "password": "hashed",
+    "id": "00a8d4ab-2262-43f8-96de-a6269f1b0dae",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.080Z",
+    "updatedAt": "2026-02-24T14:06:42.080Z"
+  },
+  {
+    "email": "member1@example.com",
+    "password": "hashed",
+    "id": "bda1ce79-1f2b-4ac9-a72e-5ce0c90bd00c",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.089Z",
+    "updatedAt": "2026-02-24T14:06:42.089Z"
+  },
+  {
+    "email": "member2@example.com",
+    "password": "hashed",
+    "id": "c680b6f4-b4fb-4a08-abb0-c7747572882a",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.091Z",
+    "updatedAt": "2026-02-24T14:06:42.091Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "42c4b9c9-8ca4-4de9-b31c-b4f63966b225",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.092Z",
+    "updatedAt": "2026-02-24T14:06:42.092Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "ef09b97a-0d38-4e14-86f8-729cf12afd38",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.100Z",
+    "updatedAt": "2026-02-24T14:06:42.100Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "3c88c5f5-239b-4bbe-9fda-1c45aac1720f",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.102Z",
+    "updatedAt": "2026-02-24T14:06:42.102Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "7786ad10-7e16-4d60-a51e-bad655431c18",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.110Z",
+    "updatedAt": "2026-02-24T14:06:42.110Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "dd67123f-121b-4e81-adf6-5dd85ae2e49e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.111Z",
+    "updatedAt": "2026-02-24T14:06:42.111Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "168efb4c-25a7-40c7-8525-c04b92f8f395",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.118Z",
+    "updatedAt": "2026-02-24T14:06:42.118Z"
+  },
+  {
+    "email": "supporter@example.com",
+    "password": "hashed",
+    "id": "d09fb01d-02d0-452e-8cd1-7b8e14197347",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.119Z",
+    "updatedAt": "2026-02-24T14:06:42.119Z"
+  },
+  {
+    "email": "user1@example.com",
+    "password": "hashed",
+    "id": "7608b6d2-e402-4dc7-805a-14321875afba",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.128Z",
+    "updatedAt": "2026-02-24T14:06:42.128Z"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "hashed",
+    "id": "4fd3e314-a0dd-4ad8-9e98-a2f6b1e48985",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.129Z",
+    "updatedAt": "2026-02-24T14:06:42.129Z"
+  },
+  {
+    "email": "member@example.com",
+    "password": "hashed",
+    "id": "5a1ad218-f5e6-4c6c-bcfd-c2fee3ce0f0f",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.133Z",
+    "updatedAt": "2026-02-24T14:06:42.133Z"
+  },
+  {
+    "email": "test-wrong-pass-1771942002392@example.com",
+    "password": "$2b$10$UxrV6H1pbYbMl1PFaPzw3.3IXE0dgseECawvlQS/aAQlH6qDk7yXK",
+    "id": "cb84e6b9-5fc9-4419-b2c9-98dc33837482",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.455Z",
+    "updatedAt": "2026-02-24T14:06:42.455Z"
+  },
+  {
+    "email": "test-correct-pass-1771942002511@example.com",
+    "password": "$2b$10$ILVbDbdirvFYSPd0YjjZV.fsnBnFHAu/V0NxihxhjlLYDI2ok.VSi",
+    "id": "4fb95f47-f0c8-4dfb-b29a-2ee3f4ec8fe0",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.555Z",
+    "updatedAt": "2026-02-24T14:06:42.555Z"
+  },
+  {
+    "email": "test-hash-1771942002608@example.com",
+    "password": "$2b$10$P67UlRuhd6Rbx4Ypjvc7ze4lz1k9rVY9W.iMo7lwOCUWIxNH2rac6",
+    "id": "efab1784-756d-4676-97fc-6029b2473161",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.654Z",
+    "updatedAt": "2026-02-24T14:06:42.654Z"
+  },
+  {
+    "email": "test-rate-reg-1771942002716-0@example.com",
+    "password": "$2b$10$xFBf7Hg91Ofss4Vo8UiVg.fhlc028//cf9CBfbni4b1Nmx2/asM2m",
+    "id": "3266b885-a4c3-4464-a217-f46864eec258",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.760Z",
+    "updatedAt": "2026-02-24T14:06:42.760Z"
+  },
+  {
+    "email": "test-rate-reg-1771942002716-1@example.com",
+    "password": "$2b$10$c7X3MWZkTFbze51MQvOkX.9XEx.s90QVLk2wvnQjsq6XVKsxuvDW6",
+    "id": "a3780485-ccde-4bfa-b713-709b279fce14",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.807Z",
+    "updatedAt": "2026-02-24T14:06:42.807Z"
+  },
+  {
+    "email": "test-rate-reg-1771942002716-2@example.com",
+    "password": "$2b$10$2N1HvPucbSGs8s.xkmSMRe4/yqs80uWieepeewliGgQoP20vgSbgm",
+    "id": "d790683b-eea3-47cb-b306-ed09f0b34205",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.853Z",
+    "updatedAt": "2026-02-24T14:06:42.853Z"
+  },
+  {
+    "email": "test-rate-reg-1771942002716-3@example.com",
+    "password": "$2b$10$bt7dWE4Tba9mQ6JE1mbr0ONbz.rpqgC5nnYOsBQQ9i31fUPl5Xlra",
+    "id": "34442cc4-db62-4a9b-a591-edc6f197b58d",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.900Z",
+    "updatedAt": "2026-02-24T14:06:42.900Z"
+  },
+  {
+    "email": "test-rate-reg-1771942002716-4@example.com",
+    "password": "$2b$10$Xwj4JiWRQAUldV73dW7DQuIGMLnT0wIA39/r56yKAsg9fyOMcio6i",
+    "id": "49049006-9442-4d43-afd0-be27657c100e",
+    "passwordVersion": "bcrypt-10",
+    "createdAt": "2026-02-24T14:06:42.946Z",
+    "updatedAt": "2026-02-24T14:06:42.946Z"
   }
 ]

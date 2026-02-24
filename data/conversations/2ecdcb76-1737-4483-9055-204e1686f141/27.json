@@ -1,0 +1,17 @@
+{
+  "id": 27,
+  "memberId": "2ecdcb76-1737-4483-9055-204e1686f141",
+  "title": "Updated Title",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "2ecdcb76-1737-4483-9055-204e1686f141",
+        "authorName": "Test User",
+        "content": "Original",
+        "timestamp": "2026-02-24T13:51:42.791Z"
+      }
+    ]
+  },
+  "createdAt": "2026-02-24T13:51:42.791Z"
+}
