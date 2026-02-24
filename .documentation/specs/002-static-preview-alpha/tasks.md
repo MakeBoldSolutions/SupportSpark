@@ -33,9 +33,10 @@
 
 - [ ] T004 [P] Create localStorage adapter implementing all 14 methods per contracts/local-storage-adapter.md — auth (register, login, logout, getCurrentUser), conversations (getConversations, getConversation, createConversation, addMessage), supporters (getSupporters, inviteSupporter, updateSupporterStatus), and storage management (getStorageUsagePercent, resetAllData, isStorageAvailable) — using supportSpark_ prefixed keys in client/src/lib/local-storage-adapter.ts
 - [ ] T005 [P] Create seed data module with demo user Alex Rivera (seed-supporter-001), 2 "My Journey" conversations (Starting My Recovery Journey, Grateful for Small Wins), 2 "Following" conversations (Managing Daily Challenges, Finding Community Support), and bidirectional supporter relationships per data-model.md in client/src/lib/seed-data.ts
-- [ ] T006 [P] Create preview banner component with persistent "Preview Alpha" notice visible on all pages (including Home and Auth per FR-003), passive storage usage warning at 80% threshold via navigator.storage.estimate() with fallback, and Reset Demo Data action calling adapter.resetAllData() in client/src/components/preview-banner.tsx
+- [ ] T006 [P] Create preview banner component with persistent "Preview Alpha" notice visible on all pages (including Home and Auth per FR-003), passive storage usage warning at 80% threshold via navigator.storage.estimate() with fallback, and Reset Demo Data action calling adapter.resetAllData() — conditionally show Reset Demo Data button only when adapter.getCurrentUser() is non-null (unauthenticated visitors see banner text only) — in client/src/components/preview-banner.tsx
 - [ ] T007 Modify client/src/App.tsx to wrap all routes with Router hook={useHashLocation} imported from wouter/use-hash-location and render PreviewBanner component on all pages (not just authenticated — FR-003 requires "every page")
 - [ ] T007a [P] Modify client/src/pages/Home.tsx to replace the /api/quotes useQuery fetch with a static import of data/quotes.json bundled via Vite, preserving the existing quote carousel rotation logic (FR-017)
+- [ ] T007b [P] Modify client/src/pages/Demo.tsx to replace server API calls (/api/demo/info, /api/demo/login/patient, /api/demo/login/supporter) and apiRequest import with localStorage adapter equivalents — demo login buttons call adapter.login() with pre-seeded credentials, demo info sourced from adapter data (SC-004 requires all 6 pages render correctly)
 - [ ] T008 Modify client/src/lib/queryClient.ts to remove all server-dependent utilities — apiRequest(), getQueryFn(), and throwIfResNotOk (no remaining call sites after adapter swap) — preserving only the QueryClient instance
 
 **Checkpoint**: Foundation ready — localStorage adapter, seed data, preview banner, hash routing, and cleaned queryClient are in place. User story hook modifications can now begin.
@@ -92,7 +93,7 @@
 
 ### Implementation for User Story 4
 
-- [ ] T012 [US4] Complete login and logout mutations in client/src/hooks/use-auth.ts — replace login mutation to call adapter.login() with email/password credential validation against localStorage, replace logout mutation to call adapter.logout() which clears session only while preserving all stored data
+- [ ] T012 [US4] Complete login and logout mutations in client/src/hooks/use-auth.ts — replace login mutation to call adapter.login() with email/password credential validation against localStorage, replace logout mutation to call adapter.logout() which clears session only while preserving all stored data. Verify Zod validation errors (email format per FR-016) surface correctly on the login form, not just generic "wrong credentials"
 
 **Checkpoint**: Login validates against localStorage credentials (correct → dashboard, incorrect → error). Logout clears session only. Re-login restores full access to all data.
 
@@ -107,7 +108,7 @@
 ### Implementation for User Story 5
 
 - [ ] T013 [US5] Add .nojekyll marker file to client/public/.nojekyll to prevent GitHub Pages Jekyll processing of underscore-prefixed Vite asset files
-- [ ] T014 [US5] Validate static build by running npm run build:static — confirm dist-static/ contains index.html with hash-based routing, no server-side artifacts, and total output under 5MB
+- [ ] T014 [US5] Validate static build by running npm run build:static — confirm dist-static/ contains index.html with hash-based routing, no server-side artifacts, total output under 5MB, and all 6 pages (Home, Auth, Dashboard, ConversationView, Supporters, Demo) render without console errors per SC-004
 
 **Checkpoint**: Static build produces clean client-only output under 5MB. GitHub Actions workflow in deploy-preview.yml is ready for auto-deployment on push.
 
@@ -172,18 +173,18 @@ T001 (vite config) → then:
   T002 (npm scripts) ║ T003 (GH Actions workflow)
 ```
 
-#### Phase 2 (Foundational — three new files in parallel)
+#### Phase 2 (Foundational — new files in parallel, then sequential edits)
 ```
 T004 (adapter) ║ T005 (seed data) ║ T006 (banner)
   → then sequentially:
     T007 (App.tsx hash routing + banner)
+    T007a (Home.tsx quotes)  ║  T007b (Demo.tsx adapter swap)
     T008 (queryClient.ts cleanup)
 ```
 
 #### Phases 3–7 (User story hooks — maximum parallelism)
 ```
 After Foundational:
-  T007a (Home.tsx quotes)      ║
   T009 (US1: auth register)  ──→  T012 (US4: auth login/logout)
   T010 (US2: conversations)   ║
   T011 (US3: supporters)      ║
@@ -242,7 +243,7 @@ With multiple developers:
 
 ## Notes
 
-- **24 total tasks** across 9 phases covering 5 user stories + tests
+- **25 total tasks** across 9 phases covering 5 user stories + tests
 - **[P] tasks** = different files, no unresolved dependencies — safe to parallelize
 - **[Story] labels** map tasks to spec.md user stories (US1–US5) for traceability
 - **Test tasks T019–T023** satisfy constitution Principle II (NON-NEGOTIABLE)

@@ -81,7 +81,7 @@ client/
 │       ├── Dashboard.tsx              # Unchanged
 │       ├── ConversationView.tsx       # Unchanged
 │       ├── Supporters.tsx             # Unchanged
-│       └── Demo.tsx                   # Unchanged
+│       └── Demo.tsx                   # MODIFIED: replace /api/demo/* server calls with localStorage adapter equivalents
 ├── vite.config.static.ts              # NEW: static build config for GitHub Pages
 └── public/                            # Unchanged
 
@@ -94,7 +94,7 @@ shared/
 └── routes.ts                          # Referenced for types only, not for HTTP calls
 ```
 
-**Structure Decision**: Client-only SPA. No server/ directory changes needed. The existing `client/src/` structure is preserved. New files are added for the localStorage adapter, seed data, preview banner, static Vite config, and GitHub Actions workflow. Hooks are modified in-place to swap their data source. Home.tsx is modified to replace the `/api/quotes` fetch with a static import of bundled quote data (FR-017).
+**Structure Decision**: Client-only SPA. No server/ directory changes needed. The existing `client/src/` structure is preserved. New files are added for the localStorage adapter, seed data, preview banner, static Vite config, and GitHub Actions workflow. Hooks are modified in-place to swap their data source. Home.tsx is modified to replace the `/api/quotes` fetch with a static import of bundled quote data (FR-017). Demo.tsx is modified to replace `/api/demo/*` server calls with localStorage adapter equivalents (SC-004).
 
 ## Complexity Tracking
 
