@@ -70,12 +70,14 @@ export default [
   {
     ignores: [
       "dist/**",
+      "dist-static/**",
       "node_modules/**",
       "*.config.js",
       "*.config.ts",
       "client/src/components/ui/**",
       "coverage/**",
       ".vscode/**",
+      "lint-output.txt",
     ],
   },
 
