@@ -42,7 +42,7 @@ describe("Authentication Security Tests", () => {
     // Note: In a real implementation, you'd want to reset the storage state
   });
 
-  // T040: Test rejects login with incorrect password
+  // Verifies that login fails with a 401 when an incorrect password is supplied
   describe("POST /api/login - Password Verification", () => {
     it("should reject login with incorrect password", async () => {
       // First, register a test user
@@ -74,7 +74,7 @@ describe("Authentication Security Tests", () => {
       expect(response.status).toBe(401);
     });
 
-    // T041: Test accepts login with correct bcrypt password
+    // Verifies that login succeeds when the correct bcrypt-hashed password is supplied
     it("should accept login with correct bcrypt password", async () => {
       const testEmail = `test-correct-pass-${Date.now()}@example.com`;
       const correctPassword = "CorrectPassword123";
@@ -110,7 +110,7 @@ describe("Authentication Security Tests", () => {
     });
   });
 
-  // T042: Test hashes password on registration
+  // Verifies that passwords are stored as bcrypt hashes (not plaintext) on registration
   describe("POST /api/register - Password Hashing", () => {
     it("should hash password on registration using bcrypt", async () => {
       const testEmail = `test-hash-${Date.now()}@example.com`;
@@ -194,7 +194,7 @@ describe("Authentication Security Tests", () => {
     }, 30000);
   });
 
-  // T045: Test returns 403 for users requiring password migration
+  // Verifies that accounts without a passwordVersion field are blocked with 403
   describe("POST /api/login - Password Migration Detection", () => {
     it("should return 403 for users without passwordVersion", async () => {
       // This test would require directly manipulating storage to create a user without passwordVersion
@@ -209,7 +209,7 @@ describe("Authentication Security Tests", () => {
     });
   });
 
-  // T046: Test validates SESSION_SECRET requirement
+  // Verifies that SESSION_SECRET is configured in the test environment
   describe("Environment Validation", () => {
     it("should have SESSION_SECRET configured in test environment", () => {
       // Verify environment variable is set
