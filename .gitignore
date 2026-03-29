@@ -88,6 +88,9 @@ replit.nix
 .claude/*
 !.claude/settings.json
 
+# Temporary lint output
+lint-output.txt
+
 # Optional: Uncomment to ignore development data files
 # data/users.json
 # data/supporters.json

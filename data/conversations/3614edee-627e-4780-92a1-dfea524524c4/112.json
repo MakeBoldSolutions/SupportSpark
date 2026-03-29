@@ -1,0 +1,17 @@
+{
+  "id": 112,
+  "memberId": "3614edee-627e-4780-92a1-dfea524524c4",
+  "title": "Conversation 1",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "3614edee-627e-4780-92a1-dfea524524c4",
+        "authorName": "Test User",
+        "content": "Message 1",
+        "timestamp": "2026-03-29T13:26:22.707Z"
+      }
+    ]
+  },
+  "createdAt": "2026-03-29T13:26:22.707Z"
+}

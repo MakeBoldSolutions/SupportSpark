@@ -1,0 +1,17 @@
+{
+  "id": 103,
+  "memberId": "bbedddd8-1435-4c7a-a729-5e0d739e7cb0",
+  "title": "Test",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "bbedddd8-1435-4c7a-a729-5e0d739e7cb0",
+        "authorName": "Test User",
+        "content": "Test message",
+        "timestamp": "2026-03-29T13:24:09.892Z"
+      }
+    ]
+  },
+  "createdAt": "2026-03-29T13:24:09.892Z"
+}

@@ -1,0 +1,17 @@
+{
+  "id": 154,
+  "memberId": "248ccd22-33cb-4aaf-a662-a00260830e49",
+  "title": "Test",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "248ccd22-33cb-4aaf-a662-a00260830e49",
+        "authorName": "Test User",
+        "content": "Test message",
+        "timestamp": "2026-03-29T13:43:51.201Z"
+      }
+    ]
+  },
+  "createdAt": "2026-03-29T13:43:51.201Z"
+}

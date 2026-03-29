@@ -1,0 +1,17 @@
+{
+  "id": 157,
+  "memberId": "73ff39bb-c20c-4b60-82e2-92ba559353ae",
+  "title": "Conv 2",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-2",
+        "authorId": "73ff39bb-c20c-4b60-82e2-92ba559353ae",
+        "authorName": "User",
+        "content": "Second",
+        "timestamp": "2026-03-29T13:43:51.228Z"
+      }
+    ]
+  },
+  "createdAt": "2026-03-29T13:43:51.228Z"
+}

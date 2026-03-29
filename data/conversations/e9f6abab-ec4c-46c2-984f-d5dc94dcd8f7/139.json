@@ -1,0 +1,17 @@
+{
+  "id": 139,
+  "memberId": "e9f6abab-ec4c-46c2-984f-d5dc94dcd8f7",
+  "title": "Conv 1",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "e9f6abab-ec4c-46c2-984f-d5dc94dcd8f7",
+        "authorName": "User",
+        "content": "First",
+        "timestamp": "2026-03-29T13:41:26.894Z"
+      }
+    ]
+  },
+  "createdAt": "2026-03-29T13:41:26.894Z"
+}

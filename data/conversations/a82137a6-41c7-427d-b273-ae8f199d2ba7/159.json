@@ -1,0 +1,17 @@
+{
+  "id": 159,
+  "memberId": "a82137a6-41c7-427d-b273-ae8f199d2ba7",
+  "title": "Conv 2",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-2",
+        "authorId": "a82137a6-41c7-427d-b273-ae8f199d2ba7",
+        "authorName": "User",
+        "content": "Second",
+        "timestamp": "2026-03-29T13:43:51.362Z"
+      }
+    ]
+  },
+  "createdAt": "2026-03-29T13:43:51.362Z"
+}
