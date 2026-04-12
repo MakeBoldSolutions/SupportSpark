@@ -15,6 +15,7 @@ This repository uses the DevSpark documentation layout so durable product knowle
 | `.documentation/scripts/` | Team script overrides | Repository-specific DevSpark helper scripts |
 | `.documentation/templates/` | Team template overrides | Customized spec, plan, task, and checklist templates |
 | `.documentation/repo-story/` | Historical narrative | Repository history snapshots and story artifacts |
+| `.archive/` | Historical archive | Completed and historical docs. Do not read from here during normal operations. |
 
 ## Current Canonical Documents
 
@@ -33,10 +34,6 @@ This repository uses the DevSpark documentation layout so durable product knowle
 - `.documentation/domain/deployment-iis.md`: IIS deployment runbook.
 - `.documentation/domain/UPGRADE_PLAN.md`: dependency upgrade roadmap.
 
-### Session Records
-
-- `.documentation/copilot/session-2026-04-12/architecture-documentation-arrangement.md`: documentation arrangement record for this reorganization.
-
 ## Working Rules
 
 1. Put long-lived product knowledge in `.documentation/domain/`.
@@ -44,6 +41,14 @@ This repository uses the DevSpark documentation layout so durable product knowle
 3. Put ephemeral AI-generated analysis in `.documentation/copilot/session-YYYY-MM-DD/`.
 4. Add ADR-style records to `.documentation/decisions/` when a decision needs durable rationale.
 5. Keep README short; link to this guide and the domain documents for deeper detail.
+
+## How To Use
+
+- DevSpark stock command prompts resolve from `.devspark/defaults/commands/`.
+- Team command overrides belong in `.documentation/commands/`.
+- Team script overrides belong in `.documentation/scripts/`.
+- Feature work should create artifacts under `.documentation/specs/<feature-id>/`.
+- Copilot-generated one-off analysis belongs under `.documentation/copilot/` only while it is current.
 
 ## Recommended Next Documents
 
