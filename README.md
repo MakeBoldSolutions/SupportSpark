@@ -207,17 +207,31 @@ SupportSpark/
 
 ---
 
+## Documentation
+
+The repository documentation follows the DevSpark layout.
+
+- Documentation entry point: `.documentation/Guide.md`
+- Governance: `.documentation/memory/constitution.md`
+- Durable product and system docs: `.documentation/domain/`
+- Feature workspaces: `.documentation/specs/`
+- Session output: `.documentation/copilot/session-YYYY-MM-DD/`
+
+Start with `.documentation/Guide.md` when you need to know where a document belongs.
+
+---
+
 ## API Overview
 
-All API endpoints follow the contract pattern defined in `shared/routes.ts`:
+Core conversation and supporter endpoints are defined in `shared/routes.ts`. Authentication, demo, quote, and upload endpoints currently live directly in `server/routes.ts`.
 
 ### Authentication
 
 | Endpoint             | Method | Description        |
 | -------------------- | ------ | ------------------ |
-| `/api/auth/register` | POST   | Create new account |
-| `/api/auth/login`    | POST   | Authenticate user  |
-| `/api/auth/logout`   | POST   | End session        |
+| `/api/register`      | POST   | Create new account |
+| `/api/login`         | POST   | Authenticate user  |
+| `/api/logout`        | POST   | End session        |
 | `/api/auth/user`     | GET    | Get current user   |
 
 ### Conversations
@@ -228,6 +242,7 @@ All API endpoints follow the contract pattern defined in `shared/routes.ts`:
 | `/api/conversations`              | POST   | Create new conversation   |
 | `/api/conversations/:id`          | GET    | Get conversation details  |
 | `/api/conversations/:id/messages` | POST   | Add message/reply         |
+| `/api/conversations/:id/images`   | POST   | Upload conversation image |
 
 ### Supporters
 
@@ -235,13 +250,22 @@ All API endpoints follow the contract pattern defined in `shared/routes.ts`:
 | ------------------------ | ------ | ------------------------ |
 | `/api/supporters`        | GET    | List supporters          |
 | `/api/supporters/invite` | POST   | Invite by email          |
-| `/api/supporters/:id`    | PUT    | Accept/reject invitation |
+| `/api/supporters/:id/status` | PATCH | Accept/reject invitation |
+
+### Demo and Utility
+
+| Endpoint                      | Method | Description |
+| ----------------------------- | ------ | ----------- |
+| `/api/demo/login/patient`     | POST   | Sign in as demo member |
+| `/api/demo/login/supporter`   | POST   | Sign in as demo supporter |
+| `/api/demo/info`              | GET    | Return demo identity summary |
+| `/api/quotes`                 | GET    | Return quote content |
 
 ---
 
 ## Development Guidelines
 
-This project follows strict development principles defined in the [Constitution](.specify/memory/constitution.md):
+This project follows strict development principles defined in the [Constitution](.documentation/memory/constitution.md):
 
 ### Core Principles
 

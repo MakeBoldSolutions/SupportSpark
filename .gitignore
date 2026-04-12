@@ -95,3 +95,6 @@ lint-output.txt
 # data/users.json
 # data/supporters.json
 # data/conversations/
+
+# DevSpark - personal overrides (never commit)
+.documentation/*/commands/
