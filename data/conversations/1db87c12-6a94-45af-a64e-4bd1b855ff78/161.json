@@ -1,0 +1,17 @@
+{
+  "id": 161,
+  "memberId": "1db87c12-6a94-45af-a64e-4bd1b855ff78",
+  "title": "Test",
+  "data": {
+    "messages": [
+      {
+        "id": "msg-1",
+        "authorId": "1db87c12-6a94-45af-a64e-4bd1b855ff78",
+        "authorName": "Test User",
+        "content": "Test message",
+        "timestamp": "2026-04-12T14:30:11.618Z"
+      }
+    ]
+  },
+  "createdAt": "2026-04-12T14:30:11.618Z"
+}

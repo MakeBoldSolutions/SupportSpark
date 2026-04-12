@@ -138,7 +138,7 @@ function Get-FileCategories {
     
     # Exclusion patterns
     $excludeDirs = @('node_modules', 'venv', '.venv', '__pycache__', '.git', '.vs', '.idea',
-                     'dist', 'build', 'bin', 'obj', '.next', 'coverage', '.pytest_cache',
+                     'dist', 'dist-static', 'build', 'bin', 'obj', '.next', 'coverage', '.pytest_cache',
                      '.mypy_cache', '.tox', 'eggs', '.egg-info', '.genreleases', '.archive')
     
     $excludePattern = '(^|[/\\])(' + (($excludeDirs | ForEach-Object { [regex]::Escape($_) }) -join '|') + ')([/\\]|$)'
@@ -355,7 +355,7 @@ function Get-CodeMetrics {
             $metrics.max_lines_file = $relPath
         }
         
-        if ($lineCount -gt 500) {
+        if ($lineCount -gt 500 -and $relPath -notmatch '^client/src/components/ui/') {
             $metrics.large_files += @{
                 file = $relPath
                 lines = $lineCount

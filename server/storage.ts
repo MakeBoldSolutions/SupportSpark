@@ -8,6 +8,11 @@ import {
 import fs from "fs/promises";
 import path from "path";
 import { randomUUID } from "crypto";
+import {
+  buildDemoSeedData,
+  DEMO_MEMBER_ID,
+  DEMO_SUPPORTER_ID,
+} from "./demo-seed";
 
 export interface IStorage {
   // User Operations
@@ -45,12 +50,12 @@ interface ConversationMeta {
 }
 
 export class FileStorage implements IStorage {
-  private dataDir = path.join(process.cwd(), "data");
-  private usersFile = path.join(this.dataDir, "users.json");
-  private supportersFile = path.join(this.dataDir, "supporters.json");
-  private conversationsDir = path.join(this.dataDir, "conversations");
-  private conversationIndexFile = path.join(this.conversationsDir, "index.json");
-  private conversationMetaFile = path.join(this.conversationsDir, "meta.json");
+  private dataDir: string;
+  private usersFile: string;
+  private supportersFile: string;
+  private conversationsDir: string;
+  private conversationIndexFile: string;
+  private conversationMetaFile: string;
 
   // In-memory cache
   private users: Map<string, User> = new Map();
@@ -60,13 +65,19 @@ export class FileStorage implements IStorage {
   private currentSupporterId = 1;
   private initialized = false;
 
-  constructor() {
+  constructor(dataDir = path.join(process.cwd(), process.env.NODE_ENV === "test" ? "data-test" : "data")) {
+    this.dataDir = dataDir;
+    this.usersFile = path.join(this.dataDir, "users.json");
+    this.supportersFile = path.join(this.dataDir, "supporters.json");
+    this.conversationsDir = path.join(this.dataDir, "conversations");
+    this.conversationIndexFile = path.join(this.conversationsDir, "index.json");
+    this.conversationMetaFile = path.join(this.conversationsDir, "meta.json");
     this.init();
   }
 
   // Demo account IDs (deterministic for easy lookup)
-  static DEMO_MEMBER_ID = "demo-member-sarah";
-  static DEMO_SUPPORTER_ID = "demo-supporter-james";
+  static DEMO_MEMBER_ID = DEMO_MEMBER_ID;
+  static DEMO_SUPPORTER_ID = DEMO_SUPPORTER_ID;
 
   private async init() {
     if (this.initialized) return;
@@ -82,196 +93,43 @@ export class FileStorage implements IStorage {
   }
 
   private async ensureDemoData() {
-    // Check if demo member exists
-    // Demo accounts use random UUIDs as passwords to prevent standard login
     const demoPasswordBlocker = `DEMO_ONLY_${randomUUID()}`;
+    const demoSeed = buildDemoSeedData({
+      password: demoPasswordBlocker,
+      startingConversationId: this.currentConversationId,
+      supporterRelationshipId: this.currentSupporterId,
+    });
 
-    if (!this.users.has(FileStorage.DEMO_MEMBER_ID)) {
-      const demoMember: User = {
-        id: FileStorage.DEMO_MEMBER_ID,
-        email: "sarah@demo.supportspark.com",
-        password: demoPasswordBlocker,
-        passwordVersion: "bcrypt-10", // Demo accounts bypass normal auth but need version field
-        firstName: "Sarah",
-        lastName: "Mitchell",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-      this.users.set(demoMember.id, demoMember);
+    let usersChanged = false;
+
+    for (const demoUser of demoSeed.users) {
+      if (!this.users.has(demoUser.id)) {
+        this.users.set(demoUser.id, demoUser);
+        usersChanged = true;
+      }
+    }
+
+    if (usersChanged) {
       await this.persistUsers();
     }
 
-    // Check if demo supporter exists
-    if (!this.users.has(FileStorage.DEMO_SUPPORTER_ID)) {
-      const demoSupporter: User = {
-        id: FileStorage.DEMO_SUPPORTER_ID,
-        email: "james@demo.supportspark.com",
-        password: demoPasswordBlocker,
-        passwordVersion: "bcrypt-10", // Demo accounts bypass normal auth but need version field
-        firstName: "James",
-        lastName: "Chen",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-      this.users.set(demoSupporter.id, demoSupporter);
-      await this.persistUsers();
-    }
-
-    // Create supporter relationship if not exists
-    // Note: We directly access the map here since we're inside init() and can't call ensureInitialized()
     const existingRelation = Array.from(this.supporters.values()).find(
       (s) =>
         s.memberId === FileStorage.DEMO_MEMBER_ID && s.supporterId === FileStorage.DEMO_SUPPORTER_ID
     );
+
     if (!existingRelation) {
-      const supporterId = this.currentSupporterId++;
-      const supporter: Supporter = {
-        id: supporterId,
-        memberId: FileStorage.DEMO_MEMBER_ID,
-        supporterId: FileStorage.DEMO_SUPPORTER_ID,
-        status: "accepted",
-        createdAt: new Date().toISOString(),
-      };
-      this.supporters.set(supporterId, supporter);
+      this.supporters.set(demoSeed.supporter.id, demoSeed.supporter);
+      this.currentSupporterId = demoSeed.nextSupporterId;
       await this.persistSupporters();
     }
 
-    // Create demo conversations if none exist for demo member
     const demoConversations = Array.from(this.conversationIndex.values()).filter(
       (c) => c.memberId === FileStorage.DEMO_MEMBER_ID
     );
 
     if (demoConversations.length === 0) {
-      const now = new Date();
-      const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-      const sixDaysAgo = new Date(now.getTime() - 6 * 24 * 60 * 60 * 1000);
-      const fiveDaysAgo = new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000);
-      const threeDaysAgo = new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000);
-      const twoDaysAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000);
-      const oneDayAgo = new Date(now.getTime() - 1 * 24 * 60 * 60 * 1000);
-
-      // First conversation - Life transition
-      const conversationId1 = this.currentConversationId++;
-      const demoConversation1: Conversation = {
-        id: conversationId1,
-        memberId: FileStorage.DEMO_MEMBER_ID,
-        title: "Starting fresh after a big change",
-        createdAt: sevenDaysAgo.toISOString(),
-        data: {
-          messages: [
-            {
-              id: "msg-1-1",
-              authorId: FileStorage.DEMO_MEMBER_ID,
-              authorName: "Sarah Mitchell",
-              content:
-                "Hi everyone. I wanted to create this space to keep you all updated during this transition. As some of you know, I was laid off last week. It's been a shock, but I'm trying to stay positive and see this as an opportunity for a fresh start.",
-              timestamp: sevenDaysAgo.toISOString(),
-              replies: [
-                {
-                  id: "msg-1-1-reply-1",
-                  authorId: FileStorage.DEMO_SUPPORTER_ID,
-                  authorName: "James Chen",
-                  content:
-                    "Sarah, I'm so sorry to hear this. We've all been thinking of you. Your skills and experience are incredible - this is just a temporary setback. We're here for whatever you need.",
-                  timestamp: new Date(sevenDaysAgo.getTime() + 2 * 60 * 60 * 1000).toISOString(),
-                  replies: [],
-                },
-              ],
-            },
-            {
-              id: "msg-1-2",
-              authorId: FileStorage.DEMO_MEMBER_ID,
-              authorName: "Sarah Mitchell",
-              content:
-                "Day 2 update: Started updating my resume today. It's been a while since I've done this, but it's actually nice to reflect on what I've accomplished. Small steps forward!",
-              timestamp: sixDaysAgo.toISOString(),
-              replies: [
-                {
-                  id: "msg-1-2-reply-1",
-                  authorId: FileStorage.DEMO_SUPPORTER_ID,
-                  authorName: "James Chen",
-                  content:
-                    "That's the spirit! Every small step counts. Happy to review your resume if you'd like another set of eyes on it.",
-                  timestamp: new Date(sixDaysAgo.getTime() + 3 * 60 * 60 * 1000).toISOString(),
-                  replies: [],
-                },
-              ],
-            },
-            {
-              id: "msg-1-3",
-              authorId: FileStorage.DEMO_MEMBER_ID,
-              authorName: "Sarah Mitchell",
-              content:
-                "Had a great call with a former colleague who offered to introduce me to some people in her network. It really helps to know I'm not alone in this. Thank you all for the encouraging messages.",
-              timestamp: fiveDaysAgo.toISOString(),
-              replies: [],
-            },
-          ],
-        },
-      };
-
-      // Second conversation - Week 1 progress
-      const conversationId2 = this.currentConversationId++;
-      const demoConversation2: Conversation = {
-        id: conversationId2,
-        memberId: FileStorage.DEMO_MEMBER_ID,
-        title: "Week 1 - Finding my footing",
-        createdAt: threeDaysAgo.toISOString(),
-        data: {
-          messages: [
-            {
-              id: "msg-2-1",
-              authorId: FileStorage.DEMO_MEMBER_ID,
-              authorName: "Sarah Mitchell",
-              content:
-                "First week has been an emotional rollercoaster. Some days I feel motivated, others I just want to stay in bed. My cat hasn't left my side - she seems to know I need extra cuddles right now.",
-              timestamp: threeDaysAgo.toISOString(),
-              replies: [
-                {
-                  id: "msg-2-1-reply-1",
-                  authorId: FileStorage.DEMO_SUPPORTER_ID,
-                  authorName: "James Chen",
-                  content:
-                    "Those ups and downs are completely normal. Be kind to yourself - you're going through a major life change. We're all cheering for you!",
-                  timestamp: new Date(threeDaysAgo.getTime() + 4 * 60 * 60 * 1000).toISOString(),
-                  replies: [],
-                },
-              ],
-            },
-            {
-              id: "msg-2-2",
-              authorId: FileStorage.DEMO_MEMBER_ID,
-              authorName: "Sarah Mitchell",
-              content:
-                "Milestone today - had my first informational interview! It went really well and they mentioned a potential opening. Also established a daily routine which helps a lot. Feeling more like myself each day.",
-              timestamp: twoDaysAgo.toISOString(),
-              replies: [
-                {
-                  id: "msg-2-2-reply-1",
-                  authorId: FileStorage.DEMO_SUPPORTER_ID,
-                  authorName: "James Chen",
-                  content:
-                    "That's amazing progress! Establishing a routine is so important. Keep celebrating those wins - they add up!",
-                  timestamp: new Date(twoDaysAgo.getTime() + 2 * 60 * 60 * 1000).toISOString(),
-                  replies: [],
-                },
-              ],
-            },
-            {
-              id: "msg-2-3",
-              authorId: FileStorage.DEMO_MEMBER_ID,
-              authorName: "Sarah Mitchell",
-              content:
-                "Applied to five positions this week and feeling hopeful. Also taking time to think about what I really want in my next role. Grateful for all your support through this journey.",
-              timestamp: oneDayAgo.toISOString(),
-              replies: [],
-            },
-          ],
-        },
-      };
-
-      // Add both conversations to index
-      for (const conv of [demoConversation1, demoConversation2]) {
+      for (const conv of demoSeed.conversations) {
         this.conversationIndex.set(conv.id, {
           id: conv.id,
           memberId: FileStorage.DEMO_MEMBER_ID,
@@ -281,6 +139,7 @@ export class FileStorage implements IStorage {
         await this.writeConversationFile(conv);
       }
 
+      this.currentConversationId = demoSeed.nextConversationId;
       await this.persistConversationIndex();
       await this.persistConversationMeta();
     }

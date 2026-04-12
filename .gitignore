@@ -28,6 +28,7 @@ pids/
 *.pid
 *.seed
 *.pid.lock
+data-test/
 
 # Test coverage
 coverage/
@@ -90,6 +91,9 @@ replit.nix
 
 # Temporary lint output
 lint-output.txt
+
+# Transient audit context
+.documentation/copilot/audit/*_prescan.json
 
 # Optional: Uncomment to ignore development data files
 # data/users.json
