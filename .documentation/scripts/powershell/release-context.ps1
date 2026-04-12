@@ -162,12 +162,17 @@ if (Test-HasGit) {
 $timestamp = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
 $releaseDate = Get-Date -Format "yyyy-MM-dd"
 
-# Spec Kit Spark version stamp info
-$specKitVersionPath = Join-Path $repoRoot ".documentation/SPECKIT_VERSION"
+# DevSpark version stamp info
+$devSparkVersionPath = Join-Path $repoRoot ".devspark/VERSION"
 $installedVersion = ""
-if (Test-Path $specKitVersionPath) {
+if (Test-Path $devSparkVersionPath) {
     try {
-        $installedVersion = (Get-Content $specKitVersionPath -TotalCount 1 -ErrorAction SilentlyContinue).Trim()
+        $versionLine = (Get-Content $devSparkVersionPath -TotalCount 1 -ErrorAction SilentlyContinue).Trim()
+        if ($versionLine -match '^version:\s*(.+)$') {
+            $installedVersion = $matches[1].Trim()
+        } else {
+            $installedVersion = $versionLine
+        }
     } catch { }
 }
 
@@ -194,7 +199,7 @@ if ($Json) {
         TIMESTAMP              = $timestamp
         RELEASE_DATE           = $releaseDate
         DRY_RUN                = [bool]$DryRun
-        SPECKIT_VERSION_PATH   = $specKitVersionPath
+        DEVSPARK_VERSION_PATH  = $devSparkVersionPath
         INSTALLED_VERSION      = $installedVersion
     } | ConvertTo-Json
 }
@@ -213,9 +218,9 @@ else {
     Write-Output "Contributors: $($contributors.Count)"
     Write-Output ""
     if ($installedVersion) {
-        Write-Output "Installed Spec Kit Version: $installedVersion"
+        Write-Output "Installed DevSpark Version: $installedVersion"
     } else {
-        Write-Output "Installed Spec Kit Version: (SPECKIT_VERSION not found)"
+        Write-Output "Installed DevSpark Version: (.devspark/VERSION not found)"
     }
     if ($DryRun) {
         Write-Output ""

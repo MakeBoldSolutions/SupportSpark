@@ -6,7 +6,7 @@
 
 .DESCRIPTION
     Pre-scans the repository to collect file listings, dependency information,
-    code metrics, and pattern detection results for the speckit.site-audit command.
+    code metrics, and pattern detection results for the devspark.site-audit command.
 
 .PARAMETER Scope
     Audit scope: full, constitution, packages, quality, unused, duplicate

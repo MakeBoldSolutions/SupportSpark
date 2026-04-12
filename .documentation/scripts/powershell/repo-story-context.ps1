@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
-# Build repository history context for /speckit.repo-story
+# Build repository history context for /devspark.repo-story
 # Usage:
 #   .\repo-story-context.ps1 [-Output <path>] [-Months 12] [-Scope full] [-CompareBaseline YYYY-MM] [-Stdout]
 
@@ -91,8 +91,6 @@ $sinceDate = $auditStart.ToString("yyyy-MM-dd")
 $auditStartMonth = $auditStart.ToString("yyyy-MM")
 $auditEndMonth = $auditEnd.ToString("yyyy-MM")
 $baselineMonth = if ($CompareBaseline) { $CompareBaseline } else { $auditStartMonth }
-
-$sinceArgs = @("--since=$sinceDate")
 
 $firstCommitRaw = Invoke-Git @("rev-list", "--max-parents=0", "HEAD")
 $firstCommitSha = @($firstCommitRaw -split "`r?`n" | Where-Object { $_ -and $_.ToString().Trim() -ne "" } | Select-Object -Last 1)[0].ToString().Trim()
@@ -366,7 +364,6 @@ if ($mergeRaw) {
 }
 
 $testFileCount = 0
-$testPatterns = @("*.test.*", "*.spec.*", "test*.py")
 try {
     $testFileCount = @(Get-ChildItem -Path $repoRoot -Recurse -File -ErrorAction SilentlyContinue |
         Where-Object {
@@ -391,8 +388,6 @@ if ($subjectRaw) {
 $governancePath = ""
 if (Test-Path (Join-Path $repoRoot ".documentation/memory/constitution.md")) {
     $governancePath = Join-Path $repoRoot ".documentation/memory/constitution.md"
-} elseif (Test-Path (Join-Path $repoRoot ".specify/memory/constitution.md")) {
-    $governancePath = Join-Path $repoRoot ".specify/memory/constitution.md"
 }
 
 $constitutionVersion = ""

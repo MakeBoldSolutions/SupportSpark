@@ -327,7 +327,7 @@ DATABASE_URL=postgresql://user:pass@host:5432/db
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Ensure code follows [Constitution](.specify/memory/constitution.md) principles
+3. Ensure code follows [Constitution](.documentation/memory/constitution.md) principles
 4. Write/update tests
 5. Commit changes (`git commit -m 'Add amazing feature'`)
 6. Push to branch (`git push origin feature/amazing-feature`)
