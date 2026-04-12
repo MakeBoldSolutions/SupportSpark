@@ -1,766 +1,785 @@
-﻿{
-    "generated_at":  "2026-03-29T14:33:05.3767053+00:00",
-    "audit_parameters":  {
-                             "months":  12,
-                             "scope":  "full",
-                             "compare_baseline":  "2025-03",
-                             "since_date":  "2025-03-29",
-                             "start_month":  "2025-03",
-                             "end_month":  "2026-03"
-                         },
-    "repo":  {
-                 "name":  "SupportSpark",
-                 "root":  "C:/GitHub/MarkHazleton/SupportSpark",
-                 "remote_origin":  "https://github.com/markhazleton/SupportSpark.git",
-                 "default_branch":  "main"
-             },
-    "summary":  {
-                    "total_commits":  42,
-                    "total_commits_in_window":  42,
-                    "total_contributors":  2,
-                    "total_tags":  0,
-                    "history_span_days":  55
-                },
-    "timeline":  {
-                     "first_commit":  {
-                                          "sha":  "2fe3435ca2c93b3fdf9cff8d9e955277c3191b17",
-                                          "date":  "2026-02-01T09:50:00-06:00",
-                                          "role":  "Lead Architect",
-                                          "subject":  "feat: add server-side static file serving and storage management"
-                                      },
-                     "latest_commit":  {
-                                           "sha":  "8350738e3b5888437375ee054a157625cd2b558f",
-                                           "date":  "2026-03-29T09:29:46-05:00",
-                                           "role":  "Lead Architect",
-                                           "subject":  "docs: normalize markdown locations and archive stale docs"
-                                       },
-                     "commits_by_year":  {
-                                             "2026":  42
-                                         },
-                     "commits_by_month":  {
-                                              "2026-02":  25,
-                                              "2026-03":  17
-                                          }
-                 },
-    "contributors":  {
-                         "top":  [
-                                     {
-                                         "role":  "Lead Architect",
-                                         "commits":  35
-                                     },
-                                     {
-                                         "role":  "Developer A",
-                                         "commits":  7
-                                     }
-                                 ],
-                         "all_count":  2,
-                         "monthly_by_role":  {
-                                                 "2026-02":  {
-                                                                 "Lead Architect":  23,
-                                                                 "Developer A":  2
-                                                             },
-                                                 "2026-03":  {
-                                                                 "Lead Architect":  12,
-                                                                 "Developer A":  5
-                                                             }
-                                             }
-                     },
-    "contributor_census":  {
-                               "role_assignments":  [
-                                                        {
-                                                            "role":  "Lead Architect",
-                                                            "commits":  35
-                                                        },
-                                                        {
-                                                            "role":  "Developer A",
-                                                            "commits":  7
-                                                        }
-                                                    ]
-                           },
-    "volume_metrics":  {
-                           "total_commits":  42,
-                           "monthly_commit_distribution":  {
-                                                               "2026-02":  25,
-                                                               "2026-03":  17
-                                                           },
-                           "merged_pr_count":  7,
-                           "file_types_top":  [
-                                                  {
-                                                      "extension":  "md",
-                                                      "touched_files":  234
-                                                  },
-                                                  {
-                                                      "extension":  "json",
-                                                      "touched_files":  225
-                                                  },
-                                                  {
-                                                      "extension":  "tsx",
-                                                      "touched_files":  153
-                                                  },
-                                                  {
-                                                      "extension":  "ts",
-                                                      "touched_files":  73
-                                                  },
-                                                  {
-                                                      "extension":  "ps1",
-                                                      "touched_files":  35
-                                                  },
-                                                  {
-                                                      "extension":  "js",
-                                                      "touched_files":  4
-                                                  },
-                                                  {
-                                                      "extension":  "gitignore",
-                                                      "touched_files":  4
-                                                  },
-                                                  {
-                                                      "extension":  "yml",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "config",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "replit",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "webp",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "(no-ext)",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "example",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "css",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "prettierignore",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "png",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "nojekyll",
-                                                      "touched_files":  1
-                                                  },
-                                                  {
-                                                      "extension":  "html",
-                                                      "touched_files":  1
-                                                  }
-                                              ],
-                           "largest_merges":  [
-                                                  {
-                                                      "sha":  "1eb0a10420a4b7151734e3f3719bc7b21b8c90b6",
-                                                      "subject":  "Merge pull request #1 from markhazleton/001-audit-compliance-fixes",
-                                                      "files_changed":  138,
-                                                      "additions":  19478,
-                                                      "deletions":  4171,
-                                                      "total_lines":  23649
-                                                  },
-                                                  {
-                                                      "sha":  "e45dea57a83197a0e563d5c5d42ec4fc4ba0a714",
-                                                      "subject":  "Merge pull request #3 from markhazleton/002-static-preview-alpha",
-                                                      "files_changed":  73,
-                                                      "additions":  4854,
-                                                      "deletions":  583,
-                                                      "total_lines":  5437
-                                                  },
-                                                  {
-                                                      "sha":  "58d8d6afcf78fcd79f791e0f0b7f488efaef21ba",
-                                                      "subject":  "Merge branch \u0027main\u0027 into dependabot/npm_and_yarn/flatted-3.4.2",
-                                                      "files_changed":  37,
-                                                      "additions":  4340,
-                                                      "deletions":  76,
-                                                      "total_lines":  4416
-                                                  },
-                                                  {
-                                                      "sha":  "362442cd12a54bb7b576a4de3082080eed551729",
-                                                      "subject":  "Merge pull request #5 from markhazleton/dependabot/npm_and_yarn/rollup-4.59.0",
-                                                      "files_changed":  1,
-                                                      "additions":  136,
-                                                      "deletions":  85,
-                                                      "total_lines":  221
-                                                  },
-                                                  {
-                                                      "sha":  "0894c7e953bc2cac55167d3b80d847f943a45e4a",
-                                                      "subject":  "Merge pull request #7 from markhazleton/dependabot/npm_and_yarn/multer-2.1.1",
-                                                      "files_changed":  2,
-                                                      "additions":  11,
-                                                      "deletions":  39,
-                                                      "total_lines":  50
-                                                  },
-                                                  {
-                                                      "sha":  "07e028c0cf173ca0bd10dc944965e249259ac57f",
-                                                      "subject":  "Merge pull request #4 from markhazleton/dependabot/npm_and_yarn/minimatch-3.1.5",
-                                                      "files_changed":  1,
-                                                      "additions":  15,
-                                                      "deletions":  15,
-                                                      "total_lines":  30
-                                                  },
-                                                  {
-                                                      "sha":  "8f8aad9e98250b0758113398c989f7df58039dbb",
-                                                      "subject":  "Merge pull request #8 from markhazleton/dependabot/npm_and_yarn/express-rate-limit-8.2.2",
-                                                      "files_changed":  2,
-                                                      "additions":  9,
-                                                      "deletions":  9,
-                                                      "total_lines":  18
-                                                  },
-                                                  {
-                                                      "sha":  "44b6b013701543dd2033e6cc22a0dcf190d8632e",
-                                                      "subject":  "Merge pull request #9 from markhazleton/dependabot/npm_and_yarn/flatted-3.4.2",
-                                                      "files_changed":  1,
-                                                      "additions":  3,
-                                                      "deletions":  3,
-                                                      "total_lines":  6
-                                                  },
-                                                  {
-                                                      "sha":  "be8cd7cd85013cce11fad0afe6f4cebf4718ad26",
-                                                      "subject":  "Merge branch \u0027main\u0027 into dependabot/npm_and_yarn/flatted-3.4.2",
-                                                      "files_changed":  1,
-                                                      "additions":  3,
-                                                      "deletions":  3,
-                                                      "total_lines":  6
-                                                  }
-                                              ]
-                       },
-    "commit_message_metrics":  {
-                                   "conventional_commit_count":  28,
-                                   "informal_commit_count":  0,
-                                   "spec_reference_commit_count":  1
-                               },
-    "test_metrics":  {
-                         "test_file_count":  900,
-                         "test_related_commit_count":  7
-                     },
-    "governance_maturity":  {
-                                "constitution_path":  "C:\\GitHub\\MarkHazleton\\SupportSpark\\.documentation\\memory\\constitution.md",
-                                "constitution_exists":  true,
-                                "constitution_version":  "",
-                                "constitution_amendment_count":  0,
-                                "active_spec_count":  0,
-                                "archived_spec_directory_count":  4,
-                                "governance_artifact_count":  3
-                            },
-    "milestones":  {
-                       "tags":  [
-
-                                ],
-                       "readme_evolution":  {
-                                                "total_readme_commits":  5,
-                                                "commits":  [
-                                                                {
-                                                                    "sha":  "d8200aef93aada7b26bfb5c1bbd10c3bc3ec9af9",
-                                                                    "date":  "2026-02-24T13:07:09-06:00",
-                                                                    "role":  "Lead Architect",
-                                                                    "subject":  "feat: implement static preview alpha with localStorage-only operation"
-                                                                },
-                                                                {
-                                                                    "sha":  "32507116c105dcfd0cc32a2cb0b36b52e9be7306",
-                                                                    "date":  "2026-02-03T07:58:01-06:00",
-                                                                    "role":  "Lead Architect",
-                                                                    "subject":  "Refactor documentation paths and remove obsolete research specification"
-                                                                },
-                                                                {
-                                                                    "sha":  "72870d3e05a0f101b8083ccf426131341e78ef67",
-                                                                    "date":  "2026-02-01T22:55:35-06:00",
-                                                                    "role":  "Lead Architect",
-                                                                    "subject":  "feat: add ESLint configuration for TypeScript and React"
-                                                                },
-                                                                {
-                                                                    "sha":  "dae5eaf0336bd42141c292dcec75fef3bef66ea8",
-                                                                    "date":  "2026-02-01T11:50:47-06:00",
-                                                                    "role":  "Lead Architect",
-                                                                    "subject":  "Add IIS deployment guide and automation script for SupportSpark"
-                                                                },
-                                                                {
-                                                                    "sha":  "349ec52d14868e70a5b07041538fe13799079c17",
-                                                                    "date":  "2026-02-01T09:53:19-06:00",
-                                                                    "role":  "Lead Architect",
-                                                                    "subject":  "feat: update .gitignore and add README.md with project details and setup instructions"
-                                                                }
-                                                            ]
-                                            }
-                   },
-    "change_patterns":  {
-                            "subject_type_estimates":  {
-                                                           "refactor":  0,
-                                                           "chore":  2,
-                                                           "features":  21,
-                                                           "fixes":  2,
-                                                           "other":  8,
-                                                           "tests":  0,
-                                                           "docs":  3,
-                                                           "ci_build":  6
-                                                       },
-                            "hotspots":  [
-                                             {
-                                                 "path":  "package-lock.json",
-                                                 "changes":  13
-                                             },
-                                             {
-                                                 "path":  "package.json",
-                                                 "changes":  9
-                                             },
-                                             {
-                                                 "path":  "data/users.json",
-                                                 "changes":  8
-                                             },
-                                             {
-                                                 "path":  "data/conversations/meta.json",
-                                                 "changes":  7
-                                             },
-                                             {
-                                                 "path":  "specs/001-audit-compliance-fixes/tasks.md",
-                                                 "changes":  7
-                                             },
-                                             {
-                                                 "path":  "specs/001-audit-compliance-fixes/plan.md",
-                                                 "changes":  6
-                                             },
-                                             {
-                                                 "path":  "data/conversations/index.json",
-                                                 "changes":  6
-                                             },
-                                             {
-                                                 "path":  "data/supporters.json",
-                                                 "changes":  6
-                                             },
-                                             {
-                                                 "path":  ".github/copilot-instructions.md",
-                                                 "changes":  6
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.implement.agent.md",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  "server/storage.ts",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.specify.agent.md",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.plan.agent.md",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  "client/src/pages/Home.tsx",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.pr-review.agent.md",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.constitution.agent.md",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  "server/index.ts",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  "README.md",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.site-audit.agent.md",
-                                                 "changes":  5
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.discover-constitution.agent.md",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  ".documentation/specs/002-static-preview-alpha/tasks.md",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "tsconfig.json",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "shared/routes.ts",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.tasks.agent.md",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "client/src/hooks/use-auth.ts",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "client/src/pages/Demo.tsx",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "docs/copilot/audit/2026-02-01_results.md",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "client/src/pages/Dashboard.tsx",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "script/build.ts",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "client/src/components/invite-supporter-dialog.tsx",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "client/src/components/create-update-dialog.tsx",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  ".vscode/settings.json",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  ".specify/memory/constitution.md",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "client/src/pages/Auth.tsx",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.analyze.agent.md",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "server/routes.ts",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "specs/001-audit-compliance-fixes/spec.md",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  ".gitignore",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  ".github/agents/speckit.critic.agent.md",
-                                                 "changes":  4
-                                             },
-                                             {
-                                                 "path":  "client/src/hooks/use-supporters.test.tsx",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  "server/types.ts",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  "specs/001-audit-compliance-fixes/checklists/requirements.md",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  "specs/001-audit-compliance-fixes/contracts/security-updates.md",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  "server/routes.test.ts",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  ".documentation/scripts/powershell/update-agent-context.ps1",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  "specs/001-audit-compliance-fixes/IMPLEMENTATION_PROGRESS.md",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  "vitest.config.ts",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  "client/src/hooks/use-auth.test.tsx",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  "specs/001-audit-compliance-fixes/quickstart.md",
-                                                 "changes":  3
-                                             },
-                                             {
-                                                 "path":  "specs/001-audit-compliance-fixes/IMPLEMENTATION_SUMMARY.md",
-                                                 "changes":  3
-                                             }
-                                         ]
-                        },
-    "technical_signals":  {
-                              "language_presence":  {
-                                                        "python":  true,
-                                                        "javascript":  true,
-                                                        "typescript":  true,
-                                                        "powershell":  true,
-                                                        "shell":  true,
-                                                        "markdown":  true
-                                                    },
-                              "has_pyproject_toml":  false,
-                              "has_package_json":  true,
-                              "has_dockerfile":  true,
-                              "has_github_actions":  true
-                          },
-    "recent":  {
-                   "commits":  [
-                                   {
-                                       "sha":  "8350738e3b5888437375ee054a157625cd2b558f",
-                                       "date":  "2026-03-29T09:29:46-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "docs: normalize markdown locations and archive stale docs"
-                                   },
-                                   {
-                                       "sha":  "9a5a5b88b973ceac36a7817d2f8073e5de13a59c",
-                                       "date":  "2026-03-29T09:06:06-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "chore: harvest completed spec 002 and stale docs into CHANGELOG"
-                                   },
-                                   {
-                                       "sha":  "a4c031b9ab3ca4e7d95648bede75f700b07cad37",
-                                       "date":  "2026-03-29T08:44:56-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "chore: sync runtime data and update .gitignore"
-                                   },
-                                   {
-                                       "sha":  "80516d1b8ea31132ef8e5d0039d5b274d9aa1858",
-                                       "date":  "2026-03-29T08:42:04-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "chore: update dependencies and fix ESLint configuration"
-                                   },
-                                   {
-                                       "sha":  "07e028c0cf173ca0bd10dc944965e249259ac57f",
-                                       "date":  "2026-03-29T08:21:51-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Merge pull request #4 from markhazleton/dependabot/npm_and_yarn/minimatch-3.1.5"
-                                   },
-                                   {
-                                       "sha":  "362442cd12a54bb7b576a4de3082080eed551729",
-                                       "date":  "2026-03-29T08:21:35-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Merge pull request #5 from markhazleton/dependabot/npm_and_yarn/rollup-4.59.0"
-                                   },
-                                   {
-                                       "sha":  "0894c7e953bc2cac55167d3b80d847f943a45e4a",
-                                       "date":  "2026-03-29T08:21:23-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Merge pull request #7 from markhazleton/dependabot/npm_and_yarn/multer-2.1.1"
-                                   },
-                                   {
-                                       "sha":  "8f8aad9e98250b0758113398c989f7df58039dbb",
-                                       "date":  "2026-03-29T08:21:04-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Merge pull request #8 from markhazleton/dependabot/npm_and_yarn/express-rate-limit-8.2.2"
-                                   },
-                                   {
-                                       "sha":  "44b6b013701543dd2033e6cc22a0dcf190d8632e",
-                                       "date":  "2026-03-29T08:20:45-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Merge pull request #9 from markhazleton/dependabot/npm_and_yarn/flatted-3.4.2"
-                                   },
-                                   {
-                                       "sha":  "be8cd7cd85013cce11fad0afe6f4cebf4718ad26",
-                                       "date":  "2026-03-29T08:09:55-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Merge branch \u0027main\u0027 into dependabot/npm_and_yarn/flatted-3.4.2"
-                                   },
-                                   {
-                                       "sha":  "8e74b0d7ef79c0cb4b9ca8d3b7b1b3c6ac9601c3",
-                                       "date":  "2026-03-29T08:09:52-05:00",
-                                       "role":  "Developer A",
-                                       "subject":  "build(deps): bump path-to-regexp from 8.3.0 to 8.4.0 (#11)"
-                                   },
-                                   {
-                                       "sha":  "58d8d6afcf78fcd79f791e0f0b7f488efaef21ba",
-                                       "date":  "2026-03-29T08:09:49-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Merge branch \u0027main\u0027 into dependabot/npm_and_yarn/flatted-3.4.2"
-                                   },
-                                   {
-                                       "sha":  "424f57a39d477617915dec6f8e42ba71395d1d75",
-                                       "date":  "2026-03-29T08:09:46-05:00",
-                                       "role":  "Developer A",
-                                       "subject":  "build(deps-dev): bump picomatch from 4.0.3 to 4.0.4 (#10)"
-                                   },
-                                   {
-                                       "sha":  "520f985d7fae816ca94859c44566fa07640b3b19",
-                                       "date":  "2026-03-29T08:07:58-05:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: implement local storage adapter for user data management"
-                                   },
-                                   {
-                                       "sha":  "e7b1d71129596c9c3ce37675837b7164c69ed983",
-                                       "date":  "2026-03-21T19:14:24Z",
-                                       "role":  "Developer A",
-                                       "subject":  "build(deps-dev): bump flatted from 3.3.3 to 3.4.2"
-                                   },
-                                   {
-                                       "sha":  "84960c589509bba29021ac724c8a994ee7dbd0fe",
-                                       "date":  "2026-03-06T18:46:36Z",
-                                       "role":  "Developer A",
-                                       "subject":  "build(deps): bump express-rate-limit from 8.2.1 to 8.2.2"
-                                   },
-                                   {
-                                       "sha":  "8f3cd1466c8e968fe7a3e2b51aad7d2090836e19",
-                                       "date":  "2026-03-05T08:42:27Z",
-                                       "role":  "Developer A",
-                                       "subject":  "bump multer from 2.0.2 to 2.1.1"
-                                   },
-                                   {
-                                       "sha":  "a3ded5f9c2fdd0e4f73d6422559afade8bdd8385",
-                                       "date":  "2026-02-28T22:17:14Z",
-                                       "role":  "Developer A",
-                                       "subject":  "build(deps-dev): bump rollup from 4.53.5 to 4.59.0"
-                                   },
-                                   {
-                                       "sha":  "395bb44a7aef17961f4ab5536b6136ca70426005",
-                                       "date":  "2026-02-28T13:52:30Z",
-                                       "role":  "Developer A",
-                                       "subject":  "build(deps-dev): bump minimatch from 3.1.3 to 3.1.5"
-                                   },
-                                   {
-                                       "sha":  "e45dea57a83197a0e563d5c5d42ec4fc4ba0a714",
-                                       "date":  "2026-02-24T13:19:08-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Merge pull request #3 from markhazleton/002-static-preview-alpha"
-                                   },
-                                   {
-                                       "sha":  "d8200aef93aada7b26bfb5c1bbd10c3bc3ec9af9",
-                                       "date":  "2026-02-24T13:07:09-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: implement static preview alpha with localStorage-only operation"
-                                   },
-                                   {
-                                       "sha":  "07c769ed2a66257dbb0acebf62c6c3ce43356dcb",
-                                       "date":  "2026-02-24T11:29:58-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: Update Demo component and tasks for localStorage integration and preview banner functionality"
-                                   },
-                                   {
-                                       "sha":  "0b311b311685281701d83889fab0ff26d0ba6997",
-                                       "date":  "2026-02-24T10:23:03-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: Update testing requirements and modify Home component to use static quotes"
-                                   },
-                                   {
-                                       "sha":  "0ac5bba69298124b9efd1e81c53c2824d140e5d0",
-                                       "date":  "2026-02-24T09:38:04-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: Implement Static Preview Alpha with localStorage support"
-                                   },
-                                   {
-                                       "sha":  "e87d5e35a59b0b48d851337b6592efe87065bf26",
-                                       "date":  "2026-02-24T08:35:49-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Add multiple new conversation files with initial messages"
-                                   },
-                                   {
-                                       "sha":  "d85bf3dcba89f4c2acecc4fe3f8fd21903c2b77a",
-                                       "date":  "2026-02-24T08:35:15-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat(tests): add comprehensive tests for useAuth, useConversations, and useSupporters hooks"
-                                   },
-                                   {
-                                       "sha":  "3aee0c86aaea60e8caf1b2b9e02a66bc80407ab4",
-                                       "date":  "2026-02-03T08:29:55-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Add tests for Auth, Dashboard, and Supporters pages; implement file storage tests"
-                                   },
-                                   {
-                                       "sha":  "32507116c105dcfd0cc32a2cb0b36b52e9be7306",
-                                       "date":  "2026-02-03T07:58:01-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Refactor documentation paths and remove obsolete research specification"
-                                   },
-                                   {
-                                       "sha":  "1eb0a10420a4b7151734e3f3719bc7b21b8c90b6",
-                                       "date":  "2026-02-02T08:17:32-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Merge pull request #1 from markhazleton/001-audit-compliance-fixes"
-                                   },
-                                   {
-                                       "sha":  "4d09aab595fa53777e53b107f9f7c4c9d3d27b46",
-                                       "date":  "2026-02-02T08:14:28-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: Complete audit compliance fixes - Beta ready"
-                                   },
-                                   {
-                                       "sha":  "f01d0c6c1ee53b0bb383c4ee8bdf9fc3ce658859",
-                                       "date":  "2026-02-01T23:28:02-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat(audit): update tasks and run initial linting for compliance"
-                                   },
-                                   {
-                                       "sha":  "c7d50d543ccafb68816e3657db06cc911404e64f",
-                                       "date":  "2026-02-01T22:58:52-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: add dotenv for environment variable management"
-                                   },
-                                   {
-                                       "sha":  "72870d3e05a0f101b8083ccf426131341e78ef67",
-                                       "date":  "2026-02-01T22:55:35-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: add ESLint configuration for TypeScript and React"
-                                   },
-                                   {
-                                       "sha":  "870a62d9fd20ecd2d4a842ec4cec1dbf5dc02d22",
-                                       "date":  "2026-02-01T13:42:57-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: implement environment setup, linting, and testing infrastructure"
-                                   },
-                                   {
-                                       "sha":  "5e65b6ae28020fe67cf6e68888fc27175f635085",
-                                       "date":  "2026-02-01T12:24:25-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: Enhance implementation plan and specifications with phase cross-references, terminology, and updated testing tasks"
-                                   },
-                                   {
-                                       "sha":  "9b9136e80b079c780fbf6d84dc2df3ee50d8c23a",
-                                       "date":  "2026-02-01T12:16:41-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: Add comprehensive task list for production readiness and critical compliance fixes"
-                                   },
-                                   {
-                                       "sha":  "ae0ed8078019464349840b4fd14ef55ed992e234",
-                                       "date":  "2026-02-01T12:00:06-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: Add security updates and rate limiting to API contracts"
-                                   },
-                                   {
-                                       "sha":  "2d64152a76d14d2c70b9cd5de694198991169a2b",
-                                       "date":  "2026-02-01T11:55:01-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat(research): document security hardening and compliance decisions for Phase 0"
-                                   },
-                                   {
-                                       "sha":  "dae5eaf0336bd42141c292dcec75fef3bef66ea8",
-                                       "date":  "2026-02-01T11:50:47-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "Add IIS deployment guide and automation script for SupportSpark"
-                                   },
-                                   {
-                                       "sha":  "40f910c0a6d3187ee562a076b3e15103fd536ca1",
-                                       "date":  "2026-02-01T10:43:54-06:00",
-                                       "role":  "Lead Architect",
-                                       "subject":  "feat: add Footer component and integrate it into Home page"
-                                   }
-                               ]
-               }
+{
+  "generated_at": "2026-04-12T13:19:41.9966230+00:00",
+  "audit_parameters": {
+    "months": 12,
+    "scope": "full",
+    "compare_baseline": "2025-04",
+    "since_date": "2025-04-12",
+    "start_month": "2025-04",
+    "end_month": "2026-04"
+  },
+  "repo": {
+    "name": "SupportSpark",
+    "root": "C:/GitHub/MarkHazleton/SupportSpark",
+    "remote_origin": "https://github.com/markhazleton/SupportSpark.git",
+    "default_branch": "main"
+  },
+  "summary": {
+    "total_commits": 47,
+    "total_commits_in_window": 47,
+    "total_contributors": 2,
+    "total_tags": 0,
+    "history_span_days": 69
+  },
+  "timeline": {
+    "first_commit": {
+      "sha": "2fe3435ca2c93b3fdf9cff8d9e955277c3191b17",
+      "date": "2026-02-01T09:50:00-06:00",
+      "role": "Lead Architect",
+      "subject": "feat: add server-side static file serving and storage management"
+    },
+    "latest_commit": {
+      "sha": "cc95815e58e2d76ada865053c7ee8407275cbc40",
+      "date": "2026-04-12T08:07:15-05:00",
+      "role": "Lead Architect",
+      "subject": "docs: archive historical documentation and update README for clarity"
+    },
+    "commits_by_year": {
+      "2026": 47
+    },
+    "commits_by_month": {
+      "2026-02": 25,
+      "2026-03": 18,
+      "2026-04": 4
+    }
+  },
+  "contributors": {
+    "top": [
+      {
+        "role": "Lead Architect",
+        "commits": 39
+      },
+      {
+        "role": "Developer A",
+        "commits": 8
+      }
+    ],
+    "all_count": 2,
+    "monthly_by_role": {
+      "2026-02": {
+        "Developer A": 2,
+        "Lead Architect": 23
+      },
+      "2026-03": {
+        "Lead Architect": 13,
+        "Developer A": 5
+      },
+      "2026-04": {
+        "Lead Architect": 3,
+        "Developer A": 1
+      }
+    }
+  },
+  "contributor_census": {
+    "role_assignments": [
+      {
+        "role": "Lead Architect",
+        "commits": 39
+      },
+      {
+        "role": "Developer A",
+        "commits": 8
+      }
+    ]
+  },
+  "volume_metrics": {
+    "total_commits": 47,
+    "monthly_commit_distribution": {
+      "2026-02": 25,
+      "2026-03": 18,
+      "2026-04": 4
+    },
+    "merged_pr_count": 8,
+    "file_types_top": [
+      {
+        "extension": "md",
+        "touched_files": 330
+      },
+      {
+        "extension": "json",
+        "touched_files": 231
+      },
+      {
+        "extension": "tsx",
+        "touched_files": 153
+      },
+      {
+        "extension": "ts",
+        "touched_files": 73
+      },
+      {
+        "extension": "ps1",
+        "touched_files": 50
+      },
+      {
+        "extension": "gitignore",
+        "touched_files": 5
+      },
+      {
+        "extension": "js",
+        "touched_files": 4
+      },
+      {
+        "extension": "(no-ext)",
+        "touched_files": 2
+      },
+      {
+        "extension": "png",
+        "touched_files": 1
+      },
+      {
+        "extension": "webp",
+        "touched_files": 1
+      },
+      {
+        "extension": "nojekyll",
+        "touched_files": 1
+      },
+      {
+        "extension": "prettierignore",
+        "touched_files": 1
+      },
+      {
+        "extension": "replit",
+        "touched_files": 1
+      },
+      {
+        "extension": "yml",
+        "touched_files": 1
+      },
+      {
+        "extension": "html",
+        "touched_files": 1
+      },
+      {
+        "extension": "config",
+        "touched_files": 1
+      },
+      {
+        "extension": "css",
+        "touched_files": 1
+      },
+      {
+        "extension": "example",
+        "touched_files": 1
+      }
+    ],
+    "largest_merges": [
+      {
+        "sha": "1eb0a10420a4b7151734e3f3719bc7b21b8c90b6",
+        "subject": "Merge pull request #1 from markhazleton/001-audit-compliance-fixes",
+        "files_changed": 138,
+        "additions": 19478,
+        "deletions": 4171,
+        "total_lines": 23649
+      },
+      {
+        "sha": "e45dea57a83197a0e563d5c5d42ec4fc4ba0a714",
+        "subject": "Merge pull request #3 from markhazleton/002-static-preview-alpha",
+        "files_changed": 73,
+        "additions": 4854,
+        "deletions": 583,
+        "total_lines": 5437
+      },
+      {
+        "sha": "58d8d6afcf78fcd79f791e0f0b7f488efaef21ba",
+        "subject": "Merge branch 'main' into dependabot/npm_and_yarn/flatted-3.4.2",
+        "files_changed": 37,
+        "additions": 4340,
+        "deletions": 76,
+        "total_lines": 4416
+      },
+      {
+        "sha": "8caa277979801516517b008deb7f302f72214211",
+        "subject": "Merge pull request #12 from markhazleton/dependabot/npm_and_yarn/npm_and_yarn-7c6ac41456",
+        "files_changed": 2,
+        "additions": 191,
+        "deletions": 154,
+        "total_lines": 345
+      },
+      {
+        "sha": "362442cd12a54bb7b576a4de3082080eed551729",
+        "subject": "Merge pull request #5 from markhazleton/dependabot/npm_and_yarn/rollup-4.59.0",
+        "files_changed": 1,
+        "additions": 136,
+        "deletions": 85,
+        "total_lines": 221
+      },
+      {
+        "sha": "0894c7e953bc2cac55167d3b80d847f943a45e4a",
+        "subject": "Merge pull request #7 from markhazleton/dependabot/npm_and_yarn/multer-2.1.1",
+        "files_changed": 2,
+        "additions": 11,
+        "deletions": 39,
+        "total_lines": 50
+      },
+      {
+        "sha": "07e028c0cf173ca0bd10dc944965e249259ac57f",
+        "subject": "Merge pull request #4 from markhazleton/dependabot/npm_and_yarn/minimatch-3.1.5",
+        "files_changed": 1,
+        "additions": 15,
+        "deletions": 15,
+        "total_lines": 30
+      },
+      {
+        "sha": "8f8aad9e98250b0758113398c989f7df58039dbb",
+        "subject": "Merge pull request #8 from markhazleton/dependabot/npm_and_yarn/express-rate-limit-8.2.2",
+        "files_changed": 2,
+        "additions": 9,
+        "deletions": 9,
+        "total_lines": 18
+      },
+      {
+        "sha": "44b6b013701543dd2033e6cc22a0dcf190d8632e",
+        "subject": "Merge pull request #9 from markhazleton/dependabot/npm_and_yarn/flatted-3.4.2",
+        "files_changed": 1,
+        "additions": 3,
+        "deletions": 3,
+        "total_lines": 6
+      },
+      {
+        "sha": "be8cd7cd85013cce11fad0afe6f4cebf4718ad26",
+        "subject": "Merge branch 'main' into dependabot/npm_and_yarn/flatted-3.4.2",
+        "files_changed": 1,
+        "additions": 3,
+        "deletions": 3,
+        "total_lines": 6
+      }
+    ]
+  },
+  "commit_message_metrics": {
+    "conventional_commit_count": 31,
+    "informal_commit_count": 0,
+    "spec_reference_commit_count": 1
+  },
+  "test_metrics": {
+    "test_file_count": 900,
+    "test_related_commit_count": 7
+  },
+  "governance_maturity": {
+    "constitution_path": "C:\\GitHub\\MarkHazleton\\SupportSpark\\.documentation\\memory\\constitution.md",
+    "constitution_exists": true,
+    "constitution_version": "",
+    "constitution_amendment_count": 0,
+    "active_spec_count": 0,
+    "archived_spec_directory_count": 4,
+    "governance_artifact_count": 2
+  },
+  "milestones": {
+    "tags": [],
+    "readme_evolution": {
+      "total_readme_commits": 6,
+      "commits": [
+        {
+          "sha": "90969f4c70d46a1b54e09cef65e29bc50207ab7f",
+          "date": "2026-04-12T07:55:13-05:00",
+          "role": "Lead Architect",
+          "subject": "Update DevSpark"
+        },
+        {
+          "sha": "d8200aef93aada7b26bfb5c1bbd10c3bc3ec9af9",
+          "date": "2026-02-24T13:07:09-06:00",
+          "role": "Lead Architect",
+          "subject": "feat: implement static preview alpha with localStorage-only operation"
+        },
+        {
+          "sha": "32507116c105dcfd0cc32a2cb0b36b52e9be7306",
+          "date": "2026-02-03T07:58:01-06:00",
+          "role": "Lead Architect",
+          "subject": "Refactor documentation paths and remove obsolete research specification"
+        },
+        {
+          "sha": "72870d3e05a0f101b8083ccf426131341e78ef67",
+          "date": "2026-02-01T22:55:35-06:00",
+          "role": "Lead Architect",
+          "subject": "feat: add ESLint configuration for TypeScript and React"
+        },
+        {
+          "sha": "dae5eaf0336bd42141c292dcec75fef3bef66ea8",
+          "date": "2026-02-01T11:50:47-06:00",
+          "role": "Lead Architect",
+          "subject": "Add IIS deployment guide and automation script for SupportSpark"
+        },
+        {
+          "sha": "349ec52d14868e70a5b07041538fe13799079c17",
+          "date": "2026-02-01T09:53:19-06:00",
+          "role": "Lead Architect",
+          "subject": "feat: update .gitignore and add README.md with project details and setup instructions"
+        }
+      ]
+    }
+  },
+  "change_patterns": {
+    "subject_type_estimates": {
+      "other": 10,
+      "tests": 0,
+      "ci_build": 7,
+      "features": 21,
+      "refactor": 0,
+      "docs": 5,
+      "chore": 2,
+      "fixes": 2
+    },
+    "hotspots": [
+      {
+        "path": "package-lock.json",
+        "changes": 14
+      },
+      {
+        "path": "package.json",
+        "changes": 10
+      },
+      {
+        "path": "data/users.json",
+        "changes": 8
+      },
+      {
+        "path": "specs/001-audit-compliance-fixes/tasks.md",
+        "changes": 7
+      },
+      {
+        "path": "data/conversations/meta.json",
+        "changes": 7
+      },
+      {
+        "path": "README.md",
+        "changes": 6
+      },
+      {
+        "path": ".github/copilot-instructions.md",
+        "changes": 6
+      },
+      {
+        "path": "data/supporters.json",
+        "changes": 6
+      },
+      {
+        "path": "specs/001-audit-compliance-fixes/plan.md",
+        "changes": 6
+      },
+      {
+        "path": "data/conversations/index.json",
+        "changes": 6
+      },
+      {
+        "path": ".github/agents/speckit.pr-review.agent.md",
+        "changes": 5
+      },
+      {
+        "path": ".github/agents/speckit.implement.agent.md",
+        "changes": 5
+      },
+      {
+        "path": ".vscode/settings.json",
+        "changes": 5
+      },
+      {
+        "path": ".gitignore",
+        "changes": 5
+      },
+      {
+        "path": ".github/agents/speckit.constitution.agent.md",
+        "changes": 5
+      },
+      {
+        "path": "server/storage.ts",
+        "changes": 5
+      },
+      {
+        "path": ".github/agents/speckit.plan.agent.md",
+        "changes": 5
+      },
+      {
+        "path": ".github/agents/speckit.specify.agent.md",
+        "changes": 5
+      },
+      {
+        "path": "client/src/pages/Home.tsx",
+        "changes": 5
+      },
+      {
+        "path": "server/index.ts",
+        "changes": 5
+      },
+      {
+        "path": ".github/agents/speckit.site-audit.agent.md",
+        "changes": 5
+      },
+      {
+        "path": "shared/routes.ts",
+        "changes": 4
+      },
+      {
+        "path": "script/build.ts",
+        "changes": 4
+      },
+      {
+        "path": "client/src/pages/Dashboard.tsx",
+        "changes": 4
+      },
+      {
+        "path": ".github/agents/speckit.tasks.agent.md",
+        "changes": 4
+      },
+      {
+        "path": ".github/agents/speckit.analyze.agent.md",
+        "changes": 4
+      },
+      {
+        "path": "tsconfig.json",
+        "changes": 4
+      },
+      {
+        "path": "client/src/hooks/use-auth.ts",
+        "changes": 4
+      },
+      {
+        "path": ".documentation/specs/002-static-preview-alpha/tasks.md",
+        "changes": 4
+      },
+      {
+        "path": ".github/agents/speckit.discover-constitution.agent.md",
+        "changes": 4
+      },
+      {
+        "path": "docs/copilot/audit/2026-02-01_results.md",
+        "changes": 4
+      },
+      {
+        "path": "client/src/components/invite-supporter-dialog.tsx",
+        "changes": 4
+      },
+      {
+        "path": "server/routes.ts",
+        "changes": 4
+      },
+      {
+        "path": "client/src/components/create-update-dialog.tsx",
+        "changes": 4
+      },
+      {
+        "path": "client/src/pages/Auth.tsx",
+        "changes": 4
+      },
+      {
+        "path": ".github/agents/speckit.critic.agent.md",
+        "changes": 4
+      },
+      {
+        "path": "specs/001-audit-compliance-fixes/spec.md",
+        "changes": 4
+      },
+      {
+        "path": ".specify/memory/constitution.md",
+        "changes": 4
+      },
+      {
+        "path": "client/src/pages/Demo.tsx",
+        "changes": 4
+      },
+      {
+        "path": "specs/001-audit-compliance-fixes/data-model.md",
+        "changes": 3
+      },
+      {
+        "path": ".github/agents/speckit.taskstoissues.agent.md",
+        "changes": 3
+      },
+      {
+        "path": "specs/001-audit-compliance-fixes/research.md",
+        "changes": 3
+      },
+      {
+        "path": ".documentation/specs/002-static-preview-alpha/plan.md",
+        "changes": 3
+      },
+      {
+        "path": "client/src/hooks/use-conversations.test.tsx",
+        "changes": 3
+      },
+      {
+        "path": ".github/agents/speckit.clarify.agent.md",
+        "changes": 3
+      },
+      {
+        "path": "server/types.ts",
+        "changes": 3
+      },
+      {
+        "path": "shared/schema.ts",
+        "changes": 3
+      },
+      {
+        "path": "client/src/hooks/use-supporters.ts",
+        "changes": 3
+      },
+      {
+        "path": "specs/001-audit-compliance-fixes/quickstart.md",
+        "changes": 3
+      },
+      {
+        "path": "replit.md",
+        "changes": 3
+      }
+    ]
+  },
+  "technical_signals": {
+    "language_presence": {
+      "python": true,
+      "javascript": true,
+      "typescript": true,
+      "powershell": true,
+      "shell": true,
+      "markdown": true
+    },
+    "has_pyproject_toml": false,
+    "has_package_json": true,
+    "has_dockerfile": true,
+    "has_github_actions": true
+  },
+  "recent": {
+    "commits": [
+      {
+        "sha": "cc95815e58e2d76ada865053c7ee8407275cbc40",
+        "date": "2026-04-12T08:07:15-05:00",
+        "role": "Lead Architect",
+        "subject": "docs: archive historical documentation and update README for clarity"
+      },
+      {
+        "sha": "90969f4c70d46a1b54e09cef65e29bc50207ab7f",
+        "date": "2026-04-12T07:55:13-05:00",
+        "role": "Lead Architect",
+        "subject": "Update DevSpark"
+      },
+      {
+        "sha": "8caa277979801516517b008deb7f302f72214211",
+        "date": "2026-04-12T01:39:09-05:00",
+        "role": "Lead Architect",
+        "subject": "Merge pull request #12 from markhazleton/dependabot/npm_and_yarn/npm_and_yarn-7c6ac41456"
+      },
+      {
+        "sha": "b988505e5a487b5c167e77c1a2957c4eb7302280",
+        "date": "2026-04-06T19:01:25Z",
+        "role": "Developer A",
+        "subject": "build(deps-dev): bump vite in the npm_and_yarn group across 1 directory"
+      },
+      {
+        "sha": "272e3f038bb202d95a699d38da0ce759beb4ed50",
+        "date": "2026-03-29T09:39:01-05:00",
+        "role": "Lead Architect",
+        "subject": "docs: add repository story for SupportSpark detailing project overview, development velocity, contributor dynamics, and governance maturity"
+      },
+      {
+        "sha": "8350738e3b5888437375ee054a157625cd2b558f",
+        "date": "2026-03-29T09:29:46-05:00",
+        "role": "Lead Architect",
+        "subject": "docs: normalize markdown locations and archive stale docs"
+      },
+      {
+        "sha": "9a5a5b88b973ceac36a7817d2f8073e5de13a59c",
+        "date": "2026-03-29T09:06:06-05:00",
+        "role": "Lead Architect",
+        "subject": "chore: harvest completed spec 002 and stale docs into CHANGELOG"
+      },
+      {
+        "sha": "a4c031b9ab3ca4e7d95648bede75f700b07cad37",
+        "date": "2026-03-29T08:44:56-05:00",
+        "role": "Lead Architect",
+        "subject": "chore: sync runtime data and update .gitignore"
+      },
+      {
+        "sha": "80516d1b8ea31132ef8e5d0039d5b274d9aa1858",
+        "date": "2026-03-29T08:42:04-05:00",
+        "role": "Lead Architect",
+        "subject": "chore: update dependencies and fix ESLint configuration"
+      },
+      {
+        "sha": "07e028c0cf173ca0bd10dc944965e249259ac57f",
+        "date": "2026-03-29T08:21:51-05:00",
+        "role": "Lead Architect",
+        "subject": "Merge pull request #4 from markhazleton/dependabot/npm_and_yarn/minimatch-3.1.5"
+      },
+      {
+        "sha": "362442cd12a54bb7b576a4de3082080eed551729",
+        "date": "2026-03-29T08:21:35-05:00",
+        "role": "Lead Architect",
+        "subject": "Merge pull request #5 from markhazleton/dependabot/npm_and_yarn/rollup-4.59.0"
+      },
+      {
+        "sha": "0894c7e953bc2cac55167d3b80d847f943a45e4a",
+        "date": "2026-03-29T08:21:23-05:00",
+        "role": "Lead Architect",
+        "subject": "Merge pull request #7 from markhazleton/dependabot/npm_and_yarn/multer-2.1.1"
+      },
+      {
+        "sha": "8f8aad9e98250b0758113398c989f7df58039dbb",
+        "date": "2026-03-29T08:21:04-05:00",
+        "role": "Lead Architect",
+        "subject": "Merge pull request #8 from markhazleton/dependabot/npm_and_yarn/express-rate-limit-8.2.2"
+      },
+      {
+        "sha": "44b6b013701543dd2033e6cc22a0dcf190d8632e",
+        "date": "2026-03-29T08:20:45-05:00",
+        "role": "Lead Architect",
+        "subject": "Merge pull request #9 from markhazleton/dependabot/npm_and_yarn/flatted-3.4.2"
+      },
+      {
+        "sha": "be8cd7cd85013cce11fad0afe6f4cebf4718ad26",
+        "date": "2026-03-29T08:09:55-05:00",
+        "role": "Lead Architect",
+        "subject": "Merge branch 'main' into dependabot/npm_and_yarn/flatted-3.4.2"
+      },
+      {
+        "sha": "8e74b0d7ef79c0cb4b9ca8d3b7b1b3c6ac9601c3",
+        "date": "2026-03-29T08:09:52-05:00",
+        "role": "Developer A",
+        "subject": "build(deps): bump path-to-regexp from 8.3.0 to 8.4.0 (#11)"
+      },
+      {
+        "sha": "58d8d6afcf78fcd79f791e0f0b7f488efaef21ba",
+        "date": "2026-03-29T08:09:49-05:00",
+        "role": "Lead Architect",
+        "subject": "Merge branch 'main' into dependabot/npm_and_yarn/flatted-3.4.2"
+      },
+      {
+        "sha": "424f57a39d477617915dec6f8e42ba71395d1d75",
+        "date": "2026-03-29T08:09:46-05:00",
+        "role": "Developer A",
+        "subject": "build(deps-dev): bump picomatch from 4.0.3 to 4.0.4 (#10)"
+      },
+      {
+        "sha": "520f985d7fae816ca94859c44566fa07640b3b19",
+        "date": "2026-03-29T08:07:58-05:00",
+        "role": "Lead Architect",
+        "subject": "feat: implement local storage adapter for user data management"
+      },
+      {
+        "sha": "e7b1d71129596c9c3ce37675837b7164c69ed983",
+        "date": "2026-03-21T19:14:24Z",
+        "role": "Developer A",
+        "subject": "build(deps-dev): bump flatted from 3.3.3 to 3.4.2"
+      },
+      {
+        "sha": "84960c589509bba29021ac724c8a994ee7dbd0fe",
+        "date": "2026-03-06T18:46:36Z",
+        "role": "Developer A",
+        "subject": "build(deps): bump express-rate-limit from 8.2.1 to 8.2.2"
+      },
+      {
+        "sha": "8f3cd1466c8e968fe7a3e2b51aad7d2090836e19",
+        "date": "2026-03-05T08:42:27Z",
+        "role": "Developer A",
+        "subject": "bump multer from 2.0.2 to 2.1.1"
+      },
+      {
+        "sha": "a3ded5f9c2fdd0e4f73d6422559afade8bdd8385",
+        "date": "2026-02-28T22:17:14Z",
+        "role": "Developer A",
+        "subject": "build(deps-dev): bump rollup from 4.53.5 to 4.59.0"
+      },
+      {
+        "sha": "395bb44a7aef17961f4ab5536b6136ca70426005",
+        "date": "2026-02-28T13:52:30Z",
+        "role": "Developer A",
+        "subject": "build(deps-dev): bump minimatch from 3.1.3 to 3.1.5"
+      },
+      {
+        "sha": "e45dea57a83197a0e563d5c5d42ec4fc4ba0a714",
+        "date": "2026-02-24T13:19:08-06:00",
+        "role": "Lead Architect",
+        "subject": "Merge pull request #3 from markhazleton/002-static-preview-alpha"
+      },
+      {
+        "sha": "d8200aef93aada7b26bfb5c1bbd10c3bc3ec9af9",
+        "date": "2026-02-24T13:07:09-06:00",
+        "role": "Lead Architect",
+        "subject": "feat: implement static preview alpha with localStorage-only operation"
+      },
+      {
+        "sha": "07c769ed2a66257dbb0acebf62c6c3ce43356dcb",
+        "date": "2026-02-24T11:29:58-06:00",
+        "role": "Lead Architect",
+        "subject": "feat: Update Demo component and tasks for localStorage integration and preview banner functionality"
+      },
+      {
+        "sha": "0b311b311685281701d83889fab0ff26d0ba6997",
+        "date": "2026-02-24T10:23:03-06:00",
+        "role": "Lead Architect",
+        "subject": "feat: Update testing requirements and modify Home component to use static quotes"
+      },
+      {
+        "sha": "0ac5bba69298124b9efd1e81c53c2824d140e5d0",
+        "date": "2026-02-24T09:38:04-06:00",
+        "role": "Lead Architect",
+        "subject": "feat: Implement Static Preview Alpha with localStorage support"
+      },
+      {
+        "sha": "e87d5e35a59b0b48d851337b6592efe87065bf26",
+        "date": "2026-02-24T08:35:49-06:00",
+        "role": "Lead Architect",
+        "subject": "Add multiple new conversation files with initial messages"
+      },
+      {
+        "sha": "d85bf3dcba89f4c2acecc4fe3f8fd21903c2b77a",
+        "date": "2026-02-24T08:35:15-06:00",
+        "role": "Lead Architect",
+        "subject": "feat(tests): add comprehensive tests for useAuth, useConversations, and useSupporters hooks"
+      },
+      {
+        "sha": "3aee0c86aaea60e8caf1b2b9e02a66bc80407ab4",
+        "date": "2026-02-03T08:29:55-06:00",
+        "role": "Lead Architect",
+        "subject": "Add tests for Auth, Dashboard, and Supporters pages; implement file storage tests"
+      },
+      {
+        "sha": "32507116c105dcfd0cc32a2cb0b36b52e9be7306",
+        "date": "2026-02-03T07:58:01-06:00",
+        "role": "Lead Architect",
+        "subject": "Refactor documentation paths and remove obsolete research specification"
+      },
+      {
+        "sha": "1eb0a10420a4b7151734e3f3719bc7b21b8c90b6",
+        "date": "2026-02-02T08:17:32-06:00",
+        "role": "Lead Architect",
+        "subject": "Merge pull request #1 from markhazleton/001-audit-compliance-fixes"
+      },
+      {
+        "sha": "4d09aab595fa53777e53b107f9f7c4c9d3d27b46",
+        "date": "2026-02-02T08:14:28-06:00",
+        "role": "Lead Architect",
+        "subject": "feat: Complete audit compliance fixes - Beta ready"
+      },
+      {
+        "sha": "f01d0c6c1ee53b0bb383c4ee8bdf9fc3ce658859",
+        "date": "2026-02-01T23:28:02-06:00",
+        "role": "Lead Architect",
+        "subject": "feat(audit): update tasks and run initial linting for compliance"
+      },
+      {
+        "sha": "c7d50d543ccafb68816e3657db06cc911404e64f",
+        "date": "2026-02-01T22:58:52-06:00",
+        "role": "Lead Architect",
+        "subject": "feat: add dotenv for environment variable management"
+      },
+      {
+        "sha": "72870d3e05a0f101b8083ccf426131341e78ef67",
+        "date": "2026-02-01T22:55:35-06:00",
+        "role": "Lead Architect",
+        "subject": "feat: add ESLint configuration for TypeScript and React"
+      },
+      {
+        "sha": "870a62d9fd20ecd2d4a842ec4cec1dbf5dc02d22",
+        "date": "2026-02-01T13:42:57-06:00",
+        "role": "Lead Architect",
+        "subject": "feat: implement environment setup, linting, and testing infrastructure"
+      },
+      {
+        "sha": "5e65b6ae28020fe67cf6e68888fc27175f635085",
+        "date": "2026-02-01T12:24:25-06:00",
+        "role": "Lead Architect",
+        "subject": "feat: Enhance implementation plan and specifications with phase cross-references, terminology, and updated testing tasks"
+      }
+    ]
+  }
 }
+history.json written to: C:\GitHub\MarkHazleton\SupportSpark\.documentation\repo-story\history.json
