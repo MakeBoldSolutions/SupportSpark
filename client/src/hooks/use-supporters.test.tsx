@@ -97,10 +97,15 @@ describe("useInviteSupporter", () => {
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
     });
-    // The mock user should now be loginable
-    storage.logout();
-    const mockUser = storage.login({ email: "newperson@example.com", password: "preview123" });
-    expect(mockUser.firstName).toBe("Newperson");
+    const users = JSON.parse(localStorage.getItem("supportSpark_users") || "[]") as Array<{
+      email: string;
+      firstName: string;
+      password: string;
+    }>;
+    const mockUser = users.find((user) => user.email === "newperson@example.com");
+    expect(mockUser?.firstName).toBe("Newperson");
+    expect(mockUser?.password).toBeTruthy();
+    expect(mockUser?.password.length).toBeGreaterThan(10);
   });
 
   it("should fail when not authenticated", async () => {

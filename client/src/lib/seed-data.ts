@@ -1,5 +1,8 @@
 import type { User, Conversation, Supporter } from "@shared/schema";
 
+export const DEMO_SUPPORTER_ID = "seed-supporter-001";
+export const DEMO_SUPPORTER_EMAIL = "alex.supporter@example.com";
+
 const KEYS = {
   users: "supportSpark_users",
   conversations: "supportSpark_conversations",
@@ -32,9 +35,9 @@ export function injectSeedData(registeredUserId: string): void {
 
   // Seed supporter user
   const seedSupporter: User = {
-    id: "seed-supporter-001",
-    email: "alex.supporter@example.com",
-    password: "preview123",
+    id: DEMO_SUPPORTER_ID,
+    email: DEMO_SUPPORTER_EMAIL,
+    password: crypto.randomUUID(),
     firstName: "Alex",
     lastName: "Rivera",
     createdAt: earlier,
@@ -102,13 +105,13 @@ export function injectSeedData(registeredUserId: string): void {
     // Following — owned by Alex
     {
       id: 3,
-      memberId: "seed-supporter-001",
+      memberId: DEMO_SUPPORTER_ID,
       title: "Managing Daily Challenges",
       data: {
         messages: [
           {
             id: "seed-msg-004",
-            authorId: "seed-supporter-001",
+            authorId: DEMO_SUPPORTER_ID,
             authorName: "Alex",
             content:
               "Some days are harder than others, but I'm learning to take things one moment at a time. Grateful for everyone cheering me on.",
@@ -116,7 +119,7 @@ export function injectSeedData(registeredUserId: string): void {
           },
           {
             id: "seed-msg-005",
-            authorId: "seed-supporter-001",
+            authorId: DEMO_SUPPORTER_ID,
             authorName: "Alex",
             content:
               "Tried a new routine today. Morning walks have been surprisingly helpful for clearing my head.",
@@ -129,13 +132,13 @@ export function injectSeedData(registeredUserId: string): void {
     },
     {
       id: 4,
-      memberId: "seed-supporter-001",
+      memberId: DEMO_SUPPORTER_ID,
       title: "Finding Community Support",
       data: {
         messages: [
           {
             id: "seed-msg-006",
-            authorId: "seed-supporter-001",
+            authorId: DEMO_SUPPORTER_ID,
             authorName: "Alex",
             content:
               "Joined a local support group this week. It's comforting to know I'm not alone in this. Building connections one conversation at a time.",
@@ -158,13 +161,13 @@ export function injectSeedData(registeredUserId: string): void {
     {
       id: 1,
       memberId: registeredUserId,
-      supporterId: "seed-supporter-001",
+      supporterId: DEMO_SUPPORTER_ID,
       status: "accepted",
       createdAt: earlier,
     },
     {
       id: 2,
-      memberId: "seed-supporter-001",
+      memberId: DEMO_SUPPORTER_ID,
       supporterId: registeredUserId,
       status: "accepted",
       createdAt: earlier,

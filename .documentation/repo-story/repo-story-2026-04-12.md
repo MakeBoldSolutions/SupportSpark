@@ -6,17 +6,17 @@
 
 SupportSpark is a TypeScript application for private, supporter-centered communication during difficult life events. The repository combines a React 19 frontend, an Express 5 backend, JSON-backed storage, and a static preview path so the product can be explored both as a hosted web app and as a browser-only demo. The current README and package metadata show a product that is intentionally narrow: members post updates once, supporters follow along and respond, and the platform avoids the noise of public social software.
 
-The repository is still young but no longer in its first construction burst. Over a 69-day history window, the project has accumulated 47 commits from 2 contributors, with the first commit on 2026-02-01 and the latest commit on 2026-04-12. The development record shows 25 commits in February, 18 in March, and 4 in April, which reads as a classic arc of initial build-out followed by stabilization, dependency maintenance, and documentation hardening.
+The repository is still young but no longer in its first construction burst. Over a 69-day history window, the project has accumulated 48 commits from 2 contributors, with the first commit on 2026-02-01 and the latest commit on 2026-04-12. The development record shows 25 commits in February, 18 in March, and 5 in April, which reads as a classic arc of initial build-out followed by stabilization, dependency maintenance, and documentation hardening.
 
 Delivery evidence is strongest in pull request and merge history rather than in formal release tags. The repository has 8 merged pull requests, including one very large compliance-oriented merge at 23,649 total changed lines and a second substantial static preview merge at 5,437 total changed lines. There are still 0 tags, so SupportSpark looks like a maturing pre-release product rather than a formally versioned service.
 
-Process maturity is high relative to the repository size. The commit history reports 31 conventional commits and 0 informal commits, a living constitution is present, and the documentation tree has been actively curated into durable domain guidance, archived artifacts, and repo-story records. In plain terms, this is a small project being run with more operational discipline than many larger teams apply.
+Process maturity is high relative to the repository size. The commit history reports 32 conventional commits and 0 informal commits, a living constitution is present, and the documentation tree has been actively curated into durable domain guidance, archived artifacts, and repo-story records. In plain terms, this is a small project being run with more operational discipline than many larger teams apply.
 
 ## Technical Analysis
 
 ### Development Velocity
 
-The monthly trend is front-loaded but not erratic. February accounts for 25 of 47 commits, March for 18, and April for 4, which suggests the product moved from initial implementation into a smaller maintenance cadence rather than stalling completely. The latest commit on 2026-04-12 shows that the repository is still active.
+The monthly trend is front-loaded but not erratic. February accounts for 25 of 48 commits, March for 18, and April for 5, which suggests the product moved from initial implementation into a smaller maintenance cadence rather than stalling completely. The latest commit on 2026-04-12 shows that the repository is still active.
 
 The largest delivery bursts were concentrated in a few merges. The audit-compliance pull request changed 138 files with 19,478 additions and 4,171 deletions, while the static preview pull request changed 73 files with 4,854 additions and 583 deletions. Those numbers indicate heavy early construction with significant follow-up refinement rather than a long series of small incremental changes.
 
@@ -24,23 +24,23 @@ Overall churn still looks like greenfield development with selective cleanup. Ad
 
 ### Contributor Dynamics
 
-The contributor census shows a highly concentrated ownership model. The Lead Architect accounts for 39 of 47 commits, or roughly 83.0% of the repository history, while Developer A accounts for 8 of 47 commits, or roughly 17.0%. That is effectively a bus factor of 1 for product intent and architectural continuity.
+The contributor census shows a highly concentrated ownership model. The Lead Architect accounts for 40 of 48 commits, or roughly 83.3% of the repository history, while Developer A accounts for 8 of 48 commits, or roughly 16.7%. That is effectively a bus factor of 1 for product intent and architectural continuity.
 
-The month-by-month split reinforces that interpretation. The Lead Architect contributed 23 commits in February, 13 in March, and 3 in April, while Developer A contributed 2, 5, and 1 respectively. The secondary contributor pattern matches dependency automation and maintenance help more than shared product ownership.
+The month-by-month split reinforces that interpretation. The Lead Architect contributed 23 commits in February, 13 in March, and 4 in April, while Developer A contributed 2, 5, and 1 respectively. The secondary contributor pattern matches dependency automation and maintenance help more than shared product ownership.
 
 For a product at this stage, this is workable but important. The repo is coherent because decision-making is centralized, but onboarding additional maintainers would still require transferring a large amount of context that currently lives with one primary contributor.
 
 ### Quality Signals
 
-Commit hygiene is strong. The history reports 31 conventional commits and 0 informal commits, which implies 100% conventional formatting across authored commits tracked by the history script. Prefix distribution is still feature-heavy, with the subject estimates showing 21 feature commits, 7 CI or build commits, 5 docs commits, 2 fixes, and 2 chores.
+Commit hygiene is strong. The history reports 32 conventional commits and 0 informal commits, which implies 100% conventional formatting across authored commits tracked by the history script. Prefix distribution is still feature-heavy, with the subject estimates showing 21 feature commits, 7 CI or build commits, 6 docs commits, 2 fixes, and 2 chores.
 
 Testing signals are mixed but credible. The history script reports 7 test-related commits, and the current repository contains 10 user-authored test files across server routes, storage, React hooks, client pages, and local-storage support modules. That is enough to show testing discipline exists, but not enough to conclude broad end-to-end coverage across every feature.
 
-Documentation investment is unusually high. Markdown files are the most-touched file type at 330 touches, ahead of JSON at 231, TSX at 153, TypeScript at 73, and PowerShell at 50. That balance says SupportSpark is being developed as both a product and a governed artifact, with process, guides, and scripts evolving alongside the application code.
+Documentation investment is unusually high. Markdown files are the most-touched file type at 331 touches, ahead of JSON at 232, TSX at 153, TypeScript at 73, and PowerShell at 50. That balance says SupportSpark is being developed as both a product and a governed artifact, with process, guides, and scripts evolving alongside the application code.
 
 ### Governance & Process Maturity
 
-SupportSpark shows strong governance signals for a 47-commit repository. A constitution is present, there are 0 active specs and 4 archived spec directories, and the governance artifact count in the history snapshot is 2. That indicates the team has already moved some completed work out of active planning and into historical record, which is a sign of documentation maintenance rather than simple accumulation.
+SupportSpark shows strong governance signals for a 48-commit repository. A constitution is present, there are 0 active specs and 4 archived spec directories, and the governance artifact count in the history snapshot is 2. That indicates the team has already moved some completed work out of active planning and into historical record, which is a sign of documentation maintenance rather than simple accumulation.
 
 The pull request workflow is also visible. The repository has 8 merged pull requests, including feature work, compliance hardening, static preview delivery, and dependency maintenance. Even without tag discipline, that merge structure shows the repository is not being managed as an unreviewed pile of direct commits.
 
@@ -80,7 +80,7 @@ There are 0 tags in the history snapshot, so the repository does not yet have fo
 | 2026-02-02 | None | Pull request #1 lands with 138 files changed and 23,649 total lines touched, establishing the core compliance-oriented foundation. |
 | 2026-02-24 | None | Pull request #3 lands with 73 files changed and 5,437 total lines touched, delivering the static preview alpha path. |
 | 2026-03-29 | None | Documentation normalization, spec harvest work, and the first repo story signal a shift from raw feature build-out to curation and maintenance. |
-| 2026-04-12 | None | DevSpark updates, archive work, and README clarification continue the move toward cleaner long-term project stewardship. |
+| 2026-04-12 | None | DevSpark updates, archive work, README clarification, and the repository story itself continue the move toward cleaner long-term project stewardship. |
 
 Velocity clearly spiked before the February milestone merges and then tapered into maintenance. That is consistent with a repository that has already built its core experience and is now strengthening the surrounding process, deployment, and documentation systems.
 
@@ -118,11 +118,11 @@ Use `npm test` for the default Vitest run, `npm run test:ui` for the interactive
 
 ### What is the branching and PR workflow?
 
-The history shows 8 merged pull requests across 47 commits, including major feature and maintenance merges plus dependency automation. That suggests a pull-request-based workflow on `main`, even though the repository does not yet use formal git tags for releases. In practice, the repo appears to rely on PR merges and changelog-style documentation more than on release tagging.
+The history shows 8 merged pull requests across 48 commits, including major feature and maintenance merges plus dependency automation. That suggests a pull-request-based workflow on `main`, even though the repository does not yet use formal git tags for releases. In practice, the repo appears to rely on PR merges and changelog-style documentation more than on release tagging.
 
 ### Who do I ask when I'm stuck?
 
-The contributor census makes the answer clear: ask the Lead Architect first. That role owns 39 of 47 commits, or roughly 83.0% of the repository history, so most architectural intent and project context sit there. Developer A contributes useful maintenance activity, but not enough of the total history to represent equal ownership.
+The contributor census makes the answer clear: ask the Lead Architect first. That role owns 40 of 48 commits, or roughly 83.3% of the repository history, so most architectural intent and project context sit there. Developer A contributes useful maintenance activity, but not enough of the total history to represent equal ownership.
 
 ### What areas of the code change most often?
 
@@ -130,7 +130,7 @@ The hottest areas are dependency metadata, seeded or runtime JSON data, and core
 
 ### Are there coding standards I must follow?
 
-Yes. The repository has a formal constitution, ESLint, Prettier, TypeScript checking, and a `validate` script that runs type checking, linting, format checks, and tests together. The history also shows 31 conventional commits and 0 informal commits, so commit messages are expected to follow conventional commit format rather than ad hoc wording.
+Yes. The repository has a formal constitution, ESLint, Prettier, TypeScript checking, and a `validate` script that runs type checking, linting, format checks, and tests together. The history also shows 32 conventional commits and 0 informal commits, so commit messages are expected to follow conventional commit format rather than ad hoc wording.
 
 ### What version is currently released?
 

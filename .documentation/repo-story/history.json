@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T13:19:41.9966230+00:00",
+  "generated_at": "2026-04-12T13:30:51.1064363+00:00",
   "audit_parameters": {
     "months": 12,
     "scope": "full",
@@ -15,8 +15,8 @@
     "default_branch": "main"
   },
   "summary": {
-    "total_commits": 47,
-    "total_commits_in_window": 47,
+    "total_commits": 48,
+    "total_commits_in_window": 48,
     "total_contributors": 2,
     "total_tags": 0,
     "history_span_days": 69
@@ -29,25 +29,25 @@
       "subject": "feat: add server-side static file serving and storage management"
     },
     "latest_commit": {
-      "sha": "cc95815e58e2d76ada865053c7ee8407275cbc40",
-      "date": "2026-04-12T08:07:15-05:00",
+      "sha": "6ca1304e9c3845292e639ec7f3137249314a63fe",
+      "date": "2026-04-12T08:25:39-05:00",
       "role": "Lead Architect",
-      "subject": "docs: archive historical documentation and update README for clarity"
+      "subject": "docs: add repository story for SupportSpark detailing project overview, development velocity, contributor dynamics, quality signals, governance, architecture, and FAQs"
     },
     "commits_by_year": {
-      "2026": 47
+      "2026": 48
     },
     "commits_by_month": {
       "2026-02": 25,
       "2026-03": 18,
-      "2026-04": 4
+      "2026-04": 5
     }
   },
   "contributors": {
     "top": [
       {
         "role": "Lead Architect",
-        "commits": 39
+        "commits": 40
       },
       {
         "role": "Developer A",
@@ -65,7 +65,7 @@
         "Developer A": 5
       },
       "2026-04": {
-        "Lead Architect": 3,
+        "Lead Architect": 4,
         "Developer A": 1
       }
     }
@@ -74,7 +74,7 @@
     "role_assignments": [
       {
         "role": "Lead Architect",
-        "commits": 39
+        "commits": 40
       },
       {
         "role": "Developer A",
@@ -83,21 +83,21 @@
     ]
   },
   "volume_metrics": {
-    "total_commits": 47,
+    "total_commits": 48,
     "monthly_commit_distribution": {
       "2026-02": 25,
       "2026-03": 18,
-      "2026-04": 4
+      "2026-04": 5
     },
     "merged_pr_count": 8,
     "file_types_top": [
       {
         "extension": "md",
-        "touched_files": 330
+        "touched_files": 331
       },
       {
         "extension": "json",
-        "touched_files": 231
+        "touched_files": 232
       },
       {
         "extension": "tsx",
@@ -132,7 +132,7 @@
         "touched_files": 1
       },
       {
-        "extension": "nojekyll",
+        "extension": "example",
         "touched_files": 1
       },
       {
@@ -148,6 +148,10 @@
         "touched_files": 1
       },
       {
+        "extension": "nojekyll",
+        "touched_files": 1
+      },
+      {
         "extension": "html",
         "touched_files": 1
       },
@@ -157,10 +161,6 @@
       },
       {
         "extension": "css",
-        "touched_files": 1
-      },
-      {
-        "extension": "example",
         "touched_files": 1
       }
     ],
@@ -248,7 +248,7 @@
     ]
   },
   "commit_message_metrics": {
-    "conventional_commit_count": 31,
+    "conventional_commit_count": 32,
     "informal_commit_count": 0,
     "spec_reference_commit_count": 1
   },
@@ -316,7 +316,7 @@
       "ci_build": 7,
       "features": 21,
       "refactor": 0,
-      "docs": 5,
+      "docs": 6,
       "chore": 2,
       "fixes": 2
     },
@@ -334,12 +334,24 @@
         "changes": 8
       },
       {
+        "path": "data/conversations/meta.json",
+        "changes": 7
+      },
+      {
         "path": "specs/001-audit-compliance-fixes/tasks.md",
         "changes": 7
       },
       {
-        "path": "data/conversations/meta.json",
-        "changes": 7
+        "path": "specs/001-audit-compliance-fixes/plan.md",
+        "changes": 6
+      },
+      {
+        "path": "data/supporters.json",
+        "changes": 6
+      },
+      {
+        "path": "data/conversations/index.json",
+        "changes": 6
       },
       {
         "path": "README.md",
@@ -350,19 +362,7 @@
         "changes": 6
       },
       {
-        "path": "data/supporters.json",
-        "changes": 6
-      },
-      {
-        "path": "specs/001-audit-compliance-fixes/plan.md",
-        "changes": 6
-      },
-      {
-        "path": "data/conversations/index.json",
-        "changes": 6
-      },
-      {
-        "path": ".github/agents/speckit.pr-review.agent.md",
+        "path": ".github/agents/speckit.plan.agent.md",
         "changes": 5
       },
       {
@@ -370,35 +370,7 @@
         "changes": 5
       },
       {
-        "path": ".vscode/settings.json",
-        "changes": 5
-      },
-      {
-        "path": ".gitignore",
-        "changes": 5
-      },
-      {
-        "path": ".github/agents/speckit.constitution.agent.md",
-        "changes": 5
-      },
-      {
         "path": "server/storage.ts",
-        "changes": 5
-      },
-      {
-        "path": ".github/agents/speckit.plan.agent.md",
-        "changes": 5
-      },
-      {
-        "path": ".github/agents/speckit.specify.agent.md",
-        "changes": 5
-      },
-      {
-        "path": "client/src/pages/Home.tsx",
-        "changes": 5
-      },
-      {
-        "path": "server/index.ts",
         "changes": 5
       },
       {
@@ -406,47 +378,39 @@
         "changes": 5
       },
       {
+        "path": ".github/agents/speckit.constitution.agent.md",
+        "changes": 5
+      },
+      {
+        "path": ".github/agents/speckit.specify.agent.md",
+        "changes": 5
+      },
+      {
+        "path": ".gitignore",
+        "changes": 5
+      },
+      {
+        "path": ".github/agents/speckit.pr-review.agent.md",
+        "changes": 5
+      },
+      {
+        "path": "server/index.ts",
+        "changes": 5
+      },
+      {
+        "path": ".vscode/settings.json",
+        "changes": 5
+      },
+      {
+        "path": "client/src/pages/Home.tsx",
+        "changes": 5
+      },
+      {
         "path": "shared/routes.ts",
         "changes": 4
       },
       {
-        "path": "script/build.ts",
-        "changes": 4
-      },
-      {
-        "path": "client/src/pages/Dashboard.tsx",
-        "changes": 4
-      },
-      {
-        "path": ".github/agents/speckit.tasks.agent.md",
-        "changes": 4
-      },
-      {
-        "path": ".github/agents/speckit.analyze.agent.md",
-        "changes": 4
-      },
-      {
-        "path": "tsconfig.json",
-        "changes": 4
-      },
-      {
-        "path": "client/src/hooks/use-auth.ts",
-        "changes": 4
-      },
-      {
-        "path": ".documentation/specs/002-static-preview-alpha/tasks.md",
-        "changes": 4
-      },
-      {
         "path": ".github/agents/speckit.discover-constitution.agent.md",
-        "changes": 4
-      },
-      {
-        "path": "docs/copilot/audit/2026-02-01_results.md",
-        "changes": 4
-      },
-      {
-        "path": "client/src/components/invite-supporter-dialog.tsx",
         "changes": 4
       },
       {
@@ -458,15 +422,15 @@
         "changes": 4
       },
       {
-        "path": "client/src/pages/Auth.tsx",
+        "path": "tsconfig.json",
         "changes": 4
       },
       {
-        "path": ".github/agents/speckit.critic.agent.md",
+        "path": "script/build.ts",
         "changes": 4
       },
       {
-        "path": "specs/001-audit-compliance-fixes/spec.md",
+        "path": "client/src/hooks/use-auth.ts",
         "changes": 4
       },
       {
@@ -474,15 +438,63 @@
         "changes": 4
       },
       {
+        "path": ".github/agents/speckit.tasks.agent.md",
+        "changes": 4
+      },
+      {
+        "path": "specs/001-audit-compliance-fixes/spec.md",
+        "changes": 4
+      },
+      {
+        "path": ".github/agents/speckit.critic.agent.md",
+        "changes": 4
+      },
+      {
+        "path": "client/src/pages/Auth.tsx",
+        "changes": 4
+      },
+      {
+        "path": ".documentation/specs/002-static-preview-alpha/tasks.md",
+        "changes": 4
+      },
+      {
+        "path": "docs/copilot/audit/2026-02-01_results.md",
+        "changes": 4
+      },
+      {
+        "path": "client/src/components/invite-supporter-dialog.tsx",
+        "changes": 4
+      },
+      {
+        "path": "client/src/pages/Dashboard.tsx",
+        "changes": 4
+      },
+      {
+        "path": ".github/agents/speckit.analyze.agent.md",
+        "changes": 4
+      },
+      {
         "path": "client/src/pages/Demo.tsx",
         "changes": 4
       },
       {
-        "path": "specs/001-audit-compliance-fixes/data-model.md",
+        "path": ".documentation/scripts/powershell/get-pr-context.ps1",
         "changes": 3
       },
       {
-        "path": ".github/agents/speckit.taskstoissues.agent.md",
+        "path": "client/src/components/navbar.tsx",
+        "changes": 3
+      },
+      {
+        "path": "vitest.config.ts",
+        "changes": 3
+      },
+      {
+        "path": ".github/agents/speckit.clarify.agent.md",
+        "changes": 3
+      },
+      {
+        "path": "specs/001-audit-compliance-fixes/quickstart.md",
         "changes": 3
       },
       {
@@ -494,31 +506,19 @@
         "changes": 3
       },
       {
-        "path": "client/src/hooks/use-conversations.test.tsx",
-        "changes": 3
-      },
-      {
-        "path": ".github/agents/speckit.clarify.agent.md",
-        "changes": 3
-      },
-      {
         "path": "server/types.ts",
         "changes": 3
       },
       {
+        "path": "client/src/hooks/use-conversations.test.tsx",
+        "changes": 3
+      },
+      {
+        "path": "client/src/pages/Supporters.tsx",
+        "changes": 3
+      },
+      {
         "path": "shared/schema.ts",
-        "changes": 3
-      },
-      {
-        "path": "client/src/hooks/use-supporters.ts",
-        "changes": 3
-      },
-      {
-        "path": "specs/001-audit-compliance-fixes/quickstart.md",
-        "changes": 3
-      },
-      {
-        "path": "replit.md",
         "changes": 3
       }
     ]
@@ -539,6 +539,12 @@
   },
   "recent": {
     "commits": [
+      {
+        "sha": "6ca1304e9c3845292e639ec7f3137249314a63fe",
+        "date": "2026-04-12T08:25:39-05:00",
+        "role": "Lead Architect",
+        "subject": "docs: add repository story for SupportSpark detailing project overview, development velocity, contributor dynamics, quality signals, governance, architecture, and FAQs"
+      },
       {
         "sha": "cc95815e58e2d76ada865053c7ee8407275cbc40",
         "date": "2026-04-12T08:07:15-05:00",
@@ -772,12 +778,6 @@
         "date": "2026-02-01T13:42:57-06:00",
         "role": "Lead Architect",
         "subject": "feat: implement environment setup, linting, and testing infrastructure"
-      },
-      {
-        "sha": "5e65b6ae28020fe67cf6e68888fc27175f635085",
-        "date": "2026-02-01T12:24:25-06:00",
-        "role": "Lead Architect",
-        "subject": "feat: Enhance implementation plan and specifications with phase cross-references, terminology, and updated testing tasks"
       }
     ]
   }

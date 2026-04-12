@@ -199,7 +199,7 @@ SupportSpark/
 │
 ├── .documentation/         # Documentation
 │   ├── domain/             # Architectural docs
-│   └── copilot/            # Session-based docs
+│   └── copilot/            # Transient audit and session docs
 │
 └── .documentation/memory/
     └── constitution.md     # Project governance
@@ -215,7 +215,7 @@ The repository documentation follows the DevSpark layout.
 - Governance: `.documentation/memory/constitution.md`
 - Durable product and system docs: `.documentation/domain/`
 - Feature workspaces: `.documentation/specs/`
-- Session output: `.documentation/copilot/session-YYYY-MM-DD/`
+- Transient audit and session output: `.documentation/copilot/`
 
 Start with `.documentation/Guide.md` when you need to know where a document belongs.
 

@@ -5,6 +5,7 @@ import type {
   Message,
   Supporter,
 } from "@shared/schema";
+import { DEMO_SUPPORTER_ID } from "./seed-data";
 
 // localStorage key constants
 const KEYS = {
@@ -120,6 +121,16 @@ function login(credentials: { email: string; password: string }): User {
     (u) => u.email === credentials.email && u.password === credentials.password,
   );
   if (!user) throw new Error("Invalid email or password");
+  setSessionUserId(user.id);
+  return user;
+}
+
+function loginDemoSupporter(): User {
+  const users = getUsers();
+  const user = users.find((candidate) => candidate.id === DEMO_SUPPORTER_ID);
+  if (!user) {
+    throw new Error("Demo supporter is not available");
+  }
   setSessionUserId(user.id);
   return user;
 }
@@ -288,7 +299,7 @@ function inviteSupporter(data: { email: string }): Supporter {
     targetUser = {
       id: crypto.randomUUID(),
       email: data.email,
-      password: "preview123",
+      password: crypto.randomUUID(),
       firstName: mockName.charAt(0).toUpperCase() + mockName.slice(1),
       createdAt: now,
       updatedAt: now,
@@ -393,6 +404,7 @@ function isStorageAvailable(): boolean {
 export const storage = {
   register,
   login,
+  loginDemoSupporter,
   logout,
   getCurrentUser,
   getConversations,

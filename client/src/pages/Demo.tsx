@@ -69,9 +69,8 @@ export default function Demo() {
   const handleLoginAsPatient = () => {
     setLoginPending("patient");
     try {
-      // Log in as the demo member — use seeded supporter credentials for a second perspective,
-      // or the current user if already registered
-      const user = storage.login({ email: "alex.supporter@example.com", password: "preview123" });
+      // Log in through the preview-only helper so demo credentials do not leak into page code.
+      const user = storage.loginDemoSupporter();
       queryClient.setQueryData(["/api/auth/user"], user);
       setLocation("/dashboard");
     } catch {
@@ -85,7 +84,7 @@ export default function Demo() {
   const handleLoginAsSupporter = () => {
     setLoginPending("supporter");
     try {
-      const user = storage.login({ email: "alex.supporter@example.com", password: "preview123" });
+      const user = storage.loginDemoSupporter();
       queryClient.setQueryData(["/api/auth/user"], user);
       setLocation("/dashboard");
     } catch {

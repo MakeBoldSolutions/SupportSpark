@@ -10,7 +10,7 @@ This repository uses the DevSpark documentation layout so durable product knowle
 | `.documentation/domain/` | Product and system knowledge | Architecture, deployment, data model, API surface, site map, development patterns |
 | `.documentation/decisions/` | Architecture decision records | One document per decision with context, choice, and consequences |
 | `.documentation/specs/` | Feature workspaces | Active feature specs, plans, research, contracts, tasks, and gates |
-| `.documentation/copilot/session-YYYY-MM-DD/` | Session output | Copilot-authored investigations, reviews, migration notes, and one-off reports |
+| `.documentation/copilot/` | Transient AI output | Audit reports, current session notes, and other temporary Copilot artifacts |
 | `.documentation/commands/` | Team command overrides | Custom DevSpark command instructions |
 | `.documentation/scripts/` | Team script overrides | Repository-specific DevSpark helper scripts |
 | `.documentation/templates/` | Team template overrides | Customized spec, plan, task, and checklist templates |
@@ -38,7 +38,7 @@ This repository uses the DevSpark documentation layout so durable product knowle
 
 1. Put long-lived product knowledge in `.documentation/domain/`.
 2. Put feature-specific planning in `.documentation/specs/<feature-id>/`.
-3. Put ephemeral AI-generated analysis in `.documentation/copilot/session-YYYY-MM-DD/`.
+3. Put ephemeral AI-generated analysis in `.documentation/copilot/` using subfolders such as `audit/` or `session-YYYY-MM-DD/` when needed.
 4. Add ADR-style records to `.documentation/decisions/` when a decision needs durable rationale.
 5. Keep README short; link to this guide and the domain documents for deeper detail.
 
@@ -49,6 +49,7 @@ This repository uses the DevSpark documentation layout so durable product knowle
 - Team script overrides belong in `.documentation/scripts/`.
 - Feature work should create artifacts under `.documentation/specs/<feature-id>/`.
 - Copilot-generated one-off analysis belongs under `.documentation/copilot/` only while it is current.
+- Use `.documentation/copilot/audit/` for site-audit outputs and other structured audit reports.
 
 ## Recommended Next Documents
 

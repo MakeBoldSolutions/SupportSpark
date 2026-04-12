@@ -1,0 +1,408 @@
+{
+  "repo_root": "C:/GitHub/MarkHazleton/SupportSpark",
+  "timestamp": "2026-04-12T08:27:07Z",
+  "scope": "full",
+  "patterns": {
+    "quality": {
+      "long_functions": [],
+      "deep_nesting": [],
+      "todo_comments": [
+        {
+          "line": 53,
+          "text": "in Zod.\");const r=new Map;for(const u of e.seen.entries()){c",
+          "type": "BUG",
+          "file": "dist-static/assets/index-DnSjp6nb.js"
+        },
+        {
+          "line": 55,
+          "text": "in Zod.\");const r=u=>{const f=e.seen.get(u);if(f.ref===null)",
+          "type": "BUG",
+          "file": "dist-static/assets/index-DnSjp6nb.js"
+        }
+      ],
+      "todo_comments_total": 2
+    },
+    "unused": {
+      "potential_dead_code": []
+    },
+    "security": {
+      "hardcoded_secrets": [
+        {
+          "line": 291,
+          "snippet": "password: \"preview123\",",
+          "type": "Password",
+          "file": "client/src/lib/local-storage-adapter.ts"
+        },
+        {
+          "line": 37,
+          "snippet": "password: \"preview123\",",
+          "type": "Password",
+          "file": "client/src/lib/seed-data.ts"
+        },
+        {
+          "line": 74,
+          "snippet": "const user = storage.login({ email: \"alex.supporter@example.com\", password: \"pre",
+          "type": "Password",
+          "file": "client/src/pages/Demo.tsx"
+        },
+        {
+          "line": 88,
+          "snippet": "const user = storage.login({ email: \"alex.supporter@example.com\", password: \"pre",
+          "type": "Password",
+          "file": "client/src/pages/Demo.tsx"
+        },
+        {
+          "line": 9,
+          "snippet": "`).replace(nD,\"\")}function hw(i,s){return s=dw(s),dw(i)===s}function at(i,s,o,c,",
+          "type": "Password",
+          "file": "dist-static/assets/index-DnSjp6nb.js"
+        },
+        {
+          "line": 115,
+          "snippet": "`},a),l}function EG(e,t){return e&&\"run\"in e?async function(n,r){const a=qT(n,{f",
+          "type": "Password",
+          "file": "dist-static/assets/index-DnSjp6nb.js"
+        },
+        {
+          "line": 1,
+          "snippet": "const a={users:\"supportSpark_users\",conversations:\"supportSpark_conversations\",s",
+          "type": "Password",
+          "file": "dist-static/assets/seed-data-Cbpk9r5f.js"
+        }
+      ],
+      "hardcoded_secrets_total": 7,
+      "insecure_patterns": [
+        {
+          "line": 9,
+          "type": "exec()",
+          "file": "dist-static/assets/index-DnSjp6nb.js"
+        },
+        {
+          "line": 103,
+          "type": "exec()",
+          "file": "dist-static/assets/index-DnSjp6nb.js"
+        },
+        {
+          "line": 105,
+          "type": "exec()",
+          "file": "dist-static/assets/index-DnSjp6nb.js"
+        },
+        {
+          "line": 109,
+          "type": "exec()",
+          "file": "dist-static/assets/index-DnSjp6nb.js"
+        }
+      ],
+      "insecure_patterns_total": 4
+    }
+  },
+  "devspark": {
+    "stamp_exists": true,
+    "installed_version": "1.5.0",
+    "method": "copilot-quickstart",
+    "installed_date": "2026-04-12"
+  },
+  "constitution": {
+    "path": ".documentation/memory/constitution.md",
+    "version": "1.3.0",
+    "principles": [
+      "I. Type Safety (NON-NEGOTIABLE)",
+      "II. Testing (NON-NEGOTIABLE)",
+      "III. UI Component Library (NON-NEGOTIABLE)",
+      "IV. Security Standards (NON-NEGOTIABLE)",
+      "V. API Contract Pattern (RECOMMENDED)",
+      "VI. State Management (RECOMMENDED)",
+      "VII. Code Style & Formatting (NON-NEGOTIABLE)",
+      "VIII. Data Storage Strategy (NON-NEGOTIABLE)",
+      "IX. Deployment & Hosting Standards (NON-NEGOTIABLE)",
+      "X. Simplicity First (NON-NEGOTIABLE)",
+      "Amendment Process"
+    ],
+    "exists": true
+  },
+  "packages": {
+    "dependencies": {
+      "direct": [
+        "@eslint/js",
+        "@hookform/resolvers",
+        "@radix-ui/react-accordion",
+        "@radix-ui/react-alert-dialog",
+        "@radix-ui/react-aspect-ratio",
+        "@radix-ui/react-avatar",
+        "@radix-ui/react-checkbox",
+        "@radix-ui/react-collapsible",
+        "@radix-ui/react-context-menu",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-dropdown-menu",
+        "@radix-ui/react-hover-card",
+        "@radix-ui/react-label",
+        "@radix-ui/react-menubar",
+        "@radix-ui/react-navigation-menu",
+        "@radix-ui/react-popover",
+        "@radix-ui/react-progress",
+        "@radix-ui/react-radio-group",
+        "@radix-ui/react-scroll-area",
+        "@radix-ui/react-select",
+        "@radix-ui/react-separator",
+        "@radix-ui/react-slider",
+        "@radix-ui/react-slot",
+        "@radix-ui/react-switch",
+        "@radix-ui/react-tabs",
+        "@radix-ui/react-toast",
+        "@radix-ui/react-toggle",
+        "@radix-ui/react-toggle-group",
+        "@radix-ui/react-tooltip",
+        "@tanstack/react-query",
+        "@types/multer",
+        "bcrypt",
+        "class-variance-authority",
+        "clsx",
+        "cmdk",
+        "cross-env",
+        "date-fns",
+        "dotenv",
+        "embla-carousel-react",
+        "express",
+        "express-rate-limit",
+        "express-session",
+        "framer-motion",
+        "input-otp",
+        "lucide-react",
+        "memorystore",
+        "multer",
+        "nanoid",
+        "passport",
+        "passport-local",
+        "react",
+        "react-day-picker",
+        "react-dom",
+        "react-hook-form",
+        "react-markdown",
+        "react-resizable-panels",
+        "recharts",
+        "tailwind-merge",
+        "tailwindcss-animate",
+        "vaul",
+        "wouter",
+        "zod"
+      ],
+      "dev": [
+        "@tailwindcss/cli",
+        "@tailwindcss/postcss",
+        "@tailwindcss/typography",
+        "@testing-library/dom",
+        "@testing-library/jest-dom",
+        "@testing-library/react",
+        "@testing-library/user-event",
+        "@types/bcrypt",
+        "@types/express",
+        "@types/express-session",
+        "@types/node",
+        "@types/passport",
+        "@types/passport-local",
+        "@types/react",
+        "@types/react-dom",
+        "@types/supertest",
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "@vitejs/plugin-react",
+        "@vitest/coverage-v8",
+        "@vitest/ui",
+        "autoprefixer",
+        "esbuild",
+        "eslint",
+        "eslint-config-prettier",
+        "eslint-plugin-react",
+        "eslint-plugin-react-hooks",
+        "jsdom",
+        "postcss",
+        "prettier",
+        "supertest",
+        "tailwindcss",
+        "tsx",
+        "typescript",
+        "vite",
+        "vitest"
+      ]
+    },
+    "manifest": "package.json",
+    "lockfile": "package-lock.json",
+    "analysis": {
+      "outdated": [],
+      "unused": [],
+      "vulnerable": []
+    },
+    "manager": "npm"
+  },
+  "metrics": {
+    "total_files": 88,
+    "large_files_total": 3,
+    "files_by_extension": {
+      ".js": 4,
+      ".ts": 22,
+      ".tsx": 62
+    },
+    "large_files": [
+      {
+        "lines": 641,
+        "file": "client/src/components/ui/sidebar.tsx"
+      },
+      {
+        "lines": 550,
+        "file": "server/routes.ts"
+      },
+      {
+        "lines": 512,
+        "file": "server/storage.ts"
+      }
+    ],
+    "max_lines": 641,
+    "lines_by_extension": {
+      ".js": 200,
+      ".ts": 2600,
+      ".tsx": 5891
+    },
+    "total_lines": 8691,
+    "avg_lines_per_file": 98.8,
+    "max_lines_file": "client/src/components/ui/sidebar.tsx"
+  },
+  "audit_dir": ".documentation/copilot/audit",
+  "files": {
+    "config": [
+      ".env",
+      ".env.example",
+      ".eslintrc.json",
+      ".prettierrc.json",
+      "agents-registry.json",
+      "components.json",
+      "package-lock.json",
+      "package.json",
+      "tsconfig.json",
+      ".claude/settings.local.json",
+      ".devspark/templates/vscode-settings.json",
+      ".documentation/repo-story/history.json",
+      ".vscode/settings.json",
+      "attached_assets/quotes_1766784685256.json",
+      "data/conversations.json",
+      "data/quotes.json",
+      "data/supporters.json",
+      "data/users.json",
+      "data/conversations/index.json",
+      "data/conversations/meta.json",
+      "data/conversations/000f3bfd-8b37-4956-acc1-274dad6b5e02/82.json",
+      "data/conversations/059248fc-91d5-4b80-aef9-79c10e776e98/97.json",
+      "data/conversations/06fcbdaf-e91d-42fb-9be6-b1d11f0d7508/98.json",
+      "data/conversations/06fcbdaf-e91d-42fb-9be6-b1d11f0d7508/99.json",
+      "data/conversations/124779fe-f2f7-4858-96db-75da4588ef46/77.json"
+    ],
+    "build": ".github/workflows/deploy-preview.yml",
+    "source": [
+      "eslint.config.js",
+      "postcss.config.js",
+      "vite.config.static.ts",
+      "vite.config.ts",
+      "vitest.config.ts",
+      "client/src/App.tsx",
+      "client/src/main.tsx",
+      "client/src/components/create-update-dialog.tsx",
+      "client/src/components/footer.tsx",
+      "client/src/components/invite-supporter-dialog.tsx",
+      "client/src/components/navbar.tsx",
+      "client/src/components/preview-banner.tsx",
+      "client/src/components/ui/accordion.tsx",
+      "client/src/components/ui/alert-dialog.tsx",
+      "client/src/components/ui/alert.tsx",
+      "client/src/components/ui/aspect-ratio.tsx",
+      "client/src/components/ui/avatar.tsx",
+      "client/src/components/ui/badge.tsx",
+      "client/src/components/ui/breadcrumb.tsx",
+      "client/src/components/ui/button.tsx",
+      "client/src/components/ui/calendar.tsx",
+      "client/src/components/ui/card.tsx",
+      "client/src/components/ui/carousel.tsx",
+      "client/src/components/ui/chart.tsx",
+      "client/src/components/ui/checkbox.tsx"
+    ],
+    "documentation": [
+      "CHANGELOG.md",
+      "lint-output.txt",
+      "README.md",
+      ".devspark/defaults/commands/devspark.add-application.md",
+      ".devspark/defaults/commands/devspark.analyze.md",
+      ".devspark/defaults/commands/devspark.archive.md",
+      ".devspark/defaults/commands/devspark.checklist.md",
+      ".devspark/defaults/commands/devspark.clarify.md",
+      ".devspark/defaults/commands/devspark.constitution.md",
+      ".devspark/defaults/commands/devspark.create-pr.md",
+      ".devspark/defaults/commands/devspark.critic.md",
+      ".devspark/defaults/commands/devspark.discover-constitution.md",
+      ".devspark/defaults/commands/devspark.evolve-constitution.md",
+      ".devspark/defaults/commands/devspark.harvest.md",
+      ".devspark/defaults/commands/devspark.implement.md",
+      ".devspark/defaults/commands/devspark.list-applications.md",
+      ".devspark/defaults/commands/devspark.personalize.md",
+      ".devspark/defaults/commands/devspark.plan.md",
+      ".devspark/defaults/commands/devspark.pr-review.md",
+      ".devspark/defaults/commands/devspark.quickfix.md",
+      ".devspark/defaults/commands/devspark.release.md",
+      ".devspark/defaults/commands/devspark.repo-story.md",
+      ".devspark/defaults/commands/devspark.site-audit.md",
+      ".devspark/defaults/commands/devspark.specify.md",
+      ".devspark/defaults/commands/devspark.tasks.md"
+    ],
+    "counts": {
+      "config": 178,
+      "build": 1,
+      "source": 88,
+      "documentation": 143,
+      "tests": 11,
+      "scripts": 31
+    },
+    "tests": [
+      "client/src/hooks/use-auth.test.tsx",
+      "client/src/hooks/use-conversations.test.tsx",
+      "client/src/hooks/use-supporters.test.tsx",
+      "client/src/lib/local-storage-adapter.test.ts",
+      "client/src/lib/seed-data.test.ts",
+      "client/src/pages/Auth.test.tsx",
+      "client/src/pages/Dashboard.test.tsx",
+      "client/src/pages/Supporters.test.tsx",
+      "server/routes.test.ts",
+      "server/storage.test.ts",
+      "test/setup.ts"
+    ],
+    "scripts": [
+      ".devspark/scripts/powershell/archive-context.ps1",
+      ".devspark/scripts/powershell/check-prerequisites.ps1",
+      ".devspark/scripts/powershell/common.ps1",
+      ".devspark/scripts/powershell/create-new-feature.ps1",
+      ".devspark/scripts/powershell/create-pr.ps1",
+      ".devspark/scripts/powershell/evolution-context.ps1",
+      ".devspark/scripts/powershell/get-pr-context.ps1",
+      ".devspark/scripts/powershell/harvest.ps1",
+      ".devspark/scripts/powershell/platform.ps1",
+      ".devspark/scripts/powershell/quickfix-context.ps1",
+      ".devspark/scripts/powershell/release-context.ps1",
+      ".devspark/scripts/powershell/repo-story-context.ps1",
+      ".devspark/scripts/powershell/setup-plan.ps1",
+      ".devspark/scripts/powershell/site-audit.ps1",
+      ".devspark/scripts/powershell/update-agent-context.ps1",
+      ".documentation/scripts/powershell/archive-context.ps1",
+      ".documentation/scripts/powershell/check-prerequisites.ps1",
+      ".documentation/scripts/powershell/common.ps1",
+      ".documentation/scripts/powershell/create-new-feature.ps1",
+      ".documentation/scripts/powershell/evolution-context.ps1",
+      ".documentation/scripts/powershell/get-pr-context.ps1",
+      ".documentation/scripts/powershell/harvest.ps1",
+      ".documentation/scripts/powershell/migrate-to-documentation.ps1",
+      ".documentation/scripts/powershell/quickfix-context.ps1",
+      ".documentation/scripts/powershell/release-context.ps1"
+    ]
+  },
+  "pre_scan_limits": {
+    "sample_limit": 25,
+    "pattern_sample_limit": 25,
+    "include_full_inventory": false,
+    "large_file_limit": 20
+  }
+}
