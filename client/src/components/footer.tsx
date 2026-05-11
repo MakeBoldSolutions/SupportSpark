@@ -75,6 +75,13 @@ export function Footer() {
             © {currentYear} SupportSpark. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
+            <a href="https://markhazleton.github.io/SupportSpark/" className="hover:text-primary transition-colors">SupportSpark</a>
+            {" — "}built by{" "}
+            <a href="https://markhazleton.com" className="hover:text-primary transition-colors">Mark Hazleton</a>
+            {" · "}
+            <a href="https://makeboldsolutions.com" className="hover:text-primary transition-colors">Make Bold Solutions</a>
+          </p>
+          <p className="text-sm text-muted-foreground">
             Made with <Heart className="w-4 h-4 inline fill-accent text-accent" /> for those who
             care
           </p>
