@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
 </p>
 
-**Live Site**: [https://markhazleton.github.io/SupportSpark/](https://markhazleton.github.io/SupportSpark/)
+**Live Site**: [https://support.makeboldspark.com](https://support.makeboldspark.com)
 
 # SupportSpark
 
@@ -20,7 +20,7 @@ SupportSpark provides a **calm, distraction-free space** where members can post 
 
 SupportSpark is a compassionate support network platform demonstrating role-based access, invitation-only networks, threaded conversations, and calm UI design for sensitive contexts.
 
-**Live Site**: [https://markhazleton.github.io/SupportSpark/](https://markhazleton.github.io/SupportSpark/)
+**Live Site**: [https://support.makeboldspark.com](https://support.makeboldspark.com)
 
 > Built by [Mark Hazleton](https://markhazleton.com) — Mark Hazleton, Solutions Architect
 > SupportSpark is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.
@@ -116,11 +116,11 @@ The application will be available at `http://localhost:5000`
 
 ---
 
-## Live Site (GitHub Pages)
+## Live Site
 
-The live site is hosted at **[https://markhazleton.github.io/SupportSpark/](https://markhazleton.github.io/SupportSpark/)**.
+The live site is hosted at **[https://support.makeboldspark.com](https://support.makeboldspark.com)**.
 
-This preview runs entirely in your browser with no backend server — all data is stored in localStorage.
+A static GitHub Pages preview also runs entirely in your browser with no backend server — all data is stored in localStorage.
 
 - **Register** with any email/password to explore
 - **Pre-seeded demo data** appears automatically on first registration
