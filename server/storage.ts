@@ -8,11 +8,7 @@ import {
 import fs from "fs/promises";
 import path from "path";
 import { randomUUID } from "crypto";
-import {
-  buildDemoSeedData,
-  DEMO_MEMBER_ID,
-  DEMO_SUPPORTER_ID,
-} from "./demo-seed";
+import { buildDemoSeedData, DEMO_MEMBER_ID, DEMO_SUPPORTER_ID } from "./demo-seed";
 
 export interface IStorage {
   // User Operations
@@ -64,15 +60,18 @@ export class FileStorage implements IStorage {
   private currentConversationId = 1;
   private currentSupporterId = 1;
   private initialized = false;
+  private initPromise: Promise<void> | null = null;
 
-  constructor(dataDir = path.join(process.cwd(), process.env.NODE_ENV === "test" ? "data-test" : "data")) {
+  constructor(
+    dataDir = path.join(process.cwd(), process.env.NODE_ENV === "test" ? "data-test" : "data")
+  ) {
     this.dataDir = dataDir;
     this.usersFile = path.join(this.dataDir, "users.json");
     this.supportersFile = path.join(this.dataDir, "supporters.json");
     this.conversationsDir = path.join(this.dataDir, "conversations");
     this.conversationIndexFile = path.join(this.conversationsDir, "index.json");
     this.conversationMetaFile = path.join(this.conversationsDir, "meta.json");
-    this.init();
+    void this.init();
   }
 
   // Demo account IDs (deterministic for easy lookup)
@@ -81,6 +80,16 @@ export class FileStorage implements IStorage {
 
   private async init() {
     if (this.initialized) return;
+    if (this.initPromise) {
+      await this.initPromise;
+      return;
+    }
+
+    this.initPromise = this.initialize();
+    await this.initPromise;
+  }
+
+  private async initialize() {
     try {
       await fs.mkdir(this.dataDir, { recursive: true });
       await fs.mkdir(this.conversationsDir, { recursive: true });
@@ -89,6 +98,10 @@ export class FileStorage implements IStorage {
       this.initialized = true;
     } catch (error) {
       console.error("Error initializing storage:", error);
+    } finally {
+      if (!this.initialized) {
+        this.initPromise = null;
+      }
     }
   }
 
@@ -183,7 +196,12 @@ export class FileStorage implements IStorage {
       const content = await fs.readFile(filePath, "utf-8");
       return JSON.parse(content);
     } catch (error) {
-      if (error && typeof error === 'object' && 'code' in error && (error as { code: string }).code === "ENOENT") {
+      if (
+        error &&
+        typeof error === "object" &&
+        "code" in error &&
+        (error as { code: string }).code === "ENOENT"
+      ) {
         await fs.writeFile(filePath, JSON.stringify(defaultValue, null, 2));
         return defaultValue;
       }
@@ -196,10 +214,7 @@ export class FileStorage implements IStorage {
   }
 
   private async persistConversationIndex() {
-    await this.atomicWrite(
-      this.conversationIndexFile,
-      Array.from(this.conversationIndex.values())
-    );
+    await this.atomicWrite(this.conversationIndexFile, Array.from(this.conversationIndex.values()));
   }
 
   private async persistConversationMeta() {
@@ -208,10 +223,7 @@ export class FileStorage implements IStorage {
   }
 
   private async persistSupporters() {
-    await this.atomicWrite(
-      this.supportersFile,
-      Array.from(this.supporters.values())
-    );
+    await this.atomicWrite(this.supportersFile, Array.from(this.supporters.values()));
   }
 
   /**
@@ -220,13 +232,12 @@ export class FileStorage implements IStorage {
    */
   private async atomicWrite(filePath: string, data: unknown): Promise<void> {
     const tempPath = `${filePath}.tmp.${Date.now()}.${Math.random().toString(36).slice(2)}`;
-    
+
     try {
       // Write to temp file
-      await fs.writeFile(tempPath, JSON.stringify(data, null, 2), 'utf-8');
-      
-      // Atomic rename (POSIX guarantees atomicity)
-      await fs.rename(tempPath, filePath);
+      await fs.writeFile(tempPath, JSON.stringify(data, null, 2), "utf-8");
+
+      await this.renameWithRetry(tempPath, filePath);
     } catch (error) {
       // Cleanup temp file on error
       try {
@@ -236,6 +247,32 @@ export class FileStorage implements IStorage {
       }
       throw error;
     }
+  }
+
+  private async renameWithRetry(tempPath: string, filePath: string): Promise<void> {
+    const maxAttempts = 5;
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      try {
+        await fs.rename(tempPath, filePath);
+        return;
+      } catch (error) {
+        if (!this.isRetryableFileSystemError(error) || attempt === maxAttempts) {
+          throw error;
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, 10 * attempt));
+      }
+    }
+  }
+
+  private isRetryableFileSystemError(error: unknown): boolean {
+    return (
+      typeof error === "object" &&
+      error !== null &&
+      "code" in error &&
+      ["EBUSY", "EPERM"].includes(String((error as { code: unknown }).code))
+    );
   }
 
   private getConversationFilePath(memberId: string, conversationId: number): string {
@@ -262,7 +299,12 @@ export class FileStorage implements IStorage {
       const content = await fs.readFile(filePath, "utf-8");
       return JSON.parse(content);
     } catch (error) {
-      if (error && typeof error === 'object' && 'code' in error && (error as { code: string }).code === "ENOENT") {
+      if (
+        error &&
+        typeof error === "object" &&
+        "code" in error &&
+        (error as { code: string }).code === "ENOENT"
+      ) {
         return undefined;
       }
       throw error;

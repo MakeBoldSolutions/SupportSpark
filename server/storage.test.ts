@@ -5,7 +5,7 @@ import fs from "fs/promises";
 import path from "path";
 
 // Use a test data directory
-const TEST_DATA_DIR = path.join(process.cwd(), "data-test");
+const TEST_DATA_DIR = path.join(process.cwd(), "data-test-storage");
 
 describe("FileStorage", () => {
   let storage: FileStorage;
@@ -31,7 +31,7 @@ describe("FileStorage", () => {
 
   describe("User Operations", () => {
     beforeEach(() => {
-      storage = new FileStorage();
+      storage = new FileStorage(TEST_DATA_DIR);
     });
 
     it("should create a new user", async () => {
@@ -94,7 +94,7 @@ describe("FileStorage", () => {
 
   describe("Conversation Operations", () => {
     beforeEach(async () => {
-      storage = new FileStorage();
+      storage = new FileStorage(TEST_DATA_DIR);
     });
 
     it("should create a new conversation", async () => {
@@ -161,7 +161,11 @@ describe("FileStorage", () => {
         timestamp: new Date().toISOString(),
       };
 
-      const conversation = await storage.createConversation(user.id, "Original Title", initialMessage);
+      const conversation = await storage.createConversation(
+        user.id,
+        "Original Title",
+        initialMessage
+      );
 
       // Update title
       conversation.title = "Updated Title";
@@ -215,7 +219,7 @@ describe("FileStorage", () => {
 
   describe("Supporter Operations", () => {
     beforeEach(async () => {
-      storage = new FileStorage();
+      storage = new FileStorage(TEST_DATA_DIR);
     });
 
     it("should create supporter relationship", async () => {
@@ -354,7 +358,7 @@ describe("FileStorage", () => {
 
   describe("Atomic Write Operations (STORAGE1 Fix)", () => {
     beforeEach(async () => {
-      storage = new FileStorage();
+      storage = new FileStorage(TEST_DATA_DIR);
     });
 
     it("should persist user data atomically", async () => {
@@ -421,7 +425,7 @@ describe("FileStorage", () => {
 
   describe("Demo Data", () => {
     beforeEach(async () => {
-      storage = new FileStorage();
+      storage = new FileStorage(TEST_DATA_DIR);
     });
 
     it("should create demo member and supporter accounts", async () => {

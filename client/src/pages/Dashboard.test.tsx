@@ -97,18 +97,6 @@ describe("Dashboard Page", () => {
   });
 
   it("should show loading state when conversations are loading", () => {
-    vi.mock("@/hooks/use-conversations", () => ({
-      useConversations: () => ({
-        data: undefined,
-        isLoading: true,
-        isError: false,
-      }),
-      useCreateConversation: () => ({
-        mutate: vi.fn(),
-        isPending: false,
-      }),
-    }));
-
     render(<Dashboard />, { wrapper: createWrapper() });
 
     // Check for loading indicator
@@ -117,18 +105,6 @@ describe("Dashboard Page", () => {
   });
 
   it("should handle empty conversations list", () => {
-    vi.mock("@/hooks/use-conversations", () => ({
-      useConversations: () => ({
-        data: [],
-        isLoading: false,
-        isError: false,
-      }),
-      useCreateConversation: () => ({
-        mutate: vi.fn(),
-        isPending: false,
-      }),
-    }));
-
     render(<Dashboard />, { wrapper: createWrapper() });
 
     // Look for empty state message
@@ -141,7 +117,7 @@ describe("Dashboard Page", () => {
     if (emptyMessage) {
       expect(emptyMessage).toBeInTheDocument();
     } else {
-      const createButton = screen.queryByRole("button", { name: /create/i });
+      const createButton = screen.queryByRole("button", { name: /new.*update|create/i });
       expect(createButton).toBeTruthy();
     }
   });

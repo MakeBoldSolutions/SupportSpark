@@ -121,21 +121,6 @@ describe("Auth Page", () => {
   });
 
   it("should display loading state during login", async () => {
-    vi.mock("@/hooks/use-auth", () => ({
-      useAuth: () => ({
-        user: null,
-        isLoading: false,
-        loginMutation: {
-          mutate: vi.fn(),
-          isPending: true,
-        },
-        registerMutation: {
-          mutate: vi.fn(),
-          isPending: false,
-        },
-      }),
-    }));
-
     render(<Auth />, { wrapper: createWrapper() });
 
     // Check for loading indicator

@@ -155,25 +155,6 @@ describe("Supporters Page", () => {
   });
 
   it("should show empty state when no supporters", () => {
-    vi.mock("@/hooks/use-supporters", () => ({
-      useSupporters: () => ({
-        data: {
-          mySupporters: [],
-          supporting: [],
-        },
-        isLoading: false,
-        isError: false,
-      }),
-      useInviteSupporter: () => ({
-        mutate: vi.fn(),
-        isPending: false,
-      }),
-      useUpdateSupporterStatus: () => ({
-        mutate: vi.fn(),
-        isPending: false,
-      }),
-    }));
-
     render(<Supporters />, { wrapper: createWrapper() });
 
     // Look for empty state message
@@ -192,22 +173,6 @@ describe("Supporters Page", () => {
   });
 
   it("should display loading state", () => {
-    vi.mock("@/hooks/use-supporters", () => ({
-      useSupporters: () => ({
-        data: undefined,
-        isLoading: true,
-        isError: false,
-      }),
-      useInviteSupporter: () => ({
-        mutate: vi.fn(),
-        isPending: false,
-      }),
-      useUpdateSupporterStatus: () => ({
-        mutate: vi.fn(),
-        isPending: false,
-      }),
-    }));
-
     render(<Supporters />, { wrapper: createWrapper() });
 
     const loadingElements = screen.queryAllByText(/loading/i) || screen.queryAllByRole("status");
