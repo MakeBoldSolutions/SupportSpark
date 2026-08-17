@@ -3,6 +3,12 @@ import { Heart } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const buildDate = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "medium",
+    timeStyle: "short",
+    timeZone: "UTC",
+    timeZoneName: "short",
+  }).format(new Date(__BUILD_DATE__));
 
   return (
     <footer className="bg-white border-t border-stone-200 mt-auto">
@@ -75,11 +81,26 @@ export function Footer() {
             © {currentYear} SupportSpark. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            <a href="https://support.makeboldspark.com" className="hover:text-primary transition-colors">SupportSpark</a>
+            <a
+              href="https://support.makeboldspark.com"
+              className="hover:text-primary transition-colors"
+            >
+              SupportSpark
+            </a>
             {" — "}built by{" "}
-            <a href="https://markhazleton.com" className="hover:text-primary transition-colors">Mark Hazleton</a>
+            <a href="https://markhazleton.com" className="hover:text-primary transition-colors">
+              Mark Hazleton
+            </a>
             {" · "}
-            <a href="https://makeboldsolutions.com" className="hover:text-primary transition-colors">Make Bold Solutions</a>
+            <a
+              href="https://makeboldsolutions.com"
+              className="hover:text-primary transition-colors"
+            >
+              Make Bold Solutions
+            </a>
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Version {__APP_VERSION__} · Last build {buildDate}
           </p>
           <p className="text-sm text-muted-foreground">
             Made with <Heart className="w-4 h-4 inline fill-accent text-accent" /> for those who

@@ -86,7 +86,7 @@ During difficult times, keeping loved ones updated can be exhausting. SupportSpa
 
 ### Prerequisites
 
-- **Node.js** 18+
+- **Node.js** 26+
 - **npm** or **pnpm**
 
 ### Installation
@@ -240,12 +240,12 @@ Core conversation and supporter endpoints are defined in `shared/routes.ts`. Aut
 
 ### Authentication
 
-| Endpoint             | Method | Description        |
-| -------------------- | ------ | ------------------ |
-| `/api/register`      | POST   | Create new account |
-| `/api/login`         | POST   | Authenticate user  |
-| `/api/logout`        | POST   | End session        |
-| `/api/auth/user`     | GET    | Get current user   |
+| Endpoint         | Method | Description        |
+| ---------------- | ------ | ------------------ |
+| `/api/register`  | POST   | Create new account |
+| `/api/login`     | POST   | Authenticate user  |
+| `/api/logout`    | POST   | End session        |
+| `/api/auth/user` | GET    | Get current user   |
 
 ### Conversations
 
@@ -259,20 +259,20 @@ Core conversation and supporter endpoints are defined in `shared/routes.ts`. Aut
 
 ### Supporters
 
-| Endpoint                 | Method | Description              |
-| ------------------------ | ------ | ------------------------ |
-| `/api/supporters`        | GET    | List supporters          |
-| `/api/supporters/invite` | POST   | Invite by email          |
-| `/api/supporters/:id/status` | PATCH | Accept/reject invitation |
+| Endpoint                     | Method | Description              |
+| ---------------------------- | ------ | ------------------------ |
+| `/api/supporters`            | GET    | List supporters          |
+| `/api/supporters/invite`     | POST   | Invite by email          |
+| `/api/supporters/:id/status` | PATCH  | Accept/reject invitation |
 
 ### Demo and Utility
 
-| Endpoint                      | Method | Description |
-| ----------------------------- | ------ | ----------- |
-| `/api/demo/login/patient`     | POST   | Sign in as demo member |
-| `/api/demo/login/supporter`   | POST   | Sign in as demo supporter |
-| `/api/demo/info`              | GET    | Return demo identity summary |
-| `/api/quotes`                 | GET    | Return quote content |
+| Endpoint                    | Method | Description                  |
+| --------------------------- | ------ | ---------------------------- |
+| `/api/demo/login/patient`   | POST   | Sign in as demo member       |
+| `/api/demo/login/supporter` | POST   | Sign in as demo supporter    |
+| `/api/demo/info`            | GET    | Return demo identity summary |
+| `/api/quotes`               | GET    | Return quote content         |
 
 ---
 
@@ -303,13 +303,13 @@ This project follows strict development principles defined in the [Constitution]
 
 ## Documentation
 
-| Document                                                | Purpose                           |
-| ------------------------------------------------------- | --------------------------------- |
-| [Constitution](.documentation/memory/constitution.md)         | Project governance and principles |
-| [Architecture](.documentation/domain/architecture.md)             | System design and data flow       |
-| [Patterns](.documentation/domain/development-patterns.md)         | Common development patterns       |
-| [IIS Deployment](.documentation/domain/deployment-iis.md)         | Windows 11 + IIS deployment guide |
-| [Copilot Instructions](.github/copilot-instructions.md) | AI assistant context              |
+| Document                                                  | Purpose                           |
+| --------------------------------------------------------- | --------------------------------- |
+| [Constitution](.documentation/memory/constitution.md)     | Project governance and principles |
+| [Architecture](.documentation/domain/architecture.md)     | System design and data flow       |
+| [Patterns](.documentation/domain/development-patterns.md) | Common development patterns       |
+| [IIS Deployment](.documentation/domain/deployment-iis.md) | Windows 11 + IIS deployment guide |
+| [Copilot Instructions](.github/copilot-instructions.md)   | AI assistant context              |
 
 ---
 
