@@ -169,7 +169,10 @@ describe("FileStorage", () => {
 
       // Update title
       conversation.title = "Updated Title";
-      const updated = await storage.updateConversation(conversation.id, conversation);
+      const updated = await storage.updateConversation(conversation.id, (current) => {
+        current.title = conversation.title;
+        current.data = conversation.data;
+      });
 
       expect(updated.title).toBe("Updated Title");
 

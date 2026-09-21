@@ -1,0 +1,35 @@
+{
+  "id": "supportspark-api",
+  "name": "SupportSpark API",
+  "kind": "repository-configuration",
+  "summary": "Express serves authenticated conversation and supporter APIs.",
+  "root": "server",
+  "lifecycle": "current",
+  "managed_by": "prompt",
+  "relations": [
+    {
+      "type": "uses",
+      "object": "supportspark-data"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "code",
+      "ref": "server/routes.ts",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "code",
+      "ref": "server/index.ts",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "code",
+      "ref": "shared/routes.ts",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    }
+  ]
+}

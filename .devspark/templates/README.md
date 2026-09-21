@@ -4,7 +4,10 @@ This directory contains the **core deliverable** of DevSpark — prompt template
 
 ## Commands (`commands/`)
 
-Each file in `commands/` is a slash-command prompt (e.g., `/devspark.specify`, `/devspark.plan`). When you run `devspark init`, stock prompts are deployed to `.devspark/defaults/commands/`. AI shims then resolve prompts via the 3-tier order: personal override, team override, then stock default.
+Each file in `commands/` is a slash-command prompt (e.g., `/devspark.specify`,
+`/devspark.plan`). Quickstart prompts deploy stock prompts to
+`.devspark/defaults/commands/`. AI shims then resolve prompts via the 3-tier
+order: personal override, team override, then stock default.
 
 Terminology used by these templates:
 
@@ -16,12 +19,14 @@ Terminology used by these templates:
 - **Roles** are responsibility labels for participants, such as owner, planner,
   implementer, reviewer, critic, or scribe.
 
-DevSpark ownership is strictly two-tier:
+DevSpark ownership is split by lifecycle:
 
 - `.devspark/` is framework-managed stock content
-- `.documentation/` is repository-owned work product and overrides
+- `.knowledge/` is repository-owned current truth, governance, and overrides
+- `.devspark.work/` is ephemeral in-flight work state
+- source and tests are the current executable product behavior
 
-The collection includes 29 active commands plus 1 deprecated compatibility alias.
+The current source collection includes 30 active commands.
 
 | File | Command | Purpose |
 |------|---------|---------|
@@ -36,11 +41,12 @@ The collection includes 29 active commands plus 1 deprecated compatibility alias
 | `pr-review.md` | `/devspark.pr-review` | Review PRs against constitution |
 | `address-pr-review.md` | `/devspark.address-pr-review` | Address PR review findings with enforced commit isolation |
 | `site-audit.md` | `/devspark.site-audit` | Comprehensive codebase audit |
+| `explain.md` | `/devspark.explain` | Explain existing functionality and verify matching current truth |
+| `next.md` | `/devspark.next` | Detect workflow state and safely dispatch the next command |
 | `commit-audit.md` | `/devspark.commit-audit` | Analyze commit history for workflow, hygiene, and delivery signals |
 | `quickfix.md` | `/devspark.quickfix` | Lightweight bug fix workflow |
 | `fix-score.md` | `/devspark.fix-score` | Diagnose and remediate repository score blockers with verification guardrails |
-| `harvest.md` | `/devspark.harvest` | Canonical knowledge-preserving cleanup and archival workflow |
-| `release.md` | `/devspark.release` | Archive artifacts and prepare releases |
+| `release.md` | `/devspark.release` | Validate current truth and archive completed work packages |
 | `evolve-constitution.md` | `/devspark.evolve-constitution` | Propose constitution amendments |
 | `repo-story.md` | `/devspark.repo-story` | Narrative from commit history |
 | `critic.md` | `/devspark.critic` | Adversarial risk analysis |
@@ -48,9 +54,8 @@ The collection includes 29 active commands plus 1 deprecated compatibility alias
 | `analyze.md` | `/devspark.analyze` | Cross-artifact consistency check |
 | `checklist.md` | `/devspark.checklist` | Quality validation checklists |
 | `personalize.md` | `/devspark.personalize` | Create per-user prompt overrides |
-| `archive.md` | `/devspark.archive` | Deprecated alias for `/devspark.harvest` |
-| `upgrade.md` | `/devspark.upgrade` | Upgrade project to latest templates |
 | `discover-constitution.md` | `/devspark.discover-constitution` | Reverse-engineer principles from code |
+| `discover-knowledge.md` | `/devspark.discover-knowledge` | Discover source-grounded entities and regenerate ontology |
 | `taskstoissues.md` | `/devspark.taskstoissues` | Convert tasks to GitHub issues |
 | `add-application.md` | `/devspark.add-application` | Register a new application in the multi-app registry (optional) |
 | `list-applications.md` | `/devspark.list-applications` | Display all registered applications (optional) |
@@ -69,7 +74,12 @@ The collection includes 29 active commands plus 1 deprecated compatibility alias
 | `checklist-template.md` | Template structure for quality checklists |
 | `spec-validation-contract.md` | Shared validation contract for spec structure and required content |
 | `command-preamble-contract.md` | Shared command guidance, including Genuine Fix Discipline |
-| `schemas/okf-knowledge-document.schema.json` | OKF knowledge-document frontmatter schema |
+| `schemas/devspark-evidence.schema.json` | v4 evidence schema |
+| `schemas/devspark-entity.schema.json` | v4 entity metadata schema |
+| `schemas/devspark-decision.schema.json` | v4 governance decision schema |
+| `schemas/devspark-derived.schema.json` | v4 generated ontology metadata schema |
+| `schemas/devspark-task-linkage.schema.json` | v4 task linkage schema |
+| `schemas/devspark-work-package.schema.json` | v4 work-package schema |
 | `agent-file-template.md` | Template for agent configuration files |
 | `vscode-settings.json` | Recommended VS Code settings |
 
@@ -81,11 +91,10 @@ Customization layers and precedence are unchanged.
 
 ## Knowledge and Genuine Fix Contracts
 
-Feature lifecycle scripts may dual-write OKF Markdown under
-`.documentation/specs/<feature>/knowledge/` while preserving existing JSON
-contracts. Validate frontmatter with
-`templates/schemas/okf-knowledge-document.schema.json` and run advisory coverage
-with `scripts/{bash,powershell}/validate-knowledge-coverage.*`.
+Feature lifecycle prompts update durable current truth under `.knowledge/` while
+ephemeral planning state remains under `.devspark.work/`. Validate entity,
+decision, evidence, derived metadata, and task-linkage contracts with the
+`templates/schemas/devspark-*.schema.json` files.
 
 Commands that fix, review, audit, analyze, or verify findings reference
 `templates/command-preamble-contract.md` §9. Findings must name behavioral

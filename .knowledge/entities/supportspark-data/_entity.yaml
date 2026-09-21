@@ -1,0 +1,30 @@
+{
+  "id": "supportspark-data",
+  "name": "SupportSpark data model",
+  "kind": "knowledge-model",
+  "summary": "Zod schemas describe users, conversations, recursive messages and supporter relationships.",
+  "root": "shared",
+  "lifecycle": "current",
+  "managed_by": "prompt",
+  "relations": [],
+  "evidence": [
+    {
+      "type": "code",
+      "ref": "shared/schema.ts",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "code",
+      "ref": "server/storage.ts",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "doc",
+      "ref": ".documentation/domain/data-model.md",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    }
+  ]
+}

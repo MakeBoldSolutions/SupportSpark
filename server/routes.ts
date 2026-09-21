@@ -1,6 +1,6 @@
 import type { Express } from "express";
 import type { Server } from "http";
-import { storage, FileStorage } from "./storage";
+import { storage as defaultStorage, FileStorage, type IStorage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
 import { randomUUID } from "crypto";
@@ -18,7 +18,7 @@ import { registerConversationImageRoutes } from "./conversation-image-routes";
 
 const MemoryStore = memorystore(session);
 
-export async function registerRoutes(httpServer: Server, app: Express): Promise<Server> {
+export async function registerRoutes(httpServer: Server, app: Express, storage: IStorage = defaultStorage): Promise<Server> {
   // === AUTHENTICATION SETUP ===
   // Remove hardcoded fallback - environment validation ensures SESSION_SECRET exists
   const sessionSecret = process.env.SESSION_SECRET!;
@@ -289,30 +289,30 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
         newMessage.images = input.images;
       }
 
-      if (input.parentMessageId) {
-        // Helper to recursively find and reply
-        const addReply = (messages: Message[]): boolean => {
-          for (const msg of messages) {
-            if (msg.id === input.parentMessageId) {
-              if (!msg.replies) msg.replies = [];
-              msg.replies.push(newMessage);
-              return true;
+      const updated = await storage.updateConversation(id, (conversation) => {
+        if (input.parentMessageId) {
+          // Helper to recursively find and reply
+          const addReply = (messages: Message[]): boolean => {
+            for (const msg of messages) {
+              if (msg.id === input.parentMessageId) {
+                if (!msg.replies) msg.replies = [];
+                msg.replies.push(newMessage);
+                return true;
+              }
+              if (msg.replies && msg.replies.length > 0) {
+                if (addReply(msg.replies)) return true;
+              }
             }
-            if (msg.replies && msg.replies.length > 0) {
-              if (addReply(msg.replies)) return true;
-            }
-          }
-          return false;
-        };
+            return false;
+          };
 
-        const found = addReply(conversation.data.messages);
-        if (!found) return res.status(404).json({ message: "Parent message not found" });
-      } else {
-        // Top level message
-        conversation.data.messages.push(newMessage);
-      }
-
-      const updated = await storage.updateConversation(id, conversation);
+          const found = addReply(conversation.data.messages);
+          if (!found) throw Object.assign(new Error("Parent message not found"), { status: 404 });
+        } else {
+          // Top level message
+          conversation.data.messages.push(newMessage);
+        }
+      });
       res.json(updated);
     }
   );

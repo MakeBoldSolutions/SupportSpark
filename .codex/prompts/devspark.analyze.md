@@ -1,30 +1,18 @@
 ---
-description: Non-destructive cross-artifact consistency, coverage, and traceability analysis across spec.md, plan.md, and tasks.md. Pairs with /devspark.critic as the dual pre-implement gate (analyze = are the artifacts internally aligned? critic = will the system survive production?).
-handoffs:
-  - label: Implement Project
-    agent: devspark.implement
-    prompt: Start the implementation in phases
-  - label: Revise Plan
-    agent: devspark.plan
-    prompt: Revise plan to address analysis findings
+description: DevSpark analyze command shim.
 ---
-
 ## Prompt Resolution
 
 Determine the current git user by running `git config user.name`.
 Normalize to a folder-safe slug: lowercase, replace spaces with hyphens, strip non-alphanumeric/hyphen chars.
 
-Read and execute the instructions from the **first file that exists**:
+Read and execute the instructions from the **first file that exists**, preserving this repository's AGENTS.md override order:
 1. `.documentation/{git-user}/commands/devspark.analyze.md` (personalized override)
 2. `.documentation/commands/devspark.analyze.md` (team customization)
 3. `.devspark/defaults/commands/devspark.analyze.md` (stock default)
 
-Where `{git-user}` is the normalized slug from step above.
-
 ## User Input
 
-```text
 $ARGUMENTS
-```
 
 Pass the user input above to the resolved prompt.

@@ -1,0 +1,31 @@
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { act, render, screen, waitFor } from "@testing-library/react";
+import App from "./App";
+import type { User } from "@shared/schema";
+const state = vi.hoisted(() => ({ user: null as User | null, isLoading: false, loginMutation: { mutate: vi.fn() }, registerMutation: { mutate: vi.fn() }, logoutMutation: { mutate: vi.fn() } }));
+vi.mock("@/hooks/use-auth", () => ({ useAuth: () => state }));
+vi.mock("@/hooks/use-conversations", () => ({ useConversations: () => ({ data: [], isLoading: false }), useCreateConversation: () => ({ isPending: false }), useConversation: () => ({ data: undefined }), useAddMessage: () => ({}) }));
+vi.mock("@/hooks/use-supporters", () => ({ useSupporters: () => ({ data: undefined }), useInviteSupporter: () => ({}) }));
+vi.mock("@/lib/local-storage-adapter", () => ({ storage: { getCurrentUser: () => null, getStorageUsagePercent: async () => 0 } }));
+beforeEach(() => { vi.stubGlobal("__APP_VERSION__", "test"); vi.stubGlobal("__BUILD_DATE__", "2026-09-21"); state.user = null; state.isLoading = false; });
+afterEach(() => { vi.unstubAllGlobals(); window.history.replaceState({}, "", "/"); });
+it("requires login before rendering a protected route", async () => {
+  window.location.hash = "#/dashboard";
+  const view = render(<App />);
+  expect(await screen.findByRole("tab", { name: "Login" })).toBeInTheDocument();
+  state.isLoading = true; view.rerender(<App />);
+  expect(screen.queryByRole("tab", { name: "Login" })).not.toBeInTheDocument();
+  state.isLoading = false; state.user = { id: "owner", email: "owner@example.com", password: "unused", firstName: "Jane" };
+  view.rerender(<App />);
+  expect(await screen.findByText("Welcome home, Jane.")).toBeInTheDocument();
+  await act(async () => { window.location.hash = "#/supporters"; });
+  expect(await screen.findByText("Community Circle")).toBeInTheDocument();
+  await act(async () => { window.location.hash = "#/conversation/1"; });
+  expect(await screen.findByText("Update not found")).toBeInTheDocument();
+});
+it("routes visitors to home and missing pages", async () => {
+  window.location.hash = "#/"; render(<App />);
+  expect(await screen.findByRole("button", { name: "Start Your Journey" })).toBeInTheDocument();
+  await act(async () => { window.location.hash = "#/unknown"; });
+  await waitFor(() => expect(screen.getByText(/404/)).toBeInTheDocument());
+});

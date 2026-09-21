@@ -1,0 +1,39 @@
+{
+  "id": "supportspark-build",
+  "name": "SupportSpark build and deployment",
+  "kind": "repository-configuration",
+  "summary": "Build scripts produce the full application and a separate static preview.",
+  "root": "script",
+  "lifecycle": "current",
+  "managed_by": "prompt",
+  "relations": [
+    {
+      "type": "uses",
+      "object": "supportspark-client"
+    },
+    {
+      "type": "uses",
+      "object": "supportspark-api"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "code",
+      "ref": "script/build.ts",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "code",
+      "ref": "package.json",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "code",
+      "ref": ".github/workflows/deploy-preview.yml",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    }
+  ]
+}

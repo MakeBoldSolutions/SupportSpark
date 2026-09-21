@@ -1,5 +1,8 @@
 ---
 description: Verify implemented work against behavioral intent, evidence, and Genuine Fix Discipline.
+scripts:
+  sh: .devspark/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks
+  ps: .devspark/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks
 ---
 
 ## User Input
@@ -9,6 +12,25 @@ $ARGUMENTS
 ```
 
 You **MUST** consider the user input before proceeding (if not empty).
+
+## DevSpark v4 Override
+
+This command is the execution-evidence engine for v4 current truth. When any
+later section conflicts with this section, the v4 section wins.
+
+- Run each cited `verified_by: execution` test directly with the repository's
+  native test command.
+- Validate current truth after evidence runs by checking `.knowledge` entity
+  metadata, decision evidence, generated `_derived.yaml` files, and the absence
+  of permanent references to ephemeral work packages.
+- Run `python .devspark/scripts/python/build_knowledge_index.py --check` when
+  available, falling back to `python scripts/python/build_knowledge_index.py
+  --check` in source repos.
+- Treat inspection evidence as skipped execution, not as a pass.
+- Verification proves behavior and current-truth linkage, but never archives a
+  work package. A successful result leaves the package in `.devspark.work/` for
+  `/devspark.release`, which revalidates it before archival.
+- This command never archives a work package and never writes to `.archive/`.
 
 ## Overview
 
@@ -37,15 +59,17 @@ manual verification note, or runtime signal tied to the intent.
 
 ## Outline
 
-1. Run `.devspark/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks` from repo root and parse `FEATURE_DIR`, `SPEC_FILE`, and
+1. Run `{SCRIPT}` from repo root and parse `FEATURE_DIR`, `SPEC_FILE`, and
    available documents.
 2. Load `spec.md`, `tasks.md`, gate artifacts, and any `knowledge/` documents if
    present. Missing knowledge documents do not block verification.
-3. Extract open findings, task IDs, requirement IDs, and intent cues from the
+3. Run the ontology generator in `--check` mode and treat stale generated
+   ontology files as a verification failure when `.knowledge/` exists.
+4. Extract open findings, task IDs, requirement IDs, and intent cues from the
    available artifacts.
-4. Compare the user-provided proof and local evidence against each relevant
+5. Compare the user-provided proof and local evidence against each relevant
    intent.
-5. Produce a concise verdict:
+6. Produce a concise verdict:
 
 ```yaml
 verification:

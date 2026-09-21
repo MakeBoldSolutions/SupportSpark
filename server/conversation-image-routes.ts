@@ -8,19 +8,14 @@ import type { AuthenticatedRequest, AuthMiddleware } from "./types";
 
 export function registerConversationImageRoutes(
   app: Express,
-  storage: IStorage,
-  requireAuth: AuthMiddleware
+  storage: Pick<IStorage, "getConversation" | "getSupporterRecord">,
+  requireAuth: AuthMiddleware,
+  imageRoot = path.join(process.cwd(), "data", "conversations")
 ): void {
   const imageStorage = multer.diskStorage({
     destination: async (req, _file, cb) => {
       const conversationId = req.params.id;
-      const uploadDir = path.join(
-        process.cwd(),
-        "data",
-        "conversations",
-        `conv-${conversationId}`,
-        "images"
-      );
+      const uploadDir = path.join(imageRoot, `conv-${conversationId}`, "images");
 
       try {
         await fs.mkdir(uploadDir, { recursive: true });
@@ -89,22 +84,30 @@ export function registerConversationImageRoutes(
     }
   );
 
-  app.get("/api/conversations/:id/images/:filename", async (req, res) => {
-    const { id, filename } = req.params;
-    const imagePath = path.join(
-      process.cwd(),
-      "data",
-      "conversations",
-      `conv-${id}`,
-      "images",
-      filename
-    );
+  app.get(
+    "/api/conversations/:id/images/:filename",
+    requireAuth,
+    async (req: AuthenticatedRequest, res) => {
+      const conversation = await storage.getConversation(Number(req.params.id));
+      if (!conversation) return res.status(404).json({ message: "Conversation not found" });
+      if (conversation.memberId !== req.user?.id) {
+        const relation = await storage.getSupporterRecord(conversation.memberId, req.user!.id);
+        if (relation?.status !== "accepted")
+          return res.status(403).json({ message: "Access denied" });
+      }
+      res.setHeader("Cache-Control", "private, no-store");
+      const { id, filename } = req.params;
+      if (typeof id !== "string" || typeof filename !== "string" || !/^\d+$/.test(id) || !/^[a-zA-Z0-9.-]+$/.test(filename) || filename.includes("..")) {
+        return res.status(400).json({ message: "Invalid image path" });
+      }
+      const imagePath = path.join(imageRoot, `conv-${id}`, "images", filename);
 
-    try {
-      await fs.access(imagePath);
-      res.sendFile(imagePath);
-    } catch {
-      res.status(404).json({ message: "Image not found" });
+      try {
+        await fs.access(imagePath);
+        res.sendFile(imagePath);
+      } catch {
+        res.status(404).json({ message: "Image not found" });
+      }
     }
-  });
+  );
 }

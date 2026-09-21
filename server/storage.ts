@@ -24,7 +24,10 @@ export interface IStorage {
     title: string,
     initialMessage: Message
   ): Promise<Conversation>;
-  updateConversation(id: number, conversation: Conversation): Promise<Conversation>;
+  updateConversation(
+    id: number,
+    mutate: (conversation: Conversation) => void
+  ): Promise<Conversation>;
 
   // Supporter Operations
   getSupportersForMember(memberId: string): Promise<Supporter[]>;
@@ -228,7 +231,7 @@ export class FileStorage implements IStorage {
 
   /**
    * Atomic write operation using temp file + rename strategy
-   * Prevents data corruption from concurrent writes (STORAGE1 fix)
+   * Prevents partial writes; conversation mutations also require the exclusive lock.
    */
   private async atomicWrite(filePath: string, data: unknown): Promise<void> {
     const tempPath = `${filePath}.tmp.${Date.now()}.${Math.random().toString(36).slice(2)}`;
@@ -413,21 +416,40 @@ export class FileStorage implements IStorage {
     return conversation;
   }
 
-  async updateConversation(id: number, conversation: Conversation): Promise<Conversation> {
+  async updateConversation(
+    id: number,
+    mutate: (conversation: Conversation) => void
+  ): Promise<Conversation> {
     await this.ensureInitialized();
-
-    // Update index if title changed
-    const indexEntry = this.conversationIndex.get(id);
-    if (indexEntry && indexEntry.title !== conversation.title) {
-      indexEntry.title = conversation.title;
-      this.conversationIndex.set(id, indexEntry);
-      await this.persistConversationIndex();
+    // The filesystem lock covers read-modify-write across instances and processes.
+    const lockPath = path.join(this.conversationsDir, `${id}.lock`);
+    const deadline = Date.now() + 5000;
+    for (;;) {
+      try {
+        await fs.mkdir(lockPath);
+        break;
+      } catch (error) {
+        if (!(error && typeof error === "object" && "code" in error && error.code === "EEXIST"))
+          throw error;
+        if (Date.now() >= deadline)
+          throw Object.assign(new Error("Conversation is busy; retry the update"), { status: 503 });
+        await new Promise((resolve) => setTimeout(resolve, 10));
+      }
     }
-
-    // Write the updated conversation file
-    await this.writeConversationFile(conversation);
-
-    return conversation;
+    try {
+      const conversation = await this.getConversation(id);
+      if (!conversation) throw Object.assign(new Error("Conversation not found"), { status: 404 });
+      mutate(conversation);
+      const indexEntry = this.conversationIndex.get(id);
+      if (indexEntry && indexEntry.title !== conversation.title) {
+        indexEntry.title = conversation.title;
+        await this.persistConversationIndex();
+      }
+      await this.writeConversationFile(conversation);
+      return conversation;
+    } finally {
+      await fs.rmdir(lockPath);
+    }
   }
 
   // === Supporter Operations ===

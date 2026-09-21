@@ -1,0 +1,35 @@
+{
+  "id": "supportspark-client",
+  "name": "SupportSpark client",
+  "kind": "repository-configuration",
+  "summary": "The React client provides hash-routed support-network pages.",
+  "root": "client",
+  "lifecycle": "current",
+  "managed_by": "prompt",
+  "relations": [
+    {
+      "type": "uses",
+      "object": "supportspark-api"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "code",
+      "ref": "client/src/App.tsx",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "code",
+      "ref": "client/src/lib/queryClient.ts",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "code",
+      "ref": "package.json",
+      "verified_by": "inspection",
+      "last_verified": "2026-09-21"
+    }
+  ]
+}
