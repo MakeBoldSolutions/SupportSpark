@@ -25,6 +25,18 @@
       "ref": ".documentation/domain/data-model.md",
       "verified_by": "inspection",
       "last_verified": "2026-09-21"
+    },
+    {
+      "type": "test",
+      "ref": "server/conversation-concurrency.test.ts",
+      "verified_by": "execution",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "test",
+      "ref": "server/storage.test.ts",
+      "verified_by": "execution",
+      "last_verified": "2026-09-21"
     }
   ]
 }

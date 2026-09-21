@@ -1,7 +1,9 @@
 # SupportSpark API
 
-The Express entry point registers routes and requires SESSION_SECRET. Passport local authentication and session middleware support login; authentication endpoints have rate limiting (ref: `server/index.ts`, `server/routes.ts`).
+The Express entry point requires SESSION_SECRET and registers the API. Passport local authentication and sessions support login; authentication endpoints have rate limits (ref: `server/index.ts`, `server/routes.ts`).
 
-The API exposes conversations, messages, supporter invitations, authentication, demo accounts, quotes and health endpoints. Shared resource contracts live in `shared/routes.ts`; image handlers also live in `server/conversation-image-routes.ts` (ref: `server/routes.ts`, `shared/routes.ts`, `server/conversation-image-routes.ts`).
+Conversation reads and image downloads require the owner or an accepted supporter. Uploads require the owner; authorized image responses use private, no-store caching (ref: `server/routes.ts`, `server/conversation-image-routes.ts`). Integration tests cover anonymous, unrelated, pending, rejected and accepted access, plus owner uploads and download payloads (ref: `server/conversation-api.test.ts`, `server/conversation-image-routes.test.ts`).
 
-Integration test source exists; no application tests were executed for this framework-only update (ref: `server/routes.test.ts`).
+API request logs contain method, route template, response status and duration. They omit payloads, query strings and path identifiers (ref: `server/request-logger.ts`, `server/request-logger.test.ts`).
+
+Messages are added to a fresh conversation snapshot inside the storage update lock, preserving simultaneous top-level and nested replies (ref: `server/routes.ts`, `server/conversation-api.test.ts`).

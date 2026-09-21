@@ -33,7 +33,9 @@ describe("Auth page", () => {
     await user.click(screen.getByRole("tab", { name: "Register" }));
     await user.click(screen.getByRole("button", { name: "Register" }));
     expect(auth.registerMutation.mutate).not.toHaveBeenCalled();
-    await waitFor(() => expect(screen.getByLabelText("Password")).toHaveAttribute("aria-invalid", "true"));
+    await waitFor(() =>
+      expect(screen.getByLabelText("Password")).toHaveAttribute("aria-invalid", "true")
+    );
     await user.type(screen.getByLabelText("Email"), "new@example.com");
     await user.type(screen.getByLabelText("Password"), "Secret123!");
     await user.type(screen.getByLabelText("First Name"), "Jane");

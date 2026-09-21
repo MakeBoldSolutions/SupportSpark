@@ -94,7 +94,6 @@ app.use(requestLogger(log));
         : "Internal Server Error";
 
     res.status(status).json({ message });
-
   });
 
   // importantly only setup vite in development and after

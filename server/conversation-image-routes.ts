@@ -97,7 +97,13 @@ export function registerConversationImageRoutes(
       }
       res.setHeader("Cache-Control", "private, no-store");
       const { id, filename } = req.params;
-      if (typeof id !== "string" || typeof filename !== "string" || !/^\d+$/.test(id) || !/^[a-zA-Z0-9.-]+$/.test(filename) || filename.includes("..")) {
+      if (
+        typeof id !== "string" ||
+        typeof filename !== "string" ||
+        !/^\d+$/.test(id) ||
+        !/^[a-zA-Z0-9.-]+$/.test(filename) ||
+        filename.includes("..")
+      ) {
         return res.status(400).json({ message: "Invalid image path" });
       }
       const imagePath = path.join(imageRoot, `conv-${id}`, "images", filename);

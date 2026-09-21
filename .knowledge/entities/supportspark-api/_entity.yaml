@@ -30,6 +30,24 @@
       "ref": "shared/routes.ts",
       "verified_by": "inspection",
       "last_verified": "2026-09-21"
+    },
+    {
+      "type": "test",
+      "ref": "server/conversation-api.test.ts",
+      "verified_by": "execution",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "test",
+      "ref": "server/conversation-image-routes.test.ts",
+      "verified_by": "execution",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "type": "test",
+      "ref": "server/request-logger.test.ts",
+      "verified_by": "execution",
+      "last_verified": "2026-09-21"
     }
   ]
 }

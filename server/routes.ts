@@ -18,7 +18,11 @@ import { registerConversationImageRoutes } from "./conversation-image-routes";
 
 const MemoryStore = memorystore(session);
 
-export async function registerRoutes(httpServer: Server, app: Express, storage: IStorage = defaultStorage): Promise<Server> {
+export async function registerRoutes(
+  httpServer: Server,
+  app: Express,
+  storage: IStorage = defaultStorage
+): Promise<Server> {
   // === AUTHENTICATION SETUP ===
   // Remove hardcoded fallback - environment validation ensures SESSION_SECRET exists
   const sessionSecret = process.env.SESSION_SECRET!;

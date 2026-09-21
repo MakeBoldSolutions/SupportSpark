@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, expect, it } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import fs from "fs/promises";
 import path from "path";
 import os from "os";
@@ -21,6 +21,7 @@ beforeEach(async () => {
   await store.getUser("ready");
 });
 afterEach(async () => {
+  vi.restoreAllMocks();
   await fs.rm(root, { recursive: true, force: true });
 });
 
@@ -57,4 +58,34 @@ it("releases the lock after a rejected mutation without persisting partial chang
   ]);
   await expect(store.updateConversation(999, () => {})).rejects.toThrow("Conversation not found");
   expect(await fs.readdir(path.join(root, "conversations"))).not.toContain("999.lock");
+});
+
+it("leaves a contended lock intact and returns a retryable error", async () => {
+  const conversation = await store.createConversation("owner", "Journey", message("initial"));
+  const lock = path.join(root, "conversations", `${conversation.id}.lock`);
+  await fs.mkdir(lock);
+  vi.spyOn(Date, "now").mockReturnValueOnce(0).mockReturnValue(5001);
+  await expect(store.updateConversation(conversation.id, () => {})).rejects.toMatchObject({
+    status: 503,
+  });
+  expect((await fs.stat(lock)).isDirectory()).toBe(true);
+});
+it("releases its lock after a write failure so a later reply can succeed", async () => {
+  const conversation = await store.createConversation("owner", "Journey", message("initial"));
+  const rename = vi
+    .spyOn(fs, "rename")
+    .mockRejectedValueOnce(Object.assign(new Error("disk failure"), { code: "EIO" }));
+  await expect(
+    store.updateConversation(conversation.id, (current) => {
+      current.data.messages.push(message("failed"));
+    })
+  ).rejects.toThrow("disk failure");
+  rename.mockRestore();
+  await store.updateConversation(conversation.id, (current) => {
+    current.data.messages.push(message("recovered"));
+  });
+  expect((await store.getConversation(conversation.id))!.data.messages.map((m) => m.id)).toEqual([
+    "initial",
+    "recovered",
+  ]);
 });

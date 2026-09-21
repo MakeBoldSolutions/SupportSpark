@@ -2,12 +2,39 @@ import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { storage } from "./local-storage-adapter";
 import type { Conversation, Supporter, User } from "@shared/schema";
 vi.mock("./seed-data", () => ({ injectSeedData: vi.fn(), DEMO_SUPPORTER_ID: "demo" }));
-const users: User[] = ["owner", "friend", "outsider", "demo"].map((id) => ({ id, email: `${id}@example.com`, password: "test" }));
-const conversation: Conversation = { id: 1, memberId: "owner", title: "Journey", createdAt: "2026-09-21", data: { messages: [] } };
-const relation: Supporter = { id: 1, memberId: "owner", supporterId: "friend", status: "accepted", createdAt: "2026-09-21" };
-function set(key: string, value: unknown) { localStorage.setItem(`supportSpark_${key}`, JSON.stringify(value)); }
-beforeEach(() => { storage.resetAllData(); set("users", users); set("conversations", [conversation]); set("session", "friend"); set("supporters", [relation]); });
-afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
+const users: User[] = ["owner", "friend", "outsider", "demo"].map((id) => ({
+  id,
+  email: `${id}@example.com`,
+  password: "test",
+}));
+const conversation: Conversation = {
+  id: 1,
+  memberId: "owner",
+  title: "Journey",
+  createdAt: "2026-09-21",
+  data: { messages: [] },
+};
+const relation: Supporter = {
+  id: 1,
+  memberId: "owner",
+  supporterId: "friend",
+  status: "accepted",
+  createdAt: "2026-09-21",
+};
+function set(key: string, value: unknown) {
+  localStorage.setItem(`supportSpark_${key}`, JSON.stringify(value));
+}
+beforeEach(() => {
+  storage.resetAllData();
+  set("users", users);
+  set("conversations", [conversation]);
+  set("session", "friend");
+  set("supporters", [relation]);
+});
+afterEach(() => {
+  vi.restoreAllMocks();
+  vi.unstubAllGlobals();
+});
 it("rejects stale sessions and unknown conversations", () => {
   set("session", "missing");
   expect(storage.getCurrentUser()).toBeNull();
@@ -37,10 +64,16 @@ it("denies unrelated accepted relationships and permits the owner", () => {
   expect(() => storage.addMessage(1, { content: "denied" })).toThrow("access");
   set("session", "owner");
   expect(storage.getConversation(1)?.id).toBe(1);
-  expect(storage.createConversation({ title: "Another", initialMessage: "Hello" }).data.messages[0].authorName).toBe("owner@example.com");
+  expect(
+    storage.createConversation({ title: "Another", initialMessage: "Hello" }).data.messages[0]
+      .authorName
+  ).toBe("owner@example.com");
 });
 it("handles missing people in relationship lists and unknown relationship ids", () => {
-  set("supporters", [{ ...relation, memberId: "missing", supporterId: "friend" }, { ...relation, id: 2, memberId: "friend", supporterId: "missing" }]);
+  set("supporters", [
+    { ...relation, memberId: "missing", supporterId: "friend" },
+    { ...relation, id: 2, memberId: "friend", supporterId: "missing" },
+  ]);
   const result = storage.getSupporters();
   expect(result.supporting[0].memberName).toBeUndefined();
   expect(result.mySupporters[0].supporterEmail).toBeUndefined();
@@ -58,6 +91,10 @@ it("reports browser storage quota and handles unavailable storage", async () => 
   expect(await storage.getStorageUsagePercent()).toBeGreaterThanOrEqual(0);
   vi.stubGlobal("navigator", {});
   expect(await storage.getStorageUsagePercent()).toBeGreaterThanOrEqual(0);
-  vi.stubGlobal("localStorage", { setItem: () => { throw new Error("Quota exceeded"); } });
+  vi.stubGlobal("localStorage", {
+    setItem: () => {
+      throw new Error("Quota exceeded");
+    },
+  });
   expect(storage.isStorageAvailable()).toBe(false);
 });
